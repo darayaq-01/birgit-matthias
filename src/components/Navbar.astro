@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
 import Logo from '@assets/logo.webp';
+import LogoFinal from '@assets/UI/LogoFinal.astro';
 
 const menuItems = [
     {
@@ -42,12 +43,15 @@ const menuItems = [
     <Astronav>
         <div class='flex w-full items-center justify-between lg:w-auto z-50'>
             <a href='/'>
-                <Image
+                <!-- <Image
                     width={200}
                     height={40}
                     src={Logo}
                     class='aspect-auto h-20 object-contain md:h-28'
                     alt='Logo Birgit'
+                /> -->
+                <LogoFinal
+                    class='text-white aspect-auto h-20 object-contain md:h-28'
                 />
             </a>
 
