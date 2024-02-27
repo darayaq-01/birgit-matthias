@@ -1,0 +1,61 @@
+---
+import LayoutArt from '@layouts/LayoutArt.astro';
+// import SliderComp from '@components/SliderComp.svelte';
+import { Image } from 'astro:assets';
+
+// muestra un mosaico de imagenes
+// crear componente de detalle de imagen -> dinamico de acuerdo al nombre... ver opciones d eblog
+
+import abstract from '@assets/abstract.webp';
+import auftragsarbeiten from '@assets/auftragsarbeiten.webp';
+import landschaften from '@assets/landschaften.webp';
+import menschen from '@assets/menschen.webp';
+import stilleben from '@assets/stilleben.webp';
+import halbabstrakt from '@assets/halbabstrakt.webp';
+
+const images = [
+    {
+        title: 'Abstrakte Malerei',
+        link: '/abstrakt',
+        image: abstract,
+    },
+    {
+        title: 'Auftragsarbeiten',
+        link: '/auftragsarbeiten',
+        image: auftragsarbeiten,
+    },
+    {
+        title: 'Gegenständlich / Landschaften',
+        link: '/landschaften',
+        image: landschaften,
+    },
+    {
+        title: 'Gegenständlich / Menschen',
+        link: '/menschen',
+        image: menschen,
+    },
+    {
+        title: 'Gegenständlich / Stilleben',
+        link: '/stilleben',
+        image: stilleben,
+    },
+    {
+        title: 'Halbabstrakt',
+        link: '/halbabstrakt',
+        image: halbabstrakt,
+    },
+];
+---
+
+<LayoutArt title='Abstrakte Malerei'>
+    {
+        images.map((image) => {
+            console.log(image);
+            return (
+                <>
+                    <Image src={image.image} alt={image.title} />
+                </>
+            );
+        })
+    }
+</LayoutArt>

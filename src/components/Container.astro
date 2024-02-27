@@ -1,0 +1,7 @@
+---
+const { classAstro, ...rest } = Astro.props;
+---
+
+<div class={`container py-8 mx-auto px-6 ${classAstro}`} {...rest}>
+    <slot />
+</div>

@@ -1,0 +1,56 @@
+---
+import { Picture } from 'astro:assets';
+import imageComponent from '@assets/ausstellungen.avif';
+import Container from '@components/Container.astro';
+---
+
+<section class='bg-[#fa99c3] flex flex-col justify-center'>
+    <Container classAstro='flex flex-col  md:flex md:flex-row md:gap-3'>
+        <div class='flex-1 py-3'>
+            <h2 class='text-white text-3xl text-center py-6 font-bold'>
+                <span class='border-b-2 border-white pb-1'>Ausstellungen</span>
+            </h2>
+
+            <Picture
+                src={imageComponent}
+                formats={['avif', 'webp']}
+                alt='Presentation of a own Art.'
+                class='py-8'
+            />
+        </div>
+
+        <article class='flex-1 self-center h-fit py-5'>
+            <div class='mb-10 max-w-prose'>
+                <h3 class='text-2xl py-5 font-bold'>Einzelausstellungen</h3>
+                <ul class='text-lg'>
+                    <li class='flex gap-10 my-5'>
+                        <div class='flex-1'>30.09.2016 – 10.01.2017</div>
+                        <div class='flex-1'>Galerie im Erbenhof, Weimar</div>
+                    </li>
+                    <li class='flex gap-10 my-5'>
+                        <div class='flex-1'>31.03.2017 – 26.04.2018</div>
+                        <div class='flex-1'>Gebrüder Hopf, Weimar</div>
+                    </li>
+                    <li class='flex gap-10'>
+                        <div class='flex-1'>20.06.2018 – 20.09.2018</div>
+                        <div class='flex-1'>
+                            Institut für Angewandte Bauforschung, Weimar
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class='text-2xl py-5 font-bold'>
+                    Ausstellungsbeteiligungen
+                </h3>
+                <p class='text-pretty text-lg max-w-prose'>
+                    Mal- und Zeichenschule Weimar: In den Werkschauen,
+                    Ausleihungen an fördernde Unternehmen wie Grafe, Blankenhain
+                    und Bayer AG, Weimar, Thüringer Landtag,
+                    Gruppenausstellungen mit dem Malkurs Roger Bonnard im
+                    Erbenhof, Weimar und Seebachstift, Weimar
+                </p>
+            </div>
+        </article>
+    </Container>
+</section>

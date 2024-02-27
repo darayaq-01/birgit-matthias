@@ -1,0 +1,79 @@
+---
+import Container from '@components/Container.astro';
+import Link from './ui/Link.astro';
+import { Image } from 'astro:assets';
+
+import abstract from '@assets/abstract.webp';
+import auftragsarbeiten from '@assets/auftragsarbeiten.webp';
+import landschaften from '@assets/landschaften.webp';
+import menschen from '@assets/menschen.webp';
+import stilleben from '@assets/stilleben.webp';
+import halbabstrakt from '@assets/halbabstrakt.webp';
+
+const CategoriesGallery = [
+    {
+        title: 'Abstrakte Malerei',
+        link: '/abstrakt',
+        image: abstract,
+    },
+    {
+        title: 'Auftragsarbeiten',
+        link: '/auftragsarbeiten',
+        image: auftragsarbeiten,
+    },
+    {
+        title: 'Gegenständlich / Landschaften',
+        link: '/landschaften',
+        image: landschaften,
+    },
+    {
+        title: 'Gegenständlich / Menschen',
+        link: '/menschen',
+        image: menschen,
+    },
+    {
+        title: 'Gegenständlich / Stilleben',
+        link: '/stilleben',
+        image: stilleben,
+    },
+    {
+        title: 'Halbabstrakt',
+        link: '/halbabstrakt',
+        image: halbabstrakt,
+    },
+];
+---
+
+<Container classAstro='bg-white px-5 py-24 mx-auto'>
+    <div class='flex flex-col text-center w-full mb-20'>
+        <h2 class='text-3xl text-left py-6 font-bold'>
+            <span class='border-b-2 border-black pb-1'>Ausstellungen</span>
+        </h2>
+    </div>
+
+    <div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+        {
+            CategoriesGallery.map((category) => {
+                return (
+                    <Link
+                        href={category.link}
+                        class='flex relative h-[400px] gap-5 '
+                    >
+                        <Image
+                            alt='gallery'
+                            class='absolute inset-0 w-full h-full object-cover object-center'
+                            src={category.image}
+                            height={category.image.height}
+                            width={category.image.width}
+                        />
+                        <div class='flex flex-col  justify-center relative z-10 w-full bg-slate-400/70 opacity-0 hover:opacity-100'>
+                            <h3 class='text-shadow-custom text-5xl text-balance text-center text-red-500  font-extrabold leading-relaxed'>
+                                {category.title}
+                            </h3>
+                        </div>
+                    </Link>
+                );
+            })
+        }
+    </div>
+</Container>

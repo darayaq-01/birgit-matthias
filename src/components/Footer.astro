@@ -1,0 +1,60 @@
+---
+import Container from '@components/Container.astro';
+import Facebook from '@assets/UI/Facebook_logo-mod.svg';
+import Instagram from '@assets/UI/Instagram_logo-mod.svg';
+
+const links = [
+    {
+        name: 'Impressum',
+        url: '/impresum',
+    },
+    {
+        name: 'Datenschutz',
+        url: '/datenschutz',
+    },
+    {
+        name: 'Facebook',
+        url: '/',
+        imgSrc: Facebook.src,
+        imgHeight: Facebook.height,
+        alt: 'Logo Facebook',
+    },
+    {
+        name: 'Instagram',
+        url: '/',
+        imgSrc: Instagram.src,
+        imgHeight: Instagram.height,
+        alt: 'Logo Instagram',
+    },
+];
+
+// TODO: Add links to social media
+---
+
+<Container>
+    <ul class='flex flex-col gap-4 sm:flex-row sm:gap-10 sm:align-middle'>
+        {
+            links.map((item) => (
+                <li>
+                    <a
+                        href={item.url}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        {item.imgSrc ? (
+                            <img
+                                src={item.imgSrc}
+                                height={item.imgHeight}
+                                width={100}
+                                alt={item.alt}
+                                class='aspect-auto object-contain'
+                            />
+                        ) : (
+                            item.name
+                        )}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</Container>

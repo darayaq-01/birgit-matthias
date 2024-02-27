@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets';
+import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
+import Logo from '@assets/logo.webp';
+
+const menuItems = [
+    {
+        title: 'Home',
+        path: '/',
+    },
+    {
+        title: 'Vita',
+        path: '/vita',
+    },
+    {
+        title: 'Werke',
+        path: '/werke',
+    },
+    {
+        title: 'Aktuelles',
+        path: '/aktuelles',
+    },
+    {
+        title: 'Archiv',
+        path: '/archiv',
+    },
+    {
+        title: 'Presse',
+        path: '/presse',
+    },
+    {
+        title: 'Kontakt',
+        path: '/kontakt',
+    },
+];
+---
+
+<header
+    id='navbar'
+    class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row fixed top-0 left-0 right-0 w-full bg-transparent z-50'
+>
+    <Astronav>
+        <div class='flex w-full items-center justify-between lg:w-auto z-50'>
+            <a href='/'>
+                <Image
+                    width={200}
+                    height={40}
+                    src={Logo}
+                    class='aspect-auto h-20 object-contain md:h-28'
+                    alt='Logo Birgit'
+                />
+            </a>
+
+            <!-- hamburger button -->
+            <div class='block lg:hidden'>
+                <MenuIcon class='my-class h-8 w-8 text-[#f8f8f8]' />
+            </div>
+        </div>
+        <MenuItems class='mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto'>
+            <ul class='flex flex-col text-[1.3rem] lg:flex-row lg:gap-3'>
+                {
+                    menuItems?.map((item) => (
+                        <>
+                            <li class='text-shadow-custom'>
+                                <a
+                                    href={item?.path}
+                                    class='flex py-2 text-white uppercase hover:bg-[#dfecf7] hover:text-gray-900 lg:px-3'
+                                >
+                                    {item.title}
+                                </a>
+                            </li>
+                        </>
+                    ))
+                }
+            </ul>
+        </MenuItems>
+    </Astronav>
+</header>
+
+<script>
+    // TODO: find a way to do with observables
+    // add: transitions and animations
+    const navbar = document.querySelector('#navbar');
+    const menuIcon = document.querySelector('.my-class');
+    const changeColorNav = () => {
+        if (navbar) {
+            window.addEventListener('scroll', function () {
+                if (this.window.scrollY < 50) {
+                    navbar.classList.remove('bg-[#ffffffc9]', 'shadow-md');
+                } else if (this.window.scrollY > 50) {
+                    navbar.classList.remove('bg-transparent', 'shadow-md');
+                    navbar.classList.add('bg-[#ffffffc9]', 'shadow-md');
+                    menuIcon?.classList.remove('text-[#f8f8f8]');
+                    menuIcon?.classList.add('text-red-900');
+                }
+            });
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', changeColorNav);
+</script>
