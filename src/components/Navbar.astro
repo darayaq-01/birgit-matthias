@@ -1,7 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
-import Logo from '@assets/logo.webp';
+import LogoFinal from '@assets/UI/LogoFinal.astro';
 
 const menuItems = [
     {
@@ -42,12 +41,8 @@ const menuItems = [
     <Astronav>
         <div class='flex w-full items-center justify-between lg:w-auto z-50'>
             <a href='/'>
-                <Image
-                    width={200}
-                    height={40}
-                    src={Logo}
-                    class='aspect-auto h-20 object-contain md:h-28'
-                    alt='Logo Birgit'
+                <LogoFinal
+                    class='text-white aspect-auto py-4 h-20 object-contain md:h-28'
                 />
             </a>
 
@@ -82,16 +77,21 @@ const menuItems = [
     // add: transitions and animations
     const navbar = document.querySelector('#navbar');
     const menuIcon = document.querySelector('.my-class');
+    const logoMain = document.querySelector('#logo-main');
+
     const changeColorNav = () => {
         if (navbar) {
             window.addEventListener('scroll', function () {
                 if (this.window.scrollY < 50) {
                     navbar.classList.remove('bg-[#ffffffc9]', 'shadow-md');
+                    logoMain?.classList.remove('text-black');
                 } else if (this.window.scrollY > 50) {
                     navbar.classList.remove('bg-transparent', 'shadow-md');
                     navbar.classList.add('bg-[#ffffffc9]', 'shadow-md');
                     menuIcon?.classList.remove('text-[#f8f8f8]');
-                    menuIcon?.classList.add('text-red-900');
+                    menuIcon?.classList.add('text-red-00');
+                    logoMain?.classList.remove('text-white');
+                    logoMain?.classList.add('text-black');
                 }
             });
         }
