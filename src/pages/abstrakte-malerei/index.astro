@@ -1,0 +1,66 @@
+---
+import LayoutArt from '@layouts/LayoutArt.astro';
+import { Image } from 'astro:assets';
+
+import { malereiData } from '@data/malereiData';
+import type { detailsArtwork } from '@utils/types.d.ts';
+
+import GridCell from '@components/GridCell.astro';
+---
+
+<LayoutArt title='Malerei'>
+    <main>
+        <div class='grid grid--large'>
+            <div class='grid__cell grid__cell--padded'>
+                <div class='frame'>
+                    <h1 class='frame__title oh'>
+                        <span class='oh__inner'
+                            >Astro +<br />View Transitions<br />Photo Gallery</span
+                        >
+                    </h1>
+                    <nav class='frame__links'>
+                        <a
+                            href='https://github.com/Charca/astro-photo-gallery'
+                            class='oh'
+                            target='_blank'
+                            rel='noopener'
+                            ><span class='oh__inner'>Source code</span></a
+                        >
+                        <div>
+                            Original demo by <a
+                                href='https://twitter.com/codrops'
+                                class='oh'
+                                target='_blank'
+                                rel='noopener'
+                                ><span class='oh__inner'>@codrops</span></a
+                            >
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            {
+                malereiData.map((art, index) => (
+                    <GridCell data={art} dataIndex={index} />
+                ))
+            }
+        </div>
+    </main>
+
+    <!--     <section class='flex flex-col justify-center'>
+        <div class='flex-1 py-3'>
+            <h2 class='text-3xl text-center py-6 font-bold'>
+                <span class='border-b-2 border-white pb-1'
+                    >Abstrake Malerei</span
+                >
+            </h2>
+        </div>
+
+        <article class='flex-1 self-center h-fit py-5'>
+            {
+                malereiData.map((art, index) => (
+                    <GridCell data={art} dataIndex={index} />
+                ))
+            }
+        </article>
+    </section> -->
+</LayoutArt>

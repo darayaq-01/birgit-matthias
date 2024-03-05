@@ -11,30 +11,13 @@ import Gallery from '@components/Gallery.astro';
 <Layout title='Birgit Mathias Malerei'>
     <Hero>
         <Navbar />
-        <!-- 
-            @todo: text-shadow:
-            TODO <textarea name="" id="" cols="30" rows="10"></textarea>
-            !important 
-            * testing
-            @ testing
-            ? questino
-            TODO
-
-         -->
         <div
             class='max-w-screen-lg flex flex-col items-center justify-end h-full pb-4 px-6 sm:px-0'
         >
             <CallToAction />
         </div>
     </Hero>
-
     <Description />
     <Ausstellungen />
     <Gallery />
 </Layout>
-
-<style is:global>
-    .text-shadow-custom {
-        text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.829);
-    }
-</style>

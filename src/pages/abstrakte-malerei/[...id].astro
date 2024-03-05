@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+// import MiniGrid from '../../components/MiniGrid.astro'
+import LayoutArt from '@layouts/LayoutArt.astro';
+import { malereiData } from '@data/malereiData';
+
+export async function getStaticPaths() {
+    return malereiData.map((photo) => ({ params: { id: photo.id } }));
+}
+
+const { id } = Astro.params;
+
+const photo = malereiData.find((photo) => photo.id == id);
+const photoIndex = malereiData.findIndex((photo) => photo.id == id);
+const photoNumber = photo?.id.toString().padStart(2, '0');
+
+const prevPhoto = malereiData[photoIndex - 1];
+const nextPhoto = malereiData[photoIndex + 1];
+---
+
+<LayoutArt title='Astro + View Transitions Photo Gallery'>
+    <main class='h-dvh border-2 border-red-500 mt-[100]'>
+        <div class='content mt-[100] boder-3 border-green-600'>
+            <div class='content__item' id='item-1'>
+                <nav class='slide-nav'>
+                    <div
+                        class='slide-nav__img slide-nav__img--prev'
+                        style={prevPhoto
+                            ? `background-image:url(${prevPhoto.imageUrl});`
+                            : ''}
+                    >
+                    </div>
+                    <Image
+                        class='slide-nav__main-img'
+                        src={photo?.imageUrl ?? ''}
+                        alt={photo?.title ?? ''}
+                        transition:name={`photo-${photo?.id}`}
+                        id={photo?.id.toString()}
+                        title={photo?.title}
+                    />
+
+                    <div
+                        class='slide-nav__img slide-nav__img--next'
+                        style={nextPhoto
+                            ? `background-image:url(${nextPhoto.imageUrl});`
+                            : ''}
+                    >
+                    </div>
+                </nav>
+
+                <div transition:name={`photo-details-${photo?.id}`}>
+                    <span class='content__item-number oh'
+                        ><span class='oh__inner'>{photoNumber}</span></span
+                    >
+                    <h2 class='content__item-heading oh'>
+                        <span class='oh__inner'>{photo?.title}</span>
+                    </h2>
+                    <p class='content__item-text'>
+                        {photo?.description}
+                    </p>
+                    <a
+                        class='content__item-link oh'
+                        href='/'
+                        target='_blank'
+                        rel='noopener'
+                        ><span class='oh__inner'>View more</span></a
+                    >
+                </div>
+            </div>
+            <a href='/abstrakte-malerei' class='back'>
+                <svg viewBox='0 0 50 9' width='100%'
+                    ><path d='M0 4.5l5-3M0 4.5l5 3M50 4.5h-77'></path></svg
+                >
+            </a>
+            <!-- <MiniGrid currentPhotoId={photo?.id} /> -->
+        </div>
+    </main>
+</LayoutArt>
