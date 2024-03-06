@@ -36,13 +36,13 @@ const menuItems = [
 
 <header
     id='navbar'
-    class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row fixed top-0 left-0 right-0 w-full bg-slate-100/60 z-50'
+    class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row fixed top-0 left-0 right-0 w-full bg-slate-100/60 z-50 shadow-md shadow-slate-500'
 >
     <Astronav>
         <div class='flex w-full items-center justify-between lg:w-auto z-50'>
             <a href='/'>
                 <LogoFinal
-                    class='aspect-auto py-4 h-20 object-contain md:h-28'
+                    class='aspect-auto py-4 h-20 object-contain md:h-28 text-gray-700 hover:text-black hover:stroke-2'
                 />
             </a>
 
@@ -55,8 +55,11 @@ const menuItems = [
             <ul class='flex flex-col text-[1.3rem] lg:flex-row lg:gap-3'>
                 {
                     menuItems?.map((item) => (
-                        <li class=''>
-                            <a href={item?.path} class='flex uppercase '>
+                        <li>
+                            <a
+                                href={item?.path}
+                                class='flex uppercase text-gray-700'
+                            >
                                 {item.title}
                             </a>
                         </li>
