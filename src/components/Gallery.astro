@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import Link from '@components/ui/Link.astro';
 
 import Container from '@components/Container.astro';
 import { austellungenData } from '../data/ausstellungenData.ts';
@@ -16,7 +15,7 @@ import { austellungenData } from '../data/ausstellungenData.ts';
     <div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
         {
             austellungenData.map((ausstellung) => (
-                <Link
+                <a
                     href={ausstellung.slug}
                     class='flex relative h-[400px] gap-5 '
                 >
@@ -32,7 +31,7 @@ import { austellungenData } from '../data/ausstellungenData.ts';
                             {ausstellung.title}
                         </h3>
                     </div>
-                </Link>
+                </a>
             ))
         }
     </div>
