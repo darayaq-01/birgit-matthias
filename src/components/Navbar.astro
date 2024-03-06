@@ -54,13 +54,15 @@ const menuItems = [
             </div>
         </div>
         <MenuItems class='mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto'>
-            <ul class='flex flex-col text-[1.3rem] lg:flex-row lg:gap-3'>
+            <ul
+                class='flex my-9 lg:my-0 flex-col gap-8 text-[1.3rem] lg:flex-row'
+            >
                 {
                     menuItems?.map((item) => (
                         <li>
                             <a
                                 href={item?.path}
-                                class='flex uppercase text-gray-700'
+                                class='flex uppercase text-gray-600 hover:text-black'
                             >
                                 {item.title}
                             </a>
