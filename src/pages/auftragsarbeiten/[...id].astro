@@ -8,9 +8,9 @@ import Arrow from '@assets/UI/Arrow.astro';
 export async function getStaticPaths() {
     return malereiData.map((photo) => ({ params: { id: photo.id } }));
 }
-export const prerender = true;
-const { id } = Astro.params;
 
+const { id } = Astro.params;
+export const prerender = true;
 const photo = malereiData.find((photo) => photo.id == id);
 const photoIndex = malereiData.findIndex((photo) => photo.id == id);
 const photoNumber = photo?.id.toString().padStart(2, '0');
