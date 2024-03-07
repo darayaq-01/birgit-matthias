@@ -1,34 +1,10 @@
 ---
-import LayoutArt from '@layouts/LayoutArt.astro';
+import IndexGallery from '@components/gallery/IndexGallery.astro';
 import { malereiData } from '@data/malereiData';
-import GridCell from '@components/GridCell.astro';
 ---
 
-<LayoutArt title='Malerei'>
-    <main>
-        <div class='grid grid--large'>
-            <div class='grid__cell grid__cell--padded'>
-                <div class='frame'>
-                    <h1 class='frame__title oh'>
-                        <span class='oh__inner'>Abstrakte Malerei</span>
-                    </h1>
-                    <p class='text-gray-600 text-balance text-sm'>
-                        @Copyright
-                        <a
-                            href='mailto:"birgit@mail.com'
-                            target='_blank'
-                            class='text-gray-800'
-                        >
-                            Birgit Matthias
-                        </a>
-                    </p>
-                </div>
-            </div>
-            {
-                malereiData.map((art, index) => (
-                    <GridCell data={art} dataIndex={index} />
-                ))
-            }
-        </div>
-    </main>
-</LayoutArt>
+<IndexGallery
+    title='Malerei'
+    header='Abstrakte Malerei'
+    dataArt={malereiData}
+/>
