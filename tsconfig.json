@@ -9,6 +9,8 @@
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@data/*": ["data/*"],
+      "@utils/*": ["utils/*"],
     }}
 }

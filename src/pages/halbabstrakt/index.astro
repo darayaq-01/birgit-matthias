@@ -1,0 +1,12 @@
+---
+import IndexGallery from '@components/gallery/IndexGallery.astro';
+import { halbabstraktData } from '@data/halbabstraktData';
+
+export const prerender = true;
+---
+
+<IndexGallery
+    title='Halbabstrakt'
+    header='Halbabstrakt'
+    dataArt={halbabstraktData}
+/>

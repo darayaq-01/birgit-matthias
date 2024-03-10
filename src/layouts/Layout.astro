@@ -19,8 +19,8 @@ import Footer from '@components/Footer.astro';
         <meta name='keywords' content='Birgit Matthias, Malerei, Kunst' />
         <link rel='canonical' href='https://birgitmatthias.de/' />
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
+        <meta name='robots' content='index, follow' />
+        <meta name='googlebot' content='index, follow' />
     </head>
 
     <body>
@@ -30,9 +30,21 @@ import Footer from '@components/Footer.astro';
 </html>
 
 <style is:global>
-    html {
-        font-family: system-ui, sans-serif;
-        background: #e9eaee;
+    :root {
+        font-family: Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow: hidden;
+        overflow-y: scroll;
+        line-height: 1;
+        margin: 0;
+        background: #06185ee1;
         background-size: 224px;
+        --color-text: #000;
+        --color-bg: #f7f5ee;
+        --color-link: #000;
+        --color-link-hover: #000;
+        color: var(--color-text);
+        background-color: var(--color-bg);
     }
 </style>

@@ -1,0 +1,17 @@
+---
+import IndexGallery from '@components/gallery/IndexGallery.astro';
+import { malereiData } from '@data/abstrakteMalereiData';
+
+export const prerender = true;
+// TODO: !important
+// prerrender this page on build time.
+// This will generate a static page with the data from the data file
+// Search if this is necesseary for the gallery pages
+---
+
+<IndexGallery
+    title='Malerei'
+    header='Abstrakte Malerei'
+    dataArt={malereiData}
+/>
+@data/abstrakteMalereiData

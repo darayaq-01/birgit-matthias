@@ -1,0 +1,11 @@
+---
+import IndexGallery from '@components/gallery/IndexGallery.astro';
+import { auftragsarbeitenData } from '@data/auftragsarbeitenData';
+export const prerender = true;
+---
+
+<IndexGallery
+    title='Auftragsarbeiten'
+    header='Auftragsarbeiten'
+    dataArt={auftragsarbeitenData}
+/>

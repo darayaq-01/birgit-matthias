@@ -1,0 +1,13 @@
+---
+import IndexGallery from '@components/gallery/IndexGallery.astro';
+import { stillebenData } from '@data/stillebenData';
+
+export const prerender = true;
+---
+
+<IndexGallery
+    title='Gegenständlich / Stilleben'
+    header='Gegenständlich / Stilleben'
+    dataArt={stillebenData}
+/>
+@data/abstrakteMalereiData
