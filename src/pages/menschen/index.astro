@@ -1,11 +1,12 @@
 ---
 import IndexGallery from '@components/gallery/IndexGallery.astro';
-import { malereiData } from '@data/malereiData';
+import { menschenData } from '@data/menschenData';
+
 export const prerender = true;
 ---
 
 <IndexGallery
-    title='Malerei'
-    header='Abstrakte Malerei'
-    dataArt={malereiData}
+    title='Gegenständlich / Menschen'
+    header='Gegenständlich / Menschen'
+    dataArt={menschenData}
 />
