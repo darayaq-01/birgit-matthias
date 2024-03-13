@@ -1,43 +1,46 @@
 ---
-import ImageMain from '@assets/ausstellungen.avif';
+import { INFO_CTA } from '@consts/INFO_CTA';
 ---
 
 <div
-    class='flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5'
+    class=' bg-white  '
 >
-    <div
-        class='w-full h-64 bg-top bg-cover rounded-t'
-        style=`background-image: url(${ImageMain.src}); height: {ImageMain.height}; width: {ImageMain.width}; alt="picture"`
-    >
-    </div>
-    <div class='flex flex-col w-full md:flex-row'>
-        <div
-            class='flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4'
-        >
-            <div class='md:text-3xl'>März</div>
-            <div class='md:text-6xl'>13</div>
-            <div class='md:text-xl'>7 pm</div>
-        </div>
-        <div class='p-4 font-normal text-gray-800 md:w-3/4'>
-            <h1
-                class='mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800'
-            >
-                Exibition Art
-            </h1>
-            <p class='leading-normal'>
-                Loren ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-            </p>
-            <div class='flex flex-row items-center mt-4 text-gray-700'>
-                Mehr infos: &nbsp;
-                <a
-                    href='/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    class='w-1/2 hover:text-red-500 transition-shadow duration-700 ease-in-out'
+    {
+        INFO_CTA.map((cta) => {
+            return (
+                <>
+                <div
+                    class='h-56 sm:h-72 md:h-96 w-full bg-top bg-cover bg-no-repeat bg-black/60'
+                    style=`background-image: url(${cta.image}); height: {ImageMain.height}; width: {ImageMain.width}; alt="picture"`
                 >
-                    https://some-info.com</a
-                >
-            </div>
-        </div>
-    </div>
+                </div>
+                <div class='flex flex-col w-full md:flex-row'>
+                    <div class='flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-[#1e9eb4d0] md:flex-col md:items-center md:justify-center md:w-1/4'>
+                        <div class='md:text-3xl'>{cta.date}</div>
+
+                        <div class='md:text-xl'>{cta.time}</div>
+                    </div>
+                    <div class='p-4 font-normal text-gray-800 md:w-3/4'>
+                        <h1 class='mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800'>
+                            {cta.title}
+                        </h1>
+                        <p class='leading-normal'>{cta.short_text}</p>
+                        <div class='flex flex-row items-center mt-4 text-gray-700'>
+                            <span class='font-bold'>Mehr infos:</span> &nbsp;
+                            <a
+                                href={cta.link}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                class='w-1/2 hover:text-red-500 transition-shadow duration-700 ease-in-out'
+                            >
+                                {cta.link}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </>
+            );
+        }
+        )
+    }
 </div>
