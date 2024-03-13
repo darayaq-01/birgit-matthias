@@ -1,7 +1,7 @@
 ---
 import LayoutArt from '@layouts/LayoutArt.astro';
 import GridCell from '@components/GridCell.astro';
-
+import Arrow from '@assets/UI/Arrow.astro';
 interface Props {
     title: string;
     header: string;
@@ -15,23 +15,35 @@ const linkAddress = 'algo@email';
 ---
 
 <LayoutArt title={title}>
-    <main>
+    <main class='h-fit bg-gray-400/20'>
         <div class='grid grid--large'>
             <div class='grid__cell grid__cell--padded'>
-                <div class='frame'>
-                    <h1 class='frame__title oh'>
-                        <span class='oh__inner'>{header}</span>
-                    </h1>
-                    <p class='text-gray-600 text-balance text-sm'>
-                        @Copyright
-                        <a
-                            href=`mailto:${linkAddress}`
-                            target='_blank'
-                            class='text-gray-800'
-                        >
-                            {copyright}
-                        </a>
-                    </p>
+                <div class='frame flex flex-col justify-around'>
+                    <header>
+                        <h1 class='frame__title oh'>
+                            <span class='oh__inner'>{header}</span>
+                        </h1>
+                        <p class='text-gray-600 text-balance text-sm'>
+                            @Copyright
+                            <a
+                                href=`mailto:${linkAddress}`
+                                target='_blank'
+                                class='text-gray-800'
+                            >
+                                {copyright}
+                            </a>
+                        </p>
+                    </header>
+
+                    <!-- arrow back to section -->
+
+                    <a
+                        href='/#gallery'
+                        class='text-gray-500 hover:text-gray-800 text-balance text-sm'
+                    >
+                        <p>Züruck zu Ausstellungen</p>
+                        <Arrow class='w-36 m-auto' />
+                    </a>
                 </div>
             </div>
             {
