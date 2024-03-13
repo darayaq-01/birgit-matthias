@@ -1,11 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Hero from '@components/Hero.astro';
-import Description from '@components/Description.astro';
-import Ausstellungen from '@components/Ausstellungen.astro';
-import Navbar from '@components/Navbar.astro';
-import CallToAction from '@components/CallToAction.astro';
-import Gallery from '@components/Gallery.astro';
+import Hero from '@sections/Hero.astro';
+import Description from '@sections/Description.astro';
+import Ausstellungen from '@sections/Ausstellungen.astro';
+import Navbar from '@sections/Navbar.astro';
+import CallToAction from '@sections/CallToAction.astro';
+import Gallery from '@sections/Gallery.astro';
 ---
 
 <Layout title='Birgit Mathias Malerei'>
@@ -19,5 +19,7 @@ import Gallery from '@components/Gallery.astro';
     </Hero>
     <Description />
     <Ausstellungen />
-    <Gallery />
+    <div id='gallery'>
+        <Gallery />
+    </div>
 </Layout>

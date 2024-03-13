@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 
 import Container from '@components/Container.astro';
-import { austellungenData } from '../data/ausstellungenData.ts';
+import { austellungenData } from '@consts/ausstellungenData';
 ---
 
 <Container classAstro='bg-white px-5 py-24 mx-auto'>
@@ -26,8 +26,8 @@ import { austellungenData } from '../data/ausstellungenData.ts';
                         height={ausstellung.height}
                         width={ausstellung.width}
                     />
-                    <div class='flex flex-col  justify-center relative z-10 w-full bg-slate-400/70 opacity-0 hover:opacity-100'>
-                        <h3 class='text-shadow-custom text-5xl text-balance text-center text-red-500  font-extrabold leading-relaxed'>
+                    <div class='flex flex-col  justify-center relative z-10 w-full bg-slate-600/80 opacity-0 hover:opacity-100'>
+                        <h3 class='text-shadow-custom text-shadow-white text-3xl sm:text-5xl text-balance text-center text-red-500 font-extrabold leading-relaxed'>
                             {ausstellung.title}
                         </h3>
                     </div>

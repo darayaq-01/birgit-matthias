@@ -6,30 +6,37 @@ const menuItems = [
     {
         title: 'Home',
         path: '/',
+        active: true,
     },
     {
         title: 'Vita',
         path: '/vita',
+        active: false,
     },
     {
         title: 'Werke',
         path: '/werke',
+        active: false,
     },
     {
         title: 'Aktuelles',
         path: '/aktuelles',
+        active: false,
     },
     {
         title: 'Archiv',
         path: '/archiv',
+        active: false,
     },
     {
         title: 'Presse',
         path: '/presse',
+        active: false,
     },
     {
         title: 'Kontakt',
         path: '/kontakt',
+        active: true,
     },
 ];
 ---
@@ -58,16 +65,18 @@ const menuItems = [
                 class='flex my-9 lg:my-0 flex-col gap-8 text-[1.3rem] lg:flex-row'
             >
                 {
-                    menuItems?.map((item) => (
-                        <li>
-                            <a
-                                href={item?.path}
-                                class='flex uppercase text-gray-600 hover:text-black'
-                            >
-                                {item.title}
-                            </a>
-                        </li>
-                    ))
+                    menuItems
+                        ?.filter((item) => item.active)
+                        .map((item) => (
+                            <li>
+                                <a
+                                    href={item?.path}
+                                    class='flex uppercase text-gray-600 hover:text-black'
+                                >
+                                    {item.title}
+                                </a>
+                            </li>
+                        ))
                 }
             </ul>
         </MenuItems>

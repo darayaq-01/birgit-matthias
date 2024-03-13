@@ -6,11 +6,27 @@
     "allowJs": true,
     "allowImportingTsExtensions": true,
     "paths": {
-      "@components/*": ["components/*"],
-      "@layouts/*": ["layouts/*"],
-      "@pages/*": ["pages/*"],
-      "@assets/*": ["assets/*"],
-      "@data/*": ["data/*"],
-      "@utils/*": ["utils/*"],
-    }}
+      "@components/*": [
+        "components/*"
+      ],
+      "@layouts/*": [
+        "layouts/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@consts/*": [
+        "consts/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@sections/*": [
+        "sections/*"
+      ],
+    }
+  }
 }

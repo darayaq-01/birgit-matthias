@@ -2,8 +2,8 @@
 interface Props {
     title: string;
 }
-import Navbar from '@components/Navbar.astro';
-import Footer from '@components/Footer.astro';
+import Navbar from '@sections/Navbar.astro';
+import Footer from '@sections/Footer.astro';
 
 const { title } = Astro.props;
 const descriptionPage = 'Birgit Matthias Malerei';
@@ -26,13 +26,13 @@ import Container from '@components/Container.astro';
         <meta name='googlebot' content='index, follow' />
     </head>
     <body>
-        <main class='h-dvh'>
-            <Navbar />
+        <Navbar />
+        <main class='mt-auto'>
             <Container classAstro='mt-[100px]'>
                 <slot />
             </Container>
-            <Footer />
         </main>
+        <Footer />
     </body>
 </html>
 
@@ -53,6 +53,10 @@ import Container from '@components/Container.astro';
         --color-link-hover: #000;
         color: var(--color-text);
         background-color: var(--color-bg);
+    }
+    .main {
+        height: 100dvh;
+        border: 3px solid rgb(4, 201, 4);
     }
 
     a {
