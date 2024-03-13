@@ -19,3 +19,12 @@ export type detailsArtwork = {
     price?: number
     sold?: boolean
 }
+
+export type dataCTA = {
+    title: string
+    short_text: string
+    date: string
+    time: string
+    image: Object
+    link: string
+}
