@@ -27,7 +27,7 @@ import { austellungenData } from '@consts/ausstellungenData';
                         width={ausstellung.width}
                     />
                     <div class='flex flex-col  justify-center relative z-10 w-full bg-slate-600/80 opacity-0 hover:opacity-100'>
-                        <h3 class='text-shadow-custom text-shadow-white text-3xl sm:text-5xl text-balance text-center text-red-500 font-extrabold leading-relaxed'>
+                        <h3 class='text-shadow-custom text-3xl sm:text-5xl text-balance text-center text-white font-extrabold leading-relaxed'>
                             {ausstellung.title}
                         </h3>
                     </div>
@@ -36,3 +36,9 @@ import { austellungenData } from '@consts/ausstellungenData';
         }
     </div>
 </Container>
+
+<style>
+    .text-shadow-custom {
+        text-shadow: 0 0 10px #020202;
+    }
+</style>
