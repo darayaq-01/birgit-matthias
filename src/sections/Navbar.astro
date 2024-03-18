@@ -12,7 +12,7 @@ import { menuItems } from '@consts/menuItems';
         <div class='flex w-full items-center justify-between lg:w-auto z-50'>
             <a href='/'>
                 <LogoFinal
-                    class='aspect-auto py-4 h-20 object-contain md:h-28 text-gray-700 hover:text-black hover:stroke-2'
+                    class='aspect-auto py-4 h-20 object-contain md:h-28 text-gray-700 hover:text-black hover:stroke-12 hover:scale-110'
                 />
             </a>
 
@@ -34,7 +34,7 @@ import { menuItems } from '@consts/menuItems';
                             <li>
                                 <a
                                     href={item?.path}
-                                    class='flex uppercase text-gray-600 hover:text-black'
+                                    class='flex uppercase text-gray-600 hover:text-black  hover:border-b-8 hover:border-[#59B9CB]/80 w-fit hover:font-extrabold'
                                 >
                                     {item.title}
                                 </a>
@@ -45,31 +45,3 @@ import { menuItems } from '@consts/menuItems';
         </MenuItems>
     </Astronav>
 </header>
-
-<script>
-    // TODO: find a way to do with observables
-    // add: transitions and animations
-    // const navbar = document.querySelector('#navbar');
-    // const menuIcon = document.querySelector('.my-class');
-    // const logoMain = document.querySelector('#logo-main');
-
-    // const changeColorNav = () => {
-    //     if (navbar) {
-    //         window.addEventListener('scroll', function () {
-    //             if (this.window.scrollY < 50) {
-    //                 navbar.classList.remove('bg-[#ffffffc9]', 'shadow-md');
-    //                 logoMain?.classList.remove('text-black');
-    //             } else if (this.window.scrollY > 50) {
-    //                 navbar.classList.remove('bg-transparent', 'shadow-md');
-    //                 navbar.classList.add('bg-[#ffffffc9]', 'shadow-md');
-    //                 menuIcon?.classList.remove('text-[#f8f8f8]');
-    //                 menuIcon?.classList.add('text-red-00');
-    //                 logoMain?.classList.remove('text-white');
-    //                 logoMain?.classList.add('text-black');
-    //             }
-    //         });
-    //     }
-    // };
-
-    // document.addEventListener('DOMContentLoaded', changeColorNav);
-</script>
