@@ -1,5 +1,5 @@
 
-import { dataCTA } from "@utils/types.d.ts";
+import type { dataCTA } from "@utils/types";
 
 import ImageMain from '@assets/ausstellungen.avif';
 
