@@ -39,7 +39,7 @@ import { links } from '@consts/links';
             const linkHref = link.getAttribute('href');
 
             console.log({ linkHref }, { path });
-            if (linkHref === path) {
+            if (linkHref && linkHref === path) {
                 link.classList.add('line-through');
             }
         });

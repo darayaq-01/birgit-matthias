@@ -52,10 +52,14 @@ import { menuItems } from '@consts/menuItems';
         const navbarLinks = document.querySelectorAll('.navbar-link');
         navbarLinks.forEach((link) => {
             const linkHref = link.getAttribute('href');
-            if (linkHref === path) {
+            if (linkHref && linkHref === path) {
                 link.classList.add('border-b-1', 'border-[#93cbd4dc]');
             }
-            if (linkHref === '/aktuelles' && path.includes('/aktuelles/')) {
+            if (
+                linkHref &&
+                linkHref === '/aktuelles' &&
+                path.includes('/aktuelles/')
+            ) {
                 link.classList.add('border-b-2', 'border-[#95f1ffc7]');
             }
         });
