@@ -32,7 +32,7 @@ import { links } from '@consts/links';
 </Container>
 
 <script>
-    export function handlePageLoad(page) {
+    export function handleFooterLoad(page) {
         const path = page.path;
         const footerLinks = document.querySelectorAll('.footer-link');
         footerLinks.forEach((link) => {
@@ -47,6 +47,6 @@ import { links } from '@consts/links';
 
     document.addEventListener('DOMContentLoaded', () => {
         const currentPage = { path: window.location.pathname };
-        handlePageLoad(currentPage);
+        handleFooterLoad(currentPage);
     });
 </script>

@@ -12,7 +12,7 @@ import { menuItems } from '@consts/menuItems';
         <div class='flex w-full items-center justify-between lg:w-auto z-50'>
             <a href='/'>
                 <LogoFinal
-                    class='aspect-auto py-4 h-20 object-contain md:h-28 text-gray-700 hover:text-black hover:stroke-12 hover:scale-110'
+                    class='aspect-auto py-4 h-20 object-contain md:h-28 text-gray-700 hover:text-black hover:stroke-12 hover:scale-110 transition-all duration-300 ease-in-out'
                 />
             </a>
 
@@ -34,7 +34,7 @@ import { menuItems } from '@consts/menuItems';
                             <li>
                                 <a
                                     href={item?.path}
-                                    class='navbar-link target:text-red-800 flex uppercase text-gray-600 hover:text-black border-transparent border-b-8 hover:border-[#59B9CB]/80 w-fit  hover:scale-110 transition-all duration-300 ease-in-out'
+                                    class='navbar-link flex uppercase text-gray-600 hover:text-black border-transparent border-b-8 hover:border-[#59B9CB]/80 w-fit  hover:scale-110 transition-all duration-300 ease-in-out'
                                 >
                                     {item.title}
                                 </a>
@@ -52,8 +52,15 @@ import { menuItems } from '@consts/menuItems';
         const navbarLinks = document.querySelectorAll('.navbar-link');
         navbarLinks.forEach((link) => {
             const linkHref = link.getAttribute('href');
+
+            console.log({ linkHref }, { path });
+
             if (linkHref && linkHref === path) {
-                link.classList.add('border-b-1', 'border-[#93cbd4dc]');
+                console.log('------------> here');
+                link.classList.add(
+                    'border-b-1',
+                    'border-[#93cbd4dc], line-through, text-red-900'
+                );
             }
             if (
                 linkHref &&
