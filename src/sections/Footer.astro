@@ -12,7 +12,7 @@ import { links } from '@consts/links';
                         href={item.url}
                         target='_blank'
                         rel='noopener noreferrer'
-                        class='uppercase text-gray-600 hover:text-black w-fit  hover:scale-110 transition-all duration-300 ease-in-out'
+                        class='footer-link uppercase text-gray-600 hover:text-black w-fit  hover:scale-110 transition-all duration-300 ease-in-out'
                     >
                         {item.imgSrc ? (
                             <img
@@ -31,3 +31,23 @@ import { links } from '@consts/links';
         }
     </ul>
 </Container>
+
+<script>
+    export function handlePageLoad(page) {
+        const path = page.path;
+        const footerLinks = document.querySelectorAll('.footer-link');
+        footerLinks.forEach((link) => {
+            const linkHref = link.getAttribute('href');
+
+            console.log({ linkHref }, { path });
+            if (linkHref === path) {
+                link.classList.add('line-through');
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentPage = { path: window.location.pathname };
+        handlePageLoad(currentPage);
+    });
+</script>
