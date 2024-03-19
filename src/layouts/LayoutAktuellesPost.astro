@@ -6,16 +6,13 @@ type Props = CollectionEntry<'aktuelles'>['data'];
 
 const { title, cover, coverAlt } = Astro.props;
 
-import Layout from '@layouts/Layout.astro';
+import LayoutArt from '@layouts/LayoutArt.astro';
 import Link from '@components/ui/Link.astro';
 ---
 
-<Layout title={title}>
-    <article class='flex min-h-screen items-center justify-center bg-gray-100'>
+<LayoutArt title={title}>
+    <section class='flex min-h-screen items-center justify-center bg-gray-100'>
         <div class='m-6 rounded bg-white p-8 shadow-lg'>
-            <div class='py-6'>
-                <Link href='/aktuelles'>« aktuelles</Link>
-            </div>
             <div class=''>
                 {cover && <Image width={1020} src={cover} alt={coverAlt} />}
             </div>
@@ -23,6 +20,11 @@ import Link from '@components/ui/Link.astro';
             <div class='my-8'>
                 <h1 class='py-4 text-3xl'>{title}</h1>
             </div>
+            <article class='prose lg:prose-xl'>
+                <slot />
+            </article><div class='py-6'>
+                <Link href='/aktuelles'>« Züruk</Link>
+            </div>
         </div>
-    </article>
-</Layout>
+    </section>
+</LayoutArt>

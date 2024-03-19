@@ -12,6 +12,7 @@ import { links } from '@consts/links';
                         href={item.url}
                         target='_blank'
                         rel='noopener noreferrer'
+                        class='uppercase text-gray-600 hover:text-black w-fit  hover:scale-110 transition-all duration-300 ease-in-out'
                     >
                         {item.imgSrc ? (
                             <img
@@ -19,7 +20,7 @@ import { links } from '@consts/links';
                                 height={item.imgHeight}
                                 width={100}
                                 alt={item.alt}
-                                class='aspect-auto object-contain'
+                                class='aspect-auto object-contain hover:scale-110'
                             />
                         ) : (
                             item.name

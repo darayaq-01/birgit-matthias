@@ -17,7 +17,7 @@ export const menuItems = [
     {
         title: 'Aktuelles',
         path: '/aktuelles',
-        active: false,
+        active: true,
     },
     {
         title: 'Archiv',
