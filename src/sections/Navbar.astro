@@ -34,7 +34,7 @@ import { menuItems } from '@consts/menuItems';
                             <li>
                                 <a
                                     href={item?.path}
-                                    class='flex uppercase text-gray-600 hover:text-black border-transparent border-b-8 hover:border-[#59B9CB]/80 w-fit  hover:scale-110 transition-all duration-300 ease-in-out'
+                                    class='navbar-link target:text-red-800 flex uppercase text-gray-600 hover:text-black border-transparent border-b-8 hover:border-[#59B9CB]/80 w-fit  hover:scale-110 transition-all duration-300 ease-in-out'
                                 >
                                     {item.title}
                                 </a>
@@ -45,3 +45,24 @@ import { menuItems } from '@consts/menuItems';
         </MenuItems>
     </Astronav>
 </header>
+
+<script>
+    export function handlePageLoad(page) {
+        const path = page.path;
+        const navbarLinks = document.querySelectorAll('.navbar-link');
+        navbarLinks.forEach((link) => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === path) {
+                link.classList.add('border-b-1', 'border-[#93cbd4dc]');
+            }
+            if (linkHref === '/aktuelles' && path.includes('/aktuelles/')) {
+                link.classList.add('border-b-2', 'border-[#95f1ffc7]');
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentPage = { path: window.location.pathname };
+        handlePageLoad(currentPage);
+    });
+</script>
