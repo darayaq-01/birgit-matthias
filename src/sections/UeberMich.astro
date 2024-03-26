@@ -1,0 +1,134 @@
+---
+import { Picture } from 'astro:assets';
+import imageComponent from '@assets/birgit.avif';
+import Container from '@components/Container.astro';
+---
+
+<section class='flex flex-col justify-center'>
+    <Container
+        classAstro='flex flex-col md:flex md:flex-row md:gap-3 items-center'
+    >
+        <article class='items-center h-fit py-5'>
+            <h2 class='text-3xl py-6 font-bold'>
+                <span class='border-b-2 border-black pb-1'>Über mich</span>
+            </h2>
+
+            <div class='w-max'>
+                <div class='mt-10 mb-16'>
+                    <h3 class='text-lg py-5 font-bold'>
+                        Birgit Matthias Malerin
+                    </h3>
+
+                    <p class='text-pretty text-lg max-w-prose'>
+                        Ich bin autodidaktische Künstlerin und habe mich
+                        nebenberuflich seit der Schulzeit kontinuierlich
+                        künstlerisch fortgebildet und weiterentwickelt.
+                    </p>
+                </div>
+
+                <ul class='text-lg prose text-balance'>
+                    <li class='flex my-5'>
+                        <div class='w-32'>1965</div>
+                        <div class='flex-1'>Geboren in Lübeck</div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>1984</div>
+                        <div class='flex-1'>
+                            Abitur in Lübeck mit Leistungskurs Kunst
+                        </div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>1984 - 87</div>
+                        <div class='flex-1'>
+                            Tischlerlehre mit Gesellenprüfung, Währenddessen 1
+                            Jahr an der Werkkunstschule Lübeck
+                            Mappenvorbereitungskurs als Abend- und
+                            Wochenendstudium bei Detlef Moraht, Lübeck
+                        </div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>1987</div>
+                        <div class='flex-1'>
+                            Aufnahme an der Akademie der bildenden Künste in
+                            Stuttgart zum Innenarchitekturstudium
+                        </div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>1989</div>
+                        <div class='flex-1'>
+                            Abbruch des Studiums und Aufenthalt in den USA; Los
+                            Angeles, Arbeit als Bürokauffrau
+                        </div>
+                    </li>
+
+                    <!-- testing -->
+                    <li class='flex my-5'>
+                        <div class='w-32'>1990 - 1993</div>
+                        <div class='flex-1'>
+                            Studium der Betriebswirtschaft in Kiel, dazu externe
+                            Prüfung zur Bankkauffrau
+                        </div>
+                    </li>
+                    <!-- testing -->
+
+                    <li class='flex my-5'>
+                        <div class='w-32'>1993 - 1996</div>
+                        <div class='flex-1'>
+                            Bankkauffrau in Lübeck, Heirat, parallel weitere
+                            Malkurse bei Detlef Moraht, Lübeck
+                        </div>
+                    </li>
+
+                    <li class='flex my-5'>
+                        <div class='w-32'>1996</div>
+                        <div class='flex-1'>
+                            Umzug nach Frankfurt a.M. diverse Arbeitsplätze
+                            (Bank) parallel einige Mal- und Zeichenkurse in
+                            Frankfurt und mehrere Aufenthalte an der
+                            Europäischen Akademie für bildende Kunst e.V. in
+                            Trier im Rahmen der Sommerakademien: Technische
+                            Grundlagen, Zeichnen, abstrakte Malerei, Bildhauerei
+                        </div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>1998</div>
+                        <div class='flex-1'>
+                            Beginn freier Malerei in eigenem Atelier
+                        </div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>2000</div>
+                        <div class='flex-1'>
+                            Geburt des Sohnes und Umzug nach Weimar-Legefeld,
+                            Kurs im Hofatelier Niedergrunstedt bei Erika Krämer
+                        </div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>2003</div>
+                        <div>Geburt der Tochter</div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>2005 - 2007</div>
+                        <div class='flex-1'>
+                            Maßgebliche Beteiligung am Bau unseres Hauses „neues
+                            bauen am horn“ Danach regelmäßig Kurse an der
+                            Mal-und Zeichenschule Weimar vorwiegend bei Roger
+                            Bonnard, Karsten Kunert und Peter Stechert
+                        </div>
+                    </li>
+                    <li class='flex my-5'>
+                        <div class='w-32'>Seit 2015</div>
+                        <div class='flex-1'>Hauptberuflich freie Malerei</div>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <Picture
+            src={imageComponent}
+            formats={['avif', 'webp']}
+            alt='Presentation of a own Art.'
+            class='border border-red-900'
+        />
+    </Container>
+</section>

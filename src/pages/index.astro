@@ -4,8 +4,9 @@ import Hero from '@sections/Hero.astro';
 import Description from '@sections/Description.astro';
 import Ausstellungen from '@sections/Ausstellungen.astro';
 import Navbar from '@sections/Navbar.astro';
-import CallToAction from '@sections/CallToAction.astro';
+// import CallToAction from '@sections/CallToAction.astro';
 import Gallery from '@sections/Gallery.astro';
+import UeberMich from '@sections/UeberMich.astro';
 ---
 
 <Layout title='Birgit Mathias Malerei'>
@@ -14,12 +15,14 @@ import Gallery from '@sections/Gallery.astro';
         <div
             class='flex flex-col items-center justify-end h-full pb-4 px-6 sm:px-0 drop-shadow-2xl'
         >
-            <CallToAction />
+            <!-- <CallToAction />
+        </div> -->
+        </div>
+        <Description />
+        <UeberMich />
+        <Ausstellungen />
+        <div id='gallery'>
+            <Gallery />
         </div>
     </Hero>
-    <Description />
-    <Ausstellungen />
-    <div id='gallery'>
-        <Gallery />
-    </div>
 </Layout>
