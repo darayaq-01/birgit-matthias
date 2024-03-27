@@ -6,13 +6,20 @@ import { menuItems } from '@consts/menuItems';
 
 <header
     id='navbar'
-    class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row fixed top-0 left-0 right-0 w-full bg-slate-100/80 z-50 shadow-md shadow-slate-500'
+    class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row w-full'
 >
+    <!-- 
+                * class to make it transparent
+class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row fixed top-0 left-0 right-0 w-full bg-slate-100/80 z-50 shadow-md shadow-slate-500'
+>
+
+             -->
+
     <Astronav>
         <div class='flex w-full items-center justify-between lg:w-auto z-50'>
             <a href='/'>
                 <LogoFinal
-                    class='aspect-auto py-4 h-20 object-contain md:h-28 text-gray-700 hover:text-black hover:stroke-12 hover:scale-110 transition-all duration-300 ease-in-out'
+                    class='aspect-auto py-4 h-20 object-contain md:h-28 text-white hover:stroke-12 hover:scale-110 transition-all duration-300 ease-in-out'
                 />
             </a>
 
@@ -34,7 +41,7 @@ import { menuItems } from '@consts/menuItems';
                             <li>
                                 <a
                                     href={item?.path}
-                                    class='navbar-link flex uppercase text-gray-600 hover:text-black border-transparent border-b-8 hover:border-[#59B9CB]/80 w-fit  hover:scale-110 transition-all duration-300 ease-in-out'
+                                    class='navbar-link flex uppercase text-white  border-transparent border-b-8 hover:border-[#59B9CB]/80 w-fit  hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_6px_6px_4px_rgb(30_28_28_/_97%)]'
                                 >
                                     {item.title}
                                 </a>
