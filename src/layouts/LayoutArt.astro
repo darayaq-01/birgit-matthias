@@ -26,7 +26,7 @@ import Container from '@components/Container.astro';
         <meta name='googlebot' content='index, follow' />
     </head>
     <body>
-        <Navbar logoClass='text-black' />
+        <Navbar headerNavClass='top-0' />
         <main class='mt-auto'>
             <Container classAstro='mt-[100px]'>
                 <slot />
@@ -58,40 +58,48 @@ import Container from '@components/Container.astro';
         height: 100dvh;
         border: 3px solid rgb(4, 201, 4);
     }
-
-    a {
+    /*     
+ a {
         text-decoration: none;
         color: var(--color-link);
         outline: none;
-        /* font-weight: 600; */
+        font-weight: 600;
     }
-
     a:hover {
         color: var(--color-link-hover);
         outline: none;
     }
+ */
 
     /* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+    /* Provide a fallback style for browsers
+ that don't support :focus-visible */
+
+    /*
     a:focus {
-        /* Provide a fallback style for browsers
-	 that don't support :focus-visible */
         outline: none;
         background: lightgrey;
     }
-
+    */
+    /* Remove the focus indicator on mouse-focus for browsers
+    that do support :focus-visible */
+    /*
     a:focus:not(:focus-visible) {
-        /* Remove the focus indicator on mouse-focus for browsers
-	 that do support :focus-visible */
+     
+
         background: transparent;
     }
+*/
 
+    /* Draw a very noticeable focus style for
+keyboard-focus on browsers that do support*/
+
+    /*
     a:focus-visible {
-        /* Draw a very noticeable focus style for
-	 keyboard-focus on browsers that do support
-	 :focus-visible */
+	 :focus-visible 
         outline: 2px solid red;
         background: transparent;
-    }
+    } */
 
     .line {
         transform-origin: 0% 50%;
