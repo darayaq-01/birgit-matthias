@@ -7,8 +7,9 @@ interface Props {
     logoClass?: string;
     headerNavClass?: string;
 }
-
 const { logoClass, headerNavClass } = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 
 <header
@@ -36,6 +37,7 @@ const { logoClass, headerNavClass } = Astro.props;
                 />
             </div>
         </div>
+        <p>{Astro.url}</p>
         <MenuItems class='mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto'>
             <ul
                 class='flex my-9 lg:my-0 flex-col gap-8 text-[1.3rem] lg:flex-row'
@@ -47,7 +49,7 @@ const { logoClass, headerNavClass } = Astro.props;
                             <li class='font-bold'>
                                 <a
                                     href={item?.path}
-                                    class='navbar-link flex uppercase text-white  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_2px_2px_1px_rgb(30_28_28_/_97%)]'
+                                    class={`navbar-link flex uppercase text-white  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_2px_2px_1px_rgb(30_28_28_/_97%)] ${currentPath === item.path ? 'active-item' : ''}`}
                                 >
                                     {item.title}
                                 </a>
@@ -59,31 +61,8 @@ const { logoClass, headerNavClass } = Astro.props;
     </Astronav>
 </header>
 
-<script>
-    // TODO: Move this to a separate file
-    export function handlePageLoad(page) {
-        const path = page.path;
-        const navbarLinks = document.querySelectorAll('.navbar-link');
-        navbarLinks.forEach((link) => {
-            const linkHref = link.getAttribute('href');
-
-            console.log({ linkHref }, { path });
-
-            if (linkHref && linkHref === path) {
-                link.classList.add('text-[#EC008C]');
-            }
-            if (
-                linkHref &&
-                linkHref === '/aktuelles' &&
-                path.includes('/aktuelles/')
-            ) {
-                link.classList.add('text-[#EC008C]');
-            }
-        });
+<style>
+    .active-item {
+        color: #ec008c;
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const currentPage = { path: window.location.pathname };
-        handlePageLoad(currentPage);
-    });
-</script>
+</style>
