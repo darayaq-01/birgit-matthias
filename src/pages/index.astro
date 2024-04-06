@@ -3,9 +3,10 @@ import Layout from '@layouts/Layout.astro';
 import Hero from '@sections/Hero.astro';
 import Description from '@sections/Description.astro';
 import Ausstellungen from '@sections/Ausstellungen.astro';
+import Video from '@sections/Video.astro';
 import Navbar from '@sections/Navbar.astro';
 import CallToAction from '@sections/CallToAction.astro';
-import Gallery from '@sections/Gallery.astro';
+import Werke from '@sections/Werke.astro';
 import UeberMich from '@sections/UeberMich.astro';
 ---
 
@@ -20,8 +21,7 @@ import UeberMich from '@sections/UeberMich.astro';
     </Hero>
     <Description />
     <UeberMich />
+    <Video />
     <Ausstellungen />
-    <div id='gallery'>
-        <Gallery />
-    </div>
+    <Werke />
 </Layout>
