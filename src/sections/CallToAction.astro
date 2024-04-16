@@ -2,45 +2,20 @@
 import { INFO_CTA } from '@consts/INFO_CTA';
 ---
 
-<div
-    class=' bg-white  '
->
+<section>
     {
         INFO_CTA.map((cta) => {
             return (
-                <>
-                <div
-                    class='h-56 sm:h-72 md:h-96 w-full bg-top bg-cover bg-no-repeat bg-black/60'
-                    style=`background-image: url(${cta.image}); height: {ImageMain.height}; width: {ImageMain.width}; alt="picture"`
-                >
-                </div>
-                <div class='flex flex-col w-full md:flex-row'>
-                    <div class='flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-[#1e9eb4d0] md:flex-col md:items-center md:justify-center md:w-1/4'>
-                        <div class='md:text-3xl'>{cta.date}</div>
-
-                        <div class='md:text-xl'>{cta.time}</div>
-                    </div>
-                    <div class='p-4 font-normal text-gray-800 md:w-3/4'>
-                        <h1 class='mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800'>
+                <div class='flex flex-col md:flex-row bg-[#1e0576]'>
+                    <div class='px-7 py-5 font-normal text-white '>
+                        <h1 class='text-pretty mb-4 text-4xl font-bold underline leading-none tracking-tight '>
                             {cta.title}
                         </h1>
-                        <p class='leading-normal'>{cta.short_text}</p>
-                        <div class='flex flex-row items-center mt-4 text-gray-700'>
-                            <span class='font-bold'>Mehr infos:</span> &nbsp;
-                            <a
-                                href={cta.link}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                class='w-1/2 hover:text-red-500 transition-shadow duration-700 ease-in-out'
-                            >
-                                {cta.link}
-                            </a>
-                        </div>
+                        <p class='text-2xl leading-normal'>{cta.venue}</p>
+                        <p class='text-2xl leading-normal'>{cta.date}</p>
                     </div>
                 </div>
-                </>
             );
-        }
-        )
+        })
     }
-</div>
+</section>

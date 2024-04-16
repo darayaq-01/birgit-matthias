@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import { werkeData } from '@consts/werkeData';
+---
+
+<section class='bg-[#c4bab5] flex justify-end' id='werke'>
+    <div class='lg:max-w-screen-xl mr-14 my-10 py-8 px-10'>
+        <div class='flex flex-col text-center w-full mb-20'>
+            <h2 class='text-3xl text-left py-6 font-bold'>
+                <span class='border-b-2 border-white pb-1'>Werke</span>
+            </h2>
+        </div>
+
+        <div
+            class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-white p-10 lg:min-w-max'
+        >
+            {
+                werkeData.map((w) => (
+                    <a
+                        href={w.slug}
+                        class='flex relative aspect-square gap-10 '
+                    >
+                        <Image
+                            alt='gallery'
+                            class='absolute inset-0 w-full h-full object-cover object-center'
+                            src={w.imageUrl}
+                            height={w.height}
+                            width={w.width}
+                        />
+                        <div class='flex flex-col justify-center relative z-10 w-full bg-slate-600/80 opacity-0 hover:opacity-100'>
+                            <h3 class='p-6 break-words text-shadow-custom text-3xl md:text-4xl text-balance text-center text-white font-extrabold leading-relaxed'>
+                                {w.title}
+                            </h3>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .text-shadow-custom {
+        text-shadow: 0 0 10px #020202;
+    }
+</style>

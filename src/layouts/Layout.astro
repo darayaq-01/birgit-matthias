@@ -1,11 +1,12 @@
 ---
 interface Props {
     title: string;
+    descriptionPage?: string;
 }
-const { title } = Astro.props;
-const descriptionPage = 'Birgit Matthias Malerei';
+const { title, descriptionPage = 'Birgit Matthias Malerei' } = Astro.props;
 
 import Footer from '@sections/Footer.astro';
+import Navbar from '@sections/Navbar.astro';
 ---
 
 <!doctype html>
@@ -23,7 +24,8 @@ import Footer from '@sections/Footer.astro';
         <meta name='googlebot' content='index, follow' />
     </head>
 
-    <body>
+    <body class='bg-[#c4bab5] xl:border xl:shadow-2xl xl:shadow-gray-80'>
+        <Navbar />
         <slot />
         <Footer />
     </body>
@@ -31,20 +33,22 @@ import Footer from '@sections/Footer.astro';
 
 <style is:global>
     :root {
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         overflow: hidden;
         overflow-y: scroll;
         line-height: 1;
         margin: 0;
-        background: #06185ee1;
+        /* background: #1a1919; */
         background-size: 224px;
         --color-text: #000;
-        --color-bg: #f7f5ee;
         --color-link: #000;
         --color-link-hover: #000;
-        color: var(--color-text);
-        background-color: var(--color-bg);
+    }
+    body {
+        max-width: 1440px;
+        margin: 0 auto;
+        /* background: #c4bab5; */
     }
 </style>

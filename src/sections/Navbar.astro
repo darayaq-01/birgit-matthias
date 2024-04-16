@@ -5,28 +5,23 @@ import { menuItems } from '@consts/menuItems';
 
 interface Props {
     logoClass?: string;
+    headerNavClass?: string;
 }
+const { logoClass, headerNavClass } = Astro.props;
 
-const { logoClass } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <header
     id='navbar'
-    class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row w-full'
+    class={`sticky top-0 pt-3 px-20 flex flex-col items-center justify-between lg:flex-row  z-50 w-full border border-yellow-700 ${headerNavClass}`}
 >
-    <!-- 
-                * class to make it transparent
-class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row fixed top-0 left-0 right-0 w-full bg-slate-100/80 z-50 shadow-md shadow-slate-500'
->
-
-             -->
-
     <Astronav>
-        <div class='flex w-full items-center justify-between lg:w-auto z-50'>
-            <a href='/'>
+        <div class='flex w-full items-center justify-between lg:w-auto'>
+            <a href='/' class='bg-white px-6'>
                 <LogoFinal
                     class:list={[
-                        'aspect-auto py-4 h-20 object-contain md:h-28 font-bold hover:stroke-12 hover:scale-110 transition-all duration-300 ease-in-out',
+                        'aspect-auto py-4 h-24 object-contain md:h-32 font-bold hover:stroke-12 hover:scale-110 transition-all duration-300 ease-in-out',
                         logoClass,
                     ]}
                 />
@@ -50,7 +45,7 @@ class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row fixed t
                             <li class='font-bold'>
                                 <a
                                     href={item?.path}
-                                    class='navbar-link flex uppercase text-white border-transparent border-b-8 hover:border-[#59B9CB]/80 w-fit  hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_6px_6px_4px_rgb(30_28_28_/_97%)]'
+                                    class={`navbar-link flex uppercase text-white  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_2px_2px_1px_rgb(30_28_28_/_97%)] ${currentPath === item.path ? 'active-item' : ''}`}
                                 >
                                     {item.title}
                                 </a>
@@ -62,34 +57,8 @@ class='pt-3 px-20 flex flex-col items-center justify-between lg:flex-row fixed t
     </Astronav>
 </header>
 
-<script>
-    export function handlePageLoad(page) {
-        const path = page.path;
-        const navbarLinks = document.querySelectorAll('.navbar-link');
-        navbarLinks.forEach((link) => {
-            const linkHref = link.getAttribute('href');
-
-            console.log({ linkHref }, { path });
-
-            if (linkHref && linkHref === path) {
-                console.log('------------> here');
-                link.classList.add(
-                    'border-b-1',
-                    'border-[#93cbd4dc], line-through, text-red-900, another-clase'
-                );
-            }
-            if (
-                linkHref &&
-                linkHref === '/aktuelles' &&
-                path.includes('/aktuelles/')
-            ) {
-                link.classList.add('border-b-2', 'border-[#95f1ffc7]');
-            }
-        });
+<style>
+    .active-item {
+        color: #ec008c;
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const currentPage = { path: window.location.pathname };
-        handlePageLoad(currentPage);
-    });
-</script>
+</style>

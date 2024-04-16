@@ -4,10 +4,12 @@ import imageComponent from '@assets/ausstellungen.avif';
 import Container from '@components/Container.astro';
 ---
 
-<section class='bg-[#fa99c3] flex flex-col justify-center'>
-    <Container classAstro='flex flex-col  md:flex md:flex-row md:gap-3'>
+<section class='bg-[#c4bab5] h-screen flex justify-end'>
+    <div
+        class='lg:max-w-screen-xl gap-14 mr-14 my-16 py-10 px-10 flex flex-col md:flex-row'
+    >
         <div class='flex-1 py-3'>
-            <h2 class='text-white text-3xl text-center py-6 font-bold'>
+            <h2 class='text-3xl text-center py-6 font-bold'>
                 <span class='border-b-2 border-white pb-1'>Ausstellungen</span>
             </h2>
 
@@ -19,23 +21,33 @@ import Container from '@components/Container.astro';
             />
         </div>
 
-        <article class='flex-1 self-center h-fit py-5'>
-            <div class='mb-10 max-w-prose'>
+        <article class='flex-1 h-fit py-5'>
+            <div class='my-10 max-w-prose'>
                 <h3 class='text-2xl py-5 font-bold'>Einzelausstellungen</h3>
                 <ul class='text-lg'>
-                    <li class='flex gap-10 my-5'>
-                        <div class='flex-1'>30.09.2016 – 10.01.2017</div>
-                        <div class='flex-1'>Galerie im Erbenhof, Weimar</div>
+                    <li class='flex gap-6 my-2'>
+                        <div>2016</div>
+                        <div>Galerie im Erbenhof, Weimar</div>
                     </li>
-                    <li class='flex gap-10 my-5'>
-                        <div class='flex-1'>31.03.2017 – 26.04.2018</div>
-                        <div class='flex-1'>Gebrüder Hopf, Weimar</div>
+                    <li class='flex gap-6 my-2'>
+                        <div>2017</div>
+                        <div>Gebrüder Hopf, Weimar</div>
                     </li>
-                    <li class='flex gap-10'>
-                        <div class='flex-1'>20.06.2018 – 20.09.2018</div>
-                        <div class='flex-1'>
-                            Institut für Angewandte Bauforschung, Weimar
-                        </div>
+                    <li class='flex gap-6 my-2'>
+                        <div>2018</div>
+                        <div>Institut für Angewandte Bauforschung, Weimar</div>
+                    </li>
+                    <li class='flex gap-6 my-2'>
+                        <div>2023</div>
+                        <div>Galerie Rosenfeld, Weimar</div>
+                    </li>
+                    <li class='flex gap-6 my-2'>
+                        <div>2024</div>
+                        <div>abacus, Hamburg</div>
+                    </li>
+                    <li class='flex gap-6 my-2'>
+                        <div>2024</div>
+                        <div>Hufelandklinikum, Weimar</div>
                     </li>
                 </ul>
             </div>
@@ -44,13 +56,13 @@ import Container from '@components/Container.astro';
                     Ausstellungsbeteiligungen
                 </h3>
                 <p class='text-pretty text-lg max-w-prose'>
-                    Mal- und Zeichenschule Weimar: In den Werkschauen,
-                    Ausleihungen an fördernde Unternehmen wie Grafe, Blankenhain
+                    Mal- und Zeichenschule Weimar: In den Werkschauen, Aus-
+                    leihungen an fördernde Unternehmen wie Grafe, Blanken- hain
                     und Bayer AG, Weimar, Thüringer Landtag,
                     Gruppenausstellungen mit dem Malkurs Roger Bonnard im
-                    Erbenhof, Weimar und Seebachstift, Weimar
+                    Erbenhof, Weimar und Seebachstift, Weimar.
                 </p>
             </div>
         </article>
-    </Container>
+    </div>
 </section>

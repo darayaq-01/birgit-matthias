@@ -1,16 +1,10 @@
-
 import type { dataCTA } from "@utils/types";
-
-import ImageMain from '@assets/ausstellungen.avif';
 
 export const INFO_CTA: dataCTA[] = [
     {
-        title: 'Exibition Art',
-        short_text:
-            'Loren ipsum dolor sit amet, consectetur adipiscing elit. Aliquam',
-        date: '13. März',
-        time: '7 pm',
-        image: ImageMain.src,
-        link: 'https://some-info.com',
+        title: 'Aktuelle Ausstellung',
+        venue: 'Galerie Abacus, Hamburg',
+        date: '13.3. bis 21.9.2024',
+        link: 'https://',
     },
 ];

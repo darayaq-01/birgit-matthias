@@ -22,9 +22,8 @@ export type detailsArtwork = {
 
 export type dataCTA = {
     title: string
-    short_text: string
+    description?: string
+    venue: string
     date: string
-    time: string
-    image: Object
-    link: string
+    link?: string
 }

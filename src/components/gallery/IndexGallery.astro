@@ -7,50 +7,32 @@ interface Props {
     header: string;
     dataArt: any;
 }
-
 const { title, header, dataArt } = Astro.props;
-
-const copyright = 'Birgit Matthias';
-const linkAddress = 'algo@email';
 ---
 
 <LayoutArt title={title}>
-    <main class='h-fit'>
-        <div class='grid grid--large'>
-            <div class='grid__cell grid__cell--padded'>
-                <div class='frame flex flex-col justify-around'>
-                    <header>
-                        <h1 class='frame__title oh'>
-                            <span class='oh__inner'>{header}</span>
-                        </h1>
-                        <p class='text-gray-600 text-balance text-sm'>
-                            @Copyright
-                            <a
-                                href=`mailto:${linkAddress}`
-                                target='_blank'
-                                class='text-gray-800'
-                            >
-                                {copyright}
-                            </a>
-                        </p>
-                    </header>
+    <section class='h-fit'>
+        <header>
+            <h2 class='text-3xl py-8 pl-20 font-bold'>
+                <span class='border-b-2 border-white pb-1'>{header}</span>
+            </h2>
+        </header>
 
-                    <!-- arrow back to section -->
-
-                    <a
-                        href='/#gallery'
-                        class='text-gray-500 hover:text-gray-800 text-balance text-sm'
-                    >
-                        <p>Züruck zu Ausstellungen</p>
-                        <Arrow class='w-36 m-auto' />
-                    </a>
-                </div>
+        <div class='grid grid--large bg-white'>
+            <div class='flex items-end px-4 pb-4'>
+                <a
+                    href='/#werke'
+                    class='hover:scale-150 transition-all duration-300 ease-in-out'
+                >
+                    <Arrow class='w-6 m-auto' />
+                </a>
             </div>
+
             {
                 dataArt.map((art, index) => (
                     <GridCell data={art} dataIndex={index} />
                 ))
             }
         </div>
-    </main>
+    </section>
 </LayoutArt>

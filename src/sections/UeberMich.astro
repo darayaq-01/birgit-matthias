@@ -4,130 +4,61 @@ import imageComponent from '@assets/birgit.avif';
 import Container from '@components/Container.astro';
 ---
 
-<section class='flex flex-col justify-center'>
-    <Container
-        classAstro='flex flex-col md:flex md:flex-row md:gap-3 items-center'
+<section class='bg-[#c4bab5] flex justify-end'>
+    <div
+        class='flex flex-col md:flex md:flex-row lg:max-w-screen-xl mr-14 mt-10 pt-10 px-10'
     >
-        <article class='items-center h-fit py-5'>
-            <h2 class='text-3xl py-6 font-bold'>
-                <span class='border-b-2 border-black pb-1'>Über mich</span>
+        <article class='h-fit py-5 w-3/5'>
+            <h2 class='text-3xl py-8 pl-28 font-bold'>
+                <span class='text-white border-b-2 border-white pb-1'
+                    >Über mich</span
+                >
             </h2>
 
-            <div class='w-max'>
-                <div class='mt-10 mb-16'>
-                    <h3 class='text-lg py-5 font-bold'>
-                        Birgit Matthias Malerin
-                    </h3>
-
-                    <p class='text-pretty text-lg max-w-prose'>
-                        Ich bin autodidaktische Künstlerin und habe mich
-                        nebenberuflich seit der Schulzeit kontinuierlich
-                        künstlerisch fortgebildet und weiterentwickelt.
-                    </p>
-                </div>
-
-                <ul class='text-lg prose text-balance'>
-                    <li class='flex my-5'>
-                        <div class='w-32'>1965</div>
-                        <div class='flex-1'>Geboren in Lübeck</div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>1984</div>
-                        <div class='flex-1'>
-                            Abitur in Lübeck mit Leistungskurs Kunst
-                        </div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>1984 - 87</div>
-                        <div class='flex-1'>
-                            Tischlerlehre mit Gesellenprüfung, Währenddessen 1
-                            Jahr an der Werkkunstschule Lübeck
-                            Mappenvorbereitungskurs als Abend- und
-                            Wochenendstudium bei Detlef Moraht, Lübeck
-                        </div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>1987</div>
-                        <div class='flex-1'>
-                            Aufnahme an der Akademie der bildenden Künste in
-                            Stuttgart zum Innenarchitekturstudium
-                        </div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>1989</div>
-                        <div class='flex-1'>
-                            Abbruch des Studiums und Aufenthalt in den USA; Los
-                            Angeles, Arbeit als Bürokauffrau
-                        </div>
-                    </li>
-
-                    <!-- testing -->
-                    <li class='flex my-5'>
-                        <div class='w-32'>1990 - 1993</div>
-                        <div class='flex-1'>
-                            Studium der Betriebswirtschaft in Kiel, dazu externe
-                            Prüfung zur Bankkauffrau
-                        </div>
-                    </li>
-                    <!-- testing -->
-
-                    <li class='flex my-5'>
-                        <div class='w-32'>1993 - 1996</div>
-                        <div class='flex-1'>
-                            Bankkauffrau in Lübeck, Heirat, parallel weitere
-                            Malkurse bei Detlef Moraht, Lübeck
-                        </div>
-                    </li>
-
-                    <li class='flex my-5'>
-                        <div class='w-32'>1996</div>
-                        <div class='flex-1'>
-                            Umzug nach Frankfurt a.M. diverse Arbeitsplätze
-                            (Bank) parallel einige Mal- und Zeichenkurse in
-                            Frankfurt und mehrere Aufenthalte an der
-                            Europäischen Akademie für bildende Kunst e.V. in
-                            Trier im Rahmen der Sommerakademien: Technische
-                            Grundlagen, Zeichnen, abstrakte Malerei, Bildhauerei
-                        </div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>1998</div>
-                        <div class='flex-1'>
-                            Beginn freier Malerei in eigenem Atelier
-                        </div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>2000</div>
-                        <div class='flex-1'>
-                            Geburt des Sohnes und Umzug nach Weimar-Legefeld,
-                            Kurs im Hofatelier Niedergrunstedt bei Erika Krämer
-                        </div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>2003</div>
-                        <div>Geburt der Tochter</div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>2005 - 2007</div>
-                        <div class='flex-1'>
-                            Maßgebliche Beteiligung am Bau unseres Hauses „neues
-                            bauen am horn“ Danach regelmäßig Kurse an der
-                            Mal-und Zeichenschule Weimar vorwiegend bei Roger
-                            Bonnard, Karsten Kunert und Peter Stechert
-                        </div>
-                    </li>
-                    <li class='flex my-5'>
-                        <div class='w-32'>Seit 2015</div>
-                        <div class='flex-1'>Hauptberuflich freie Malerei</div>
-                    </li>
-                </ul>
+            <div class='w-max prose prose-2xl py-10'>
+                <p class='text-pretty'>
+                    Ich bin freie Künstlerin und wohne und arbeite in Weimar.
+                </p>
+                <p class='text-pretty'>
+                    Nach dem Abitur 1984 in Lübeck habe ich eine Tischlerlehre
+                    absolviert, während der ich an der Werkkunstschule Lübeck
+                    Mappenvorbereitungskurse bei Detlef Moraht besucht habe.
+                </p>
+                <p class='text-pretty'>
+                    Ab 1987 Innenarchitekturstudium an der Akademie der
+                    bildenden Künste in Stuttgart darauf 1989 Auslandsaufenthalt
+                    in den USA, Los Angeles.
+                </p>
+                <p class='text-pretty'>
+                    Von 1990-1993 Studium der Betriebswirtschaft in Kiel, dazu
+                    externe Prüfung zur Bankkauffrau. Parallel dazu weitere
+                    Malkurse bei Detlef Moraht in Lübeck.
+                </p>
+                <p class='text-pretty'>
+                    1996 Umzug nach Frankfurt a.M. – mehrere Aufenthalte an der
+                    Europäischen Akademie für bildende Kunst e.V. in Trier im
+                    Rahmen der Sommerakademien: Zeichnen, abstrakte Malerei,
+                    Bildhauerei.
+                </p>
+                <p class='text-pretty'>
+                    Ab 1998 Beginn freie Malerei in eigenem Atelier und 2000
+                    Umzug nach Weimar, Kurs im Hofatelier Niedergrunstedt und
+                    regelmäßige Kurse an der Mal- und Zeichenschule Weimar
+                    vorwiegend bei Roger Bonnard, Karsten Kunert und Peter
+                    Stechert.
+                </p>
+                <p class='text-pretty'>
+                    Seit Oktober 2015 bin ich hauptberuflich freie Malerin
+                </p>
             </div>
         </article>
 
-        <Picture
-            src={imageComponent}
-            formats={['avif', 'webp']}
-            alt='Presentation of a own Art.'
-        />
-    </Container>
+        <div class='self-start w-2/5'>
+            <Picture
+                src={imageComponent}
+                formats={['avif', 'webp']}
+                alt='Presentation of a own Art.'
+            />
+        </div>
+    </div>
 </section>
