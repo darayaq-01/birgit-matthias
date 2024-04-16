@@ -14,7 +14,10 @@ const currentPath = Astro.url.pathname;
 
 <header
     id='navbar'
-    class={`sticky top-0 pt-3 px-20 flex flex-col items-center justify-between lg:flex-row  z-50 w-full border border-yellow-700 ${headerNavClass}`}
+    class:list={[
+        'fixed w-full max-w-[85vw] pt-3 px-20 flex flex-col items-center justify-between lg:flex-row top-0 z-50',
+        { headerNavClass },
+    ]}
 >
     <Astronav>
         <div class='flex w-full items-center justify-between lg:w-auto'>

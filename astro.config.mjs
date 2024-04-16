@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [tailwind(), svelte(), mdx()],
   experimental: {
     contentCollectionCache: true,
-    optimizeHoistedScript: true
+    // optimizeHoistedScript: true
   },
   output: "server",
   adapter: netlify()
