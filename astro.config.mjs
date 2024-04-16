@@ -11,6 +11,6 @@ export default defineConfig({
     contentCollectionCache: true,
     optimizeHoistedScript: true
   },
-  output: "static",
+  output: "server",
   adapter: netlify()
 });

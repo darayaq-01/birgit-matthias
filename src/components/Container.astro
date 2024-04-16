@@ -2,6 +2,6 @@
 const { classAstro, ...rest } = Astro.props;
 ---
 
-<div class={`container py-8 mx-auto px-6 ${classAstro}`} {...rest}>
+<section class={`h-screen pl-64 lg:max-w-screen-lg ${classAstro}`} {...rest}>
     <slot />
-</div>
+</section>

@@ -1,9 +1,9 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 import LayoutAktuellesPost from '@layouts/LayoutAktuellesPost.astro';
 
-const posts = await getCollection('aktuelles');
-type Props = CollectionEntry<'aktuelles'>;
+const posts = await getCollection('presse');
+type Props = CollectionEntry<'presse'>;
 
 const { slug } = Astro.params;
 const post = posts.find((page) => page.slug === slug);

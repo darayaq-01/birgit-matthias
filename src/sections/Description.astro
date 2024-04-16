@@ -1,17 +1,16 @@
 ---
-import ImageBackground from '@assets/background-about.jpg';
+import Container from '@components/Container.astro';
 ---
 
-<section
-    class='bg-cover bg-no-repeat h-dvh flex justify-center align-middle'
-    style=`background-image: url(${ImageBackground.src}); height: {ImageBackground.height}; width: {ImageBackground.width}; alt="background";`
->
-    <div class='prose prose-2xl bg-slate-200/80 px-14 w-max pt-32'>
-        <p class='text-pretty'>
+<Container>
+    <article
+        class='prose prose-2xl lg:prose-3xl bg-slate-200/80 px-14 lg:max-w-full py-32 h-full'
+    >
+        <p class='max-w-prose'>
             Ich arbeite hauptsächlich abstrakt mit Acryl auf Leinwand. Die
             Formate sind in der Regel groß gewählt.
         </p>
-        <p class='text-pretty'>
+        <p class='max-w-prose'>
             Abstrakte Malerei ist für mich Komponieren und Erfinden, Verwenden
             und Verfremden bekannter Seh- und Malweisen, Spielen mit Impulsen,
             die bei dem Malprozess entstehen und Schaffen neuer Realitäten –
@@ -19,18 +18,18 @@ import ImageBackground from '@assets/background-about.jpg';
             und Form.
         </p>
 
-        <p class='text-pretty'>
+        <p class='max-w-prose'>
             Den Begriff der „halbabstrakten Malerei“ habe ich kreiert, um den
             Stil meiner Bilder zu definieren.
         </p>
-        <p class='text-pretty'>
+        <p class='max-w-prose'>
             Vordergründig abstrakte Bilder erhalten eine zusätzliche Ebene,
             indem sie konkrete Inhalte erahnen lassen.
         </p>
 
-        <p class='text-pretty'>
+        <p class='max-w-prose'>
             Mir geht es um die tiefe Schönheit der Welt, der Menschen und der
             Natur, diese zu ergründen und mit Farben sichtbar zu machen.
         </p>
-    </div>
-</section>
+    </article>
+</Container>

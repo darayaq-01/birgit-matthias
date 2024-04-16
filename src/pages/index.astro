@@ -1,27 +1,35 @@
 ---
 import Layout from '@layouts/Layout.astro';
+
 import Hero from '@sections/Hero.astro';
-import Description from '@sections/Description.astro';
-import Ausstellungen from '@sections/Ausstellungen.astro';
-import Video from '@sections/Video.astro';
-import Navbar from '@sections/Navbar.astro';
 import CallToAction from '@sections/CallToAction.astro';
-import Werke from '@sections/Werke.astro';
+import Description from '@sections/Description.astro';
 import UeberMich from '@sections/UeberMich.astro';
+import Video from '@sections/Video.astro';
+import Ausstellungen from '@sections/Ausstellungen.astro';
+import Werke from '@sections/Werke.astro';
+
+import ImageBackground from '@assets/background-about.jpg';
 ---
 
 <Layout title='Birgit Mathias Malerei'>
     <Hero>
-        <Navbar />
         <div
             class='flex flex-col justify-center items-end h-full drop-shadow-2xl'
         >
             <CallToAction />
         </div>
     </Hero>
-    <Description />
-    <UeberMich />
-    <Video />
-    <Ausstellungen />
-    <Werke />
+    <main>
+        <div
+            class='bg-cover bg-no-repeat aspect-auto'
+            style=`background-image: url(${ImageBackground.src}); height: {ImageBackground.height}; width: {ImageBackground.width}; alt="background";`
+        >
+            <Description />
+        </div>
+        <UeberMich />
+        <Video />
+        <Ausstellungen />
+        <Werke />
+    </main>
 </Layout>

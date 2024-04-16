@@ -25,8 +25,8 @@ export const menuItems = [
         active: false,
     },
     {
-        title: 'Presse',
-        path: '/presse',
+        title: 'Aktuelles',
+        path: '/aktuelles',
         active: false,
     },
     {

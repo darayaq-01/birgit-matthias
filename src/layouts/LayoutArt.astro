@@ -1,11 +1,12 @@
 ---
-interface Props {
-    title: string;
-}
 import Navbar from '@sections/Navbar.astro';
 import Footer from '@sections/Footer.astro';
+interface Props {
+    title: string;
+    bodyClass?: string;
+}
+const { title, bodyClass } = Astro.props;
 
-const { title } = Astro.props;
 const descriptionPage = 'Birgit Matthias Malerei';
 
 import Container from '@components/Container.astro';
@@ -25,10 +26,10 @@ import Container from '@components/Container.astro';
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index, follow' />
     </head>
-    <body>
+    <body class:list={['bg-[#c4bab5]', bodyClass]}>
         <Navbar headerNavClass='top-0' />
-        <main class='mt-auto'>
-            <Container classAstro='mt-[100px]'>
+        <main>
+            <Container classAstro='pt-[150px]'>
                 <slot />
             </Container>
         </main>
@@ -45,18 +46,15 @@ import Container from '@components/Container.astro';
         overflow-y: scroll;
         line-height: 1;
         margin: 0;
-        background: #06185ee1;
         background-size: 224px;
         --color-text: #000;
-        --color-bg: #f7f5ee;
         --color-link: #000;
         --color-link-hover: #000;
         color: var(--color-text);
         background-color: var(--color-bg);
     }
-    .main {
+    body {
         height: 100dvh;
-        border: 3px solid rgb(4, 201, 4);
     }
     /*     
  a {
