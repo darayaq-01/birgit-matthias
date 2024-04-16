@@ -4,65 +4,64 @@ import imageComponent from '@assets/ausstellungen.avif';
 import Container from '@components/Container.astro';
 ---
 
-<section class='bg-[#c4bab5] h-screen flex justify-end'>
-    <div
-        class='lg:max-w-screen-xl gap-14 mr-14 my-16 py-10 px-10 flex flex-col md:flex-row'
-    >
-        <div class='flex-1 py-3'>
-            <h2 class='text-3xl text-center py-6 font-bold'>
+<Container
+    classAstro='h-screen flex flex-col md:flex-row justify-end gap-14 py-20'
+>
+    <div class='flex-1 py-3'>
+        <header class='ml-32'>
+            <h2 class='text-3xl pb-16 font-bold'>
                 <span class='border-b-2 border-white pb-1'>Ausstellungen</span>
             </h2>
-
-            <Picture
-                src={imageComponent}
-                formats={['avif', 'webp']}
-                alt='Presentation of a own Art.'
-                class='py-8'
-            />
-        </div>
-
-        <article class='flex-1 h-fit py-5'>
-            <div class='my-10 max-w-prose'>
-                <h3 class='text-2xl py-5 font-bold'>Einzelausstellungen</h3>
-                <ul class='text-lg'>
-                    <li class='flex gap-6 my-2'>
-                        <div>2016</div>
-                        <div>Galerie im Erbenhof, Weimar</div>
-                    </li>
-                    <li class='flex gap-6 my-2'>
-                        <div>2017</div>
-                        <div>Gebrüder Hopf, Weimar</div>
-                    </li>
-                    <li class='flex gap-6 my-2'>
-                        <div>2018</div>
-                        <div>Institut für Angewandte Bauforschung, Weimar</div>
-                    </li>
-                    <li class='flex gap-6 my-2'>
-                        <div>2023</div>
-                        <div>Galerie Rosenfeld, Weimar</div>
-                    </li>
-                    <li class='flex gap-6 my-2'>
-                        <div>2024</div>
-                        <div>abacus, Hamburg</div>
-                    </li>
-                    <li class='flex gap-6 my-2'>
-                        <div>2024</div>
-                        <div>Hufelandklinikum, Weimar</div>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h3 class='text-2xl py-5 font-bold'>
-                    Ausstellungsbeteiligungen
-                </h3>
-                <p class='text-pretty text-lg max-w-prose'>
-                    Mal- und Zeichenschule Weimar: In den Werkschauen, Aus-
-                    leihungen an fördernde Unternehmen wie Grafe, Blanken- hain
-                    und Bayer AG, Weimar, Thüringer Landtag,
-                    Gruppenausstellungen mit dem Malkurs Roger Bonnard im
-                    Erbenhof, Weimar und Seebachstift, Weimar.
-                </p>
-            </div>
-        </article>
+        </header>
+        <Picture
+            src={imageComponent}
+            formats={['avif', 'webp']}
+            alt='Presentation of a own Art.'
+            class='py-8'
+        />
     </div>
-</section>
+
+    <article class='flex-1 h-fit py-5'>
+        <div class='my-10 max-w-prose'>
+            <h3 class='prose prose-2xl py-5 font-bold'>Einzelausstellungen</h3>
+            <ul class='prose prose-2xl'>
+                <li class='flex gap-6 my-2'>
+                    <div>2016</div>
+                    <div>Galerie im Erbenhof, Weimar</div>
+                </li>
+                <li class='flex gap-6 my-2'>
+                    <div>2017</div>
+                    <div>Gebrüder Hopf, Weimar</div>
+                </li>
+                <li class='flex gap-6 my-2'>
+                    <div>2018</div>
+                    <div>Institut für Angewandte Bauforschung, Weimar</div>
+                </li>
+                <li class='flex gap-6 my-2'>
+                    <div>2023</div>
+                    <div>Galerie Rosenfeld, Weimar</div>
+                </li>
+                <li class='flex gap-6 my-2'>
+                    <div>2024</div>
+                    <div>abacus, Hamburg</div>
+                </li>
+                <li class='flex gap-6 my-2'>
+                    <div>2024</div>
+                    <div>Hufelandklinikum, Weimar</div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class='prose prose-2xl py-5 font-bold'>
+                Ausstellungsbeteiligungen
+            </h3>
+            <p class='text-pretty prose prose-2xl max-w-prose'>
+                Mal- und Zeichenschule Weimar: In den Werkschauen, Aus-
+                leihungen an fördernde Unternehmen wie Grafe, Blanken- hain und
+                Bayer AG, Weimar, Thüringer Landtag, Gruppenausstellungen mit
+                dem Malkurs Roger Bonnard im Erbenhof, Weimar und Seebachstift,
+                Weimar.
+            </p>
+        </div>
+    </article>
+</Container>
