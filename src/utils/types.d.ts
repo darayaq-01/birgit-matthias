@@ -13,7 +13,7 @@ export type detailsArtwork = {
     slug: string
     folder?: string
     title: string
-    imageUrl: string
+    imageUrl: any
     description?: string
     year?: number
     price?: number

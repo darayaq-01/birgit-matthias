@@ -16,16 +16,19 @@ import Container from '@components/Container.astro';
     >
         {
             werkeData.map((w) => (
-                <a href={w.slug} class='flex relative aspect-square gap-10 '>
+                <a
+                    href={w.slug}
+                    class='flex relative aspect-square gap-10 hover:drop-shadow '
+                >
                     <Image
                         alt='gallery'
-                        class='absolute inset-0 w-full h-full object-cover object-center'
+                        class='absolute inset-0 w-full h-full object-cover object-center '
                         src={w.imageUrl}
                         height={w.height}
                         width={w.width}
                     />
-                    <article class='flex flex-col justify-center relative z-10 w-full bg-slate-600/80 opacity-0 hover:opacity-100'>
-                        <h3 class='p-6 break-words text-shadow-custom text-3xl md:text-4xl text-balance text-center text-white font-extrabold leading-relaxed'>
+                    <article class='flex flex-col justify-center items-center p-8 relative z-10 w-full '>
+                        <h3 class='p-6 break-words text-shadow-custom text-3xl md:text-4xl text-balance text-center text-white font-extrabold leading-relaxed border-b-4  hover:scale-110 border-white w-fit'>
                             {w.title}
                         </h3>
                     </article>
