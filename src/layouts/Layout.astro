@@ -27,7 +27,7 @@ import Navbar from '@sections/Navbar.astro';
     <body
         class='bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen'
     >
-        <Navbar />
+        <Navbar logoClass='text-white' linkLogoClass=`bg-[#ec008c]` />
         <slot />
         <Footer />
     </body>
@@ -46,6 +46,7 @@ import Navbar from '@sections/Navbar.astro';
         --color-text: #000;
         --color-link: #000;
         --color-link-hover: #000;
+        --primary-color: #ec008c;
     }
     body {
         max-width: 1440px;

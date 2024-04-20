@@ -14,15 +14,15 @@
     "@astrojs/netlify": "5.2.0",
     "@astrojs/svelte": "5.4.0",
     "@astrojs/tailwind": "5.1.0",
-    "astro": "4.6.1",
+    "astro": "4.6.2",
     "astro-navbar": "2.3.1",
     "clsx": "2.1.0",
     "sharp": "0.33.3",
-    "svelte": "4.2.14",
+    "svelte": "4.2.15",
     "tailwindcss": "3.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.10",
+    "@tailwindcss/typography": "0.5.12",
     "tailwindcss-animate": "1.0.7"
   }
 }
