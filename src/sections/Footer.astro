@@ -5,32 +5,30 @@ import { links } from '@consts/links';
 const currentPath = Astro.url.pathname;
 ---
 
-<footer class='h-16 n pl-64 lg:max-w-screen-lg'>
-    <div class='pt-5'>
-        <ul class='flex flex-col gap-4 sm:flex-row sm:gap-10 sm:items-center'>
-            {
-                links.map((item) => (
-                    <li>
-                        <a
-                            href={item.url}
-                            rel='noopener noreferrer'
-                            class={`footer-link uppercase text-gray-600 hover:text-black w-fit  hover:scale-110 transition-all duration-300 ease-in-out ${currentPath === item.url ? 'line-through' : ''}`}
-                        >
-                            {item.imgSrc ? (
-                                <img
-                                    src={item.imgSrc}
-                                    height={item.imgHeight}
-                                    width={100}
-                                    alt={item.alt}
-                                    class='aspect-auto object-contain hover:scale-110'
-                                />
-                            ) : (
-                                item.name
-                            )}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
-    </div>
+<footer class='h-16 md:h-28 ml-80 pr-12 lg:max-w-screen py-14'>
+    <ul class='flex flex-col gap-4 sm:flex-row sm:gap-10 sm:items-center'>
+        {
+            links.map((item) => (
+                <li>
+                    <a
+                        href={item.url}
+                        rel='noopener noreferrer'
+                        class={`footer-link md:text-2xl uppercase text-gray-600 hover:text-black w-fit hover:scale-110 transition-all duration-300 ease-in-out ${currentPath === item.url ? 'line-through' : ''}`}
+                    >
+                        {item.imgSrc ? (
+                            <img
+                                src={item.imgSrc}
+                                height={item.imgHeight}
+                                width={100}
+                                alt={item.alt}
+                                class='aspect-auto pt-1 object-contain hover:scale-110'
+                            />
+                        ) : (
+                            item.name
+                        )}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
 </footer>

@@ -24,8 +24,10 @@ import Navbar from '@sections/Navbar.astro';
         <meta name='googlebot' content='index, follow' />
     </head>
 
-    <body class='bg-[#c4bab5] xl:border xl:shadow-2xl xl:shadow-gray-80'>
-        <Navbar />
+    <body
+        class='bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen'
+    >
+        <Navbar logoClass='text-white' linkLogoClass=`bg-[#ec008c]` />
         <slot />
         <Footer />
     </body>
@@ -40,15 +42,14 @@ import Navbar from '@sections/Navbar.astro';
         overflow-y: scroll;
         line-height: 1;
         margin: 0;
-        /* background: #1a1919; */
         background-size: 224px;
         --color-text: #000;
         --color-link: #000;
         --color-link-hover: #000;
+        --primary-color: #ec008c;
     }
     body {
         max-width: 1440px;
         margin: 0 auto;
-        /* background: #c4bab5; */
     }
 </style>

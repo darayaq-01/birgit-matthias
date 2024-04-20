@@ -4,61 +4,59 @@ import imageComponent from '@assets/birgit.avif';
 import Container from '@components/Container.astro';
 ---
 
-<section class='bg-[#c4bab5] flex justify-end'>
-    <div
-        class='flex flex-col md:flex md:flex-row lg:max-w-screen-xl mr-14 mt-10 pt-10 px-10'
-    >
-        <article class='h-fit py-5 w-3/5'>
-            <h2 class='text-3xl py-8 pl-28 font-bold'>
+<Container
+    classAstro='my-20 flex flex-col md:flex md:flex-row md:justify-between py-20'
+    >'
+    <article class='h-fit w-3/5'>
+        <header class='ml-32'>
+            <h2 class='text-3xl pb-16 font-bold'>
                 <span class='text-white border-b-2 border-white pb-1'
                     >Über mich</span
                 >
             </h2>
+        </header>
 
-            <div class='w-max prose prose-2xl py-10'>
-                <p class='text-pretty'>
-                    Ich bin freie Künstlerin und wohne und arbeite in Weimar.
-                </p>
-                <p class='text-pretty'>
-                    Nach dem Abitur 1984 in Lübeck habe ich eine Tischlerlehre
-                    absolviert, während der ich an der Werkkunstschule Lübeck
-                    Mappenvorbereitungskurse bei Detlef Moraht besucht habe.
-                </p>
-                <p class='text-pretty'>
-                    Ab 1987 Innenarchitekturstudium an der Akademie der
-                    bildenden Künste in Stuttgart darauf 1989 Auslandsaufenthalt
-                    in den USA, Los Angeles.
-                </p>
-                <p class='text-pretty'>
-                    Von 1990-1993 Studium der Betriebswirtschaft in Kiel, dazu
-                    externe Prüfung zur Bankkauffrau. Parallel dazu weitere
-                    Malkurse bei Detlef Moraht in Lübeck.
-                </p>
-                <p class='text-pretty'>
-                    1996 Umzug nach Frankfurt a.M. – mehrere Aufenthalte an der
-                    Europäischen Akademie für bildende Kunst e.V. in Trier im
-                    Rahmen der Sommerakademien: Zeichnen, abstrakte Malerei,
-                    Bildhauerei.
-                </p>
-                <p class='text-pretty'>
-                    Ab 1998 Beginn freie Malerei in eigenem Atelier und 2000
-                    Umzug nach Weimar, Kurs im Hofatelier Niedergrunstedt und
-                    regelmäßige Kurse an der Mal- und Zeichenschule Weimar
-                    vorwiegend bei Roger Bonnard, Karsten Kunert und Peter
-                    Stechert.
-                </p>
-                <p class='text-pretty'>
-                    Seit Oktober 2015 bin ich hauptberuflich freie Malerin
-                </p>
-            </div>
-        </article>
-
-        <div class='self-start w-2/5'>
-            <Picture
-                src={imageComponent}
-                formats={['avif', 'webp']}
-                alt='Presentation of a own Art.'
-            />
+        <div class='w-max prose prose-2xl py-10'>
+            <p class='text-pretty'>
+                Ich bin freie Künstlerin und wohne und arbeite in Weimar.
+            </p>
+            <p class='text-pretty'>
+                Nach dem Abitur 1984 in Lübeck habe ich eine Tischlerlehre
+                absolviert, während der ich an der Werkkunstschule Lübeck
+                Mappenvorbereitungskurse bei Detlef Moraht besucht habe.
+            </p>
+            <p class='text-pretty'>
+                Ab 1987 Innenarchitekturstudium an der Akademie der bildenden
+                Künste in Stuttgart darauf 1989 Auslandsaufenthalt in den USA,
+                Los Angeles.
+            </p>
+            <p class='text-pretty'>
+                Von 1990-1993 Studium der Betriebswirtschaft in Kiel, dazu
+                externe Prüfung zur Bankkauffrau. Parallel dazu weitere Malkurse
+                bei Detlef Moraht in Lübeck.
+            </p>
+            <p class='text-pretty'>
+                1996 Umzug nach Frankfurt a.M. – mehrere Aufenthalte an der
+                Europäischen Akademie für bildende Kunst e.V. in Trier im Rahmen
+                der Sommerakademien: Zeichnen, abstrakte Malerei, Bildhauerei.
+            </p>
+            <p class='text-pretty'>
+                Ab 1998 Beginn freie Malerei in eigenem Atelier und 2000 Umzug
+                nach Weimar, Kurs im Hofatelier Niedergrunstedt und regelmäßige
+                Kurse an der Mal- und Zeichenschule Weimar vorwiegend bei Roger
+                Bonnard, Karsten Kunert und Peter Stechert.
+            </p>
+            <p class='text-pretty'>
+                Seit Oktober 2015 bin ich hauptberuflich freie Malerin
+            </p>
         </div>
+    </article>
+
+    <div class='self-start w-2/5 px-4'>
+        <Picture
+            src={imageComponent}
+            formats={['avif', 'webp']}
+            alt='Presentation of a own Art.'
+        />
     </div>
-</section>
+</Container>

@@ -12,7 +12,7 @@ export const menuItems = [
     {
         title: 'Werke',
         path: '/werke',
-        active: false,
+        active: true,
     },
     {
         title: 'Aktuelles',
