@@ -14,6 +14,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header
+    data-header
     id='navbar'
     class:list={[
         'fixed w-full max-w-[1440px] pt-3 px-20 flex flex-col items-center justify-between lg:flex-row top-0 z-50',
@@ -48,6 +49,7 @@ const currentPath = Astro.url.pathname;
                         .map((item) => (
                             <li class='font-bold'>
                                 <a
+                                    data-link
                                     href={item?.path}
                                     class={`navbar-link flex uppercase text-white  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_2px_2px_1px_rgb(30_28_28_/_97%)] ${currentPath === item.path ? 'active-item' : ''}`}
                                 >
@@ -66,3 +68,19 @@ const currentPath = Astro.url.pathname;
         color: var(--primary-color);
     }
 </style>
+
+<script>
+    const header = document.querySelector('[data-header]');
+
+    const options = {
+        root: document.querySelector('[data-scroll-root]'),
+        rootMargin: '0px',
+        threshold: 1.0,
+    };
+
+    const callback = (entries, observer) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+        });
+    };
+</script>
