@@ -26,8 +26,8 @@ const presse = defineCollection({
 })
 
 
-/* 
-const aktuelles = defineCollection({
+
+const ausstellungen = defineCollection({
     // Type-check frontmatter using a schema
     schema: ({ image }) =>
         z.object({
@@ -48,5 +48,5 @@ const aktuelles = defineCollection({
             }),
             coverAlt: z.string()
         })
-}) */
-export const collections = { presse }
+})
+export const collections = { presse, ausstellungen }

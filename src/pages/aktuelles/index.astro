@@ -6,42 +6,86 @@ import { Image } from 'astro:assets';
 import FormattedDate from '@components/FormattedDate.astro';
 
 // sort posts by date, newest first
-const posts = (await getCollection('presse')).sort(
+const presse = (await getCollection('presse')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const ausstellungen = (await getCollection('ausstellungen')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <LayoutArt title='Aktivitäten' bodyClass='bg-white'>
+    <h1 class='text-5xl font-bold'>Aktuelle Ausstellungen</h1>
+    {
+        ausstellungen.length === 0 ? (
+            <p>Es gibt keine aktuellen Ausstellungen.</p>
+        ) : (
+            ausstellungen.map((post) => (
+                <li class='list-none'>
+                    <a href={`/aktuelles/${post.slug}/`}>
+                        <div class='mb-6 mt-2 pb-10 pt-4'>
+                            <h3 class='uppercase text-2xl text-[#033277]'>
+                                {post.data.category}
+                            </h3>
+                            <h4 class='text-3xl'>{post.data.title}</h4>
+                            <p class='pb-4 pt-2 text-base text-gray-500'>
+                                <FormattedDate date={post.data.pubDate} />
+                            </p>
+                            <div class='prose-base line-clamp-4 lg:prose-xl'>
+                                {post.data.description}
+                            </div>
+                            <div class='pt-5'>
+                                <p class='text-2xl italic text-[#033277]'>
+                                    weiterlesen...
+                                </p>
+                            </div>
+                        </div>
+                        <Image
+                            width={300}
+                            src={post.data.cover}
+                            alt={post.data.coverAlt}
+                        />
+                    </a>
+                    <div class='py-8 w-full border-b-2 border-black ' />
+                </li>
+            ))
+        )
+    }
+
     <h1 class='text-5xl font-bold'>Presse</h1>
     {
-        posts.map((post) => (
-            <li class='list-none'>
-                <a href={`/aktuelles/${post.slug}/`}>
-                    <div class='mb-6 mt-2 pb-10 pt-4'>
-                        <h3 class='uppercase text-2xl text-[#033277]'>
-                            {post.data.category}
-                        </h3>
-                        <h4 class='text-3xl'>{post.data.title}</h4>
-                        <p class='pb-4 pt-2 text-base text-gray-500'>
-                            <FormattedDate date={post.data.pubDate} />
-                        </p>
-                        <div class='prose-base line-clamp-4 lg:prose-xl'>
-                            {post.data.description}
-                        </div>
-                        <div class='pt-5'>
-                            <p class='text-2xl italic text-[#033277]'>
-                                weiterlesen...
+        presse.length === 0 ? (
+            <p>Es gibt keine aktuellen posts.</p>
+        ) : (
+            presse.map((post) => (
+                <li class='list-none'>
+                    <a href={`/aktuelles/${post.slug}/`}>
+                        <div class='mb-6 mt-2 pb-10 pt-4'>
+                            <h3 class='uppercase text-2xl text-[#033277]'>
+                                {post.data.category}
+                            </h3>
+                            <h4 class='text-3xl'>{post.data.title}</h4>
+                            <p class='pb-4 pt-2 text-base text-gray-500'>
+                                <FormattedDate date={post.data.pubDate} />
                             </p>
+                            <div class='prose-base line-clamp-4 lg:prose-xl'>
+                                {post.data.description}
+                            </div>
+                            <div class='pt-5'>
+                                <p class='text-2xl italic text-[#033277]'>
+                                    weiterlesen...
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <Image
-                        width={300}
-                        src={post.data.cover}
-                        alt={post.data.coverAlt}
-                    />
-                </a>
-                <div class='py-8 w-full border-b-2 border-black ' />
-            </li>
-        ))
+                        <Image
+                            width={300}
+                            src={post.data.cover}
+                            alt={post.data.coverAlt}
+                        />
+                    </a>
+                    <div class='py-8 w-full border-b-2 border-black ' />
+                </li>
+            ))
+        )
     }
 </LayoutArt>
