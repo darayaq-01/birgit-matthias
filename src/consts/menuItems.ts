@@ -11,7 +11,7 @@ export const menuItems = [
     },
     {
         title: 'Werke',
-        path: '/werke',
+        path: '/#werke',
         active: true,
     },
     {
