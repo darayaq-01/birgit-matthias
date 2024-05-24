@@ -25,6 +25,7 @@ const currentPath = Astro.url.pathname;
         <div class='flex w-full items-center justify-between lg:w-auto'>
             <a href='/' class:list={`px-6 ${linkLogoClass}`} {...rest}>
                 <LogoFinal
+                    id='logo'
                     class:list={[
                         'aspect-auto py-4 h-24 object-contain md:h-44 font-bold hover:stroke-12 hover:scale-110 transition-all duration-300 ease-in-out',
                         logoClass,
@@ -68,19 +69,3 @@ const currentPath = Astro.url.pathname;
         color: var(--primary-color);
     }
 </style>
-
-<script>
-    const header = document.querySelector('[data-header]');
-
-    const options = {
-        root: document.querySelector('[data-scroll-root]'),
-        rootMargin: '0px',
-        threshold: 1.0,
-    };
-
-    const callback = (entries, observer) => {
-        entries.forEach((entry) => {
-            console.log(entry);
-        });
-    };
-</script>

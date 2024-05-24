@@ -1,0 +1,35 @@
+<style is:global>
+    :root {
+        font-family: Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow: hidden;
+        overflow-y: scroll;
+        line-height: 1;
+        margin: 0;
+        background-size: 224px;
+        --color-text: #000;
+        --color-link: #000;
+        --color-link-hover: #000;
+        --primary-color: #ec008c;
+    }
+    body {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    .active-item {
+        color: var(--primary-color);
+    }
+    .on-scroll {
+        background-color: white;
+        color: black;
+    }
+    .initial-scroll {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    .initial-scroll-svg {
+        background-color: transparent;
+        color: white;
+    }
+</style>

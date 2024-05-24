@@ -27,6 +27,12 @@
       "@sections/*": [
         "sections/*"
       ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@helpers/*": [
+        "helpers/*"
+      ],
     }
   }
 }
