@@ -5,10 +5,10 @@ import Container from '@components/Container.astro';
 ---
 
 <Container
-    classAstro='my-20 flex flex-col md:flex md:flex-row md:justify-between py-20'
-    >'
-    <article class='h-fit w-3/5'>
-        <header class='ml-32'>
+    classAstro='my-20 flex flex-col md:flex-row md:justify-between py-20 gap-8'
+>
+    <article class='h-fit md:w-[55%]'>
+        <header>
             <h2 class='text-3xl pb-16 font-bold'>
                 <span class='text-white border-b-2 border-white pb-1'
                     >Über mich</span
@@ -16,7 +16,7 @@ import Container from '@components/Container.astro';
             </h2>
         </header>
 
-        <div class='w-max prose prose-2xl py-10'>
+        <div class='w-full prose prose-2xl py-10'>
             <p class='text-pretty'>
                 Ich bin freie Künstlerin und wohne und arbeite in Weimar.
             </p>
@@ -52,7 +52,7 @@ import Container from '@components/Container.astro';
         </div>
     </article>
 
-    <div class='self-start w-2/5 px-4'>
+    <div class='self-start md:w-[40%] px-4'>
         <Picture
             src={imageComponent}
             formats={['avif', 'webp']}
