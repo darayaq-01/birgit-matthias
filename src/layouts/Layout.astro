@@ -2,11 +2,20 @@
 interface Props {
     title: string;
     descriptionPage?: string;
+    backgroundColor?: string;
+    navbarProps?: string;
 }
-const { title, descriptionPage = 'Birgit Matthias Malerei' } = Astro.props;
+const {
+    title,
+    descriptionPage = 'Birgit Matthias Malerei',
+    backgroundColor = 'bg-[#c4bab5]',
+    navbarProps,
+} = Astro.props;
 
 import Footer from '@sections/Footer.astro';
 import Navbar from '@sections/Navbar.astro';
+import GlobalStyles from '@styles/GlobalStyles.astro';
+import ObserverScript from '@helpers/ObserverScript.astro';
 ---
 
 <!doctype html>
@@ -23,33 +32,16 @@ import Navbar from '@sections/Navbar.astro';
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index, follow' />
     </head>
-
     <body
-        class='bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen'
+        class:list={[
+            'bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen',
+            backgroundColor,
+        ]}
     >
-        <Navbar logoClass='text-white' linkLogoClass=`bg-[#ec008c]` />
+        <Navbar linkLogoClass='linkLogoClass' headerNavClass=`${navbarProps}` />
         <slot />
         <Footer />
+        <GlobalStyles />
+        <ObserverScript />
     </body>
 </html>
-
-<style is:global>
-    :root {
-        font-family: Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        overflow: hidden;
-        overflow-y: scroll;
-        line-height: 1;
-        margin: 0;
-        background-size: 224px;
-        --color-text: #000;
-        --color-link: #000;
-        --color-link-hover: #000;
-        --primary-color: #ec008c;
-    }
-    body {
-        max-width: 1440px;
-        margin: 0 auto;
-    }
-</style>

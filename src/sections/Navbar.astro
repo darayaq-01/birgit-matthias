@@ -14,16 +14,18 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header
+    data-header
     id='navbar'
     class:list={[
         'fixed w-full max-w-[1440px] pt-3 px-20 flex flex-col items-center justify-between lg:flex-row top-0 z-50',
-        { headerNavClass },
+        headerNavClass,
     ]}
 >
     <Astronav>
         <div class='flex w-full items-center justify-between lg:w-auto'>
             <a href='/' class:list={`px-6 ${linkLogoClass}`} {...rest}>
                 <LogoFinal
+                    id='logo'
                     class:list={[
                         'aspect-auto py-4 h-24 object-contain md:h-44 font-bold hover:stroke-12 hover:scale-110 transition-all duration-300 ease-in-out',
                         logoClass,
@@ -48,6 +50,7 @@ const currentPath = Astro.url.pathname;
                         .map((item) => (
                             <li class='font-bold'>
                                 <a
+                                    data-link
                                     href={item?.path}
                                     class={`navbar-link flex uppercase text-white  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_2px_2px_1px_rgb(30_28_28_/_97%)] ${currentPath === item.path ? 'active-item' : ''}`}
                                 >
