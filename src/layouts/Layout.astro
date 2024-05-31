@@ -2,8 +2,15 @@
 interface Props {
     title: string;
     descriptionPage?: string;
+    backgroundColor?: string;
+    navbarProps?: string;
 }
-const { title, descriptionPage = 'Birgit Matthias Malerei' } = Astro.props;
+const {
+    title,
+    descriptionPage = 'Birgit Matthias Malerei',
+    backgroundColor = 'bg-[#c4bab5]',
+    navbarProps,
+} = Astro.props;
 
 import Footer from '@sections/Footer.astro';
 import Navbar from '@sections/Navbar.astro';
@@ -26,12 +33,12 @@ import ObserverScript from '@helpers/ObserverScript.astro';
         <meta name='googlebot' content='index, follow' />
     </head>
     <body
-        class='bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen'
+        class:list={[
+            'bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen',
+            backgroundColor,
+        ]}
     >
-        <Navbar
-            logoClass='initial-scroll-svg logoClass'
-            linkLogoClass='initial-scroll linkLogoClass'
-        />
+        <Navbar linkLogoClass='linkLogoClass' headerNavClass=`${navbarProps}` />
         <slot />
         <Footer />
         <GlobalStyles />

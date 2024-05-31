@@ -1,5 +1,6 @@
 ---
-import LayoutArt from '@layouts/LayoutArt.astro';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
@@ -14,78 +15,86 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
 );
 ---
 
-<LayoutArt title='Aktivitäten' bodyClass='bg-white'>
-    <h1 class='text-5xl font-bold'>Aktuelle Ausstellungen</h1>
-    {
-        ausstellungen.length === 0 ? (
-            <p>Es gibt keine aktuellen Ausstellungen.</p>
-        ) : (
-            ausstellungen.map((post) => (
-                <li class='list-none'>
-                    <a href={`/aktuelles/${post.slug}/`}>
-                        <div class='mb-6 mt-2 pb-10 pt-4'>
-                            <h3 class='uppercase text-2xl text-[#033277]'>
-                                {post.data.category}
-                            </h3>
-                            <h4 class='text-3xl'>{post.data.title}</h4>
-                            <p class='pb-4 pt-2 text-base text-gray-500'>
-                                <FormattedDate date={post.data.pubDate} />
-                            </p>
-                            <div class='prose-base line-clamp-4 lg:prose-xl'>
-                                {post.data.description}
-                            </div>
-                            <div class='pt-5'>
-                                <p class='text-2xl italic text-[#033277]'>
-                                    weiterlesen...
-                                </p>
-                            </div>
-                        </div>
-                        <Image
-                            width={300}
-                            src={post.data.cover}
-                            alt={post.data.coverAlt}
-                        />
-                    </a>
-                    <div class='py-8 w-full border-b-2 border-black ' />
-                </li>
-            ))
-        )
-    }
-
-    <h1 class='text-5xl font-bold'>Presse</h1>
-    {
-        presse.length === 0 ? (
-            <p>Es gibt keine aktuellen posts.</p>
-        ) : (
-            presse.map((post) => (
-                <li class='list-none'>
-                    <a href={`/aktuelles/${post.slug}/`}>
-                        <div class='mb-6 mt-2 pb-10 pt-4'>
-                            <h3 class='uppercase text-2xl text-[#033277]'>
-                                {post.data.category}
-                            </h3>
-                            <h4 class='text-3xl'>{post.data.title}</h4>
-                            <p class='pb-4 pt-2 text-base text-gray-500'>
-                                <FormattedDate date={post.data.pubDate} />
-                            </p>
-                            <div class='prose-base line-clamp-4 lg:prose-xl'>
-                                {post.data.description}
-                            </div>
-                            <div class='pt-5'>
-                                <p class='text-2xl italic text-[#033277]'>
-                                    weiterlesen...
-                                </p>
-                            </div>
-                        </div>
-                        <Image
-                            width={300}
-                            src={post.data.cover}
-                            alt={post.data.coverAlt}
-                        />
-                    </a>
-                    <div class='py-8 w-full border-b-2 border-black ' />
-                </li>
-            ))
-        )
-    }
-</LayoutArt>
+<Layout
+    title='Aktivitäten'
+    backgroundColor='bg-white'
+    navbarProps='bg-white/60 backdrop-blur-sm drop-shadow-md'
+>
+    <Container classAstro='w-[60%] flex flex-col place-items-center pt-56'>
+        <article>
+            <h1
+                class='text-5xl font-bold lg:text-3xl border-b-2 w-fit border-gray-800 my-10'
+            >
+                Aktuelle Ausstellungen
+            </h1>
+            {
+                ausstellungen.length === 0 ? (
+                    <p>Es gibt keine aktuellen Ausstellungen.</p>
+                ) : (
+                    ausstellungen.map((post) => (
+                        <li class='list-none p-4'>
+                            <a href={`/aktuelles/${post.slug}/`}>
+                                <div class='mb-6 mt-2 pb-10 pt-4'>
+                                    <h3 class='text-3xl lg:text-2xl text-balance font-bold'>
+                                        {post.data.title}
+                                    </h3>
+                                    <div class='prose-base lg:prose-xl'>
+                                        {post.data.description}
+                                    </div>
+                                </div>
+                                <Image
+                                    width={300}
+                                    src={post.data.cover}
+                                    alt={post.data.coverAlt}
+                                />
+                            </a>
+                            {/* <div class='py-8 w-full border-b-2 border-black ' /> */}
+                        </li>
+                    ))
+                )
+            }
+        </article>
+        <article class='mt-10'>
+            <h1
+                class='text-5xl font-bold lg:text-3xl w-fit pl-4 underline my-10'
+            >
+                Presse
+            </h1>
+            {
+                presse.length === 0 ? (
+                    <p>Es gibt keine aktuellen posts.</p>
+                ) : (
+                    presse.map((post) => (
+                        <li class='p-4 list-none hover:shadow-black hover:shadow-lg transition duration-300 ease-in-out'>
+                            <a class='' href={`/aktuelles/${post.slug}/`}>
+                                <div class='mb-6 mt-2 pb-10 pt-4'>
+                                    <h3 class='uppercase text-balance text-2xl'>
+                                        {post.data.category}
+                                    </h3>
+                                    <h3 class='text-3xl lg:text-2xl text-balance font-bold'>
+                                        {post.data.title}
+                                    </h3>
+                                    <p class='pb-4 pt-2 prose-base lg:prose-xl'>
+                                        <FormattedDate
+                                            date={post.data.pubDate}
+                                        />
+                                    </p>
+                                    <Image
+                                        class='my-6'
+                                        width={300}
+                                        src={post.data.cover}
+                                        alt={post.data.coverAlt}
+                                    />
+                                    <div class='prose-base line-clamp-4 lg:prose-xl text-wrap'>
+                                        {post.data.description}
+                                    </div>
+                                </div>
+                            </a>
+                            <div class='py-8 w-full border-b-2 border-black ' />
+                        </li>
+                    ))
+                )
+            }
+        </article>
+    </Container>
+</Layout>
