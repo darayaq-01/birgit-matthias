@@ -34,12 +34,12 @@ import ObserverScript from '@helpers/ObserverScript.astro';
     </head>
     <body
         class:list={[
-            'bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen',
+            'bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen flex flex-col',
             backgroundColor,
         ]}
     >
         <Navbar linkLogoClass='linkLogoClass' headerNavClass=`${navbarProps}` />
-        <slot />
+        <main class='flex-grow'></main><slot />
         <Footer />
         <GlobalStyles />
         <ObserverScript />

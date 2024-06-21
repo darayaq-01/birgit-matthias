@@ -5,7 +5,7 @@ import { links } from '@consts/links';
 const currentPath = Astro.url.pathname;
 ---
 
-<footer class='h-16 md:h-28 lg:my-10 pr-12 lg:max-w-screen py-14'>
+<footer class='md:h-28 lg:my-10 pr-12 lg:max-w-screen py-14'>
     <Container>
         <ul class='flex flex-col gap-4 sm:flex-row sm:gap-10 sm:items-center'>
             {
@@ -14,7 +14,7 @@ const currentPath = Astro.url.pathname;
                         <a
                             href={item.url}
                             rel='noopener noreferrer'
-                            class={`footer-link md:text-2xl uppercase text-gray-600 hover:text-black w-fit hover:scale-110 transition-all duration-300 ease-in-out ${currentPath === item.url ? 'line-through' : ''}`}
+                            class={`footer-link md:text-2xl uppercase text-gray-600 hover:text-black hover:underline w-fit hover:scale-110 transition-all duration-300 ease-in-out ${currentPath === item.url ? 'line-through' : ''}`}
                         >
                             {item.imgSrc ? (
                                 <img

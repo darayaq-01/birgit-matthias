@@ -5,9 +5,9 @@ import Container from '@components/Container.astro';
 ---
 
 <Container
-    classAstro='h-screen flex flex-col md:flex-row justify-end gap-14 py-20'
+    classAstro='min-h-screen flex flex-col md:flex-row justify-end gap-14 py-20'
 >
-    <div class='flex-1 py-3'>
+    <div class='flex-1 py-1 md:py-3'>
         <header class='ml-32'>
             <h2 class='text-3xl pb-16 font-bold'>
                 <span class='border-b-2 border-white pb-1'>Ausstellungen</span>
@@ -17,12 +17,12 @@ import Container from '@components/Container.astro';
             src={imageComponent}
             formats={['avif', 'webp']}
             alt='Presentation of a own Art.'
-            class='py-8'
+            class='md:py-8'
         />
     </div>
 
-    <article class='flex-1 h-fit py-5'>
-        <div class='my-10 max-w-prose'>
+    <article class='flex-1 h-fit md:py-5'>
+        <div class='md:my-10 max-w-prose'>
             <h3 class='prose prose-2xl py-5 font-bold'>Einzelausstellungen</h3>
             <ul class='prose prose-2xl'>
                 <li class='flex gap-6 my-2'>
