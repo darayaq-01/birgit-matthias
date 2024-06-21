@@ -341,6 +341,15 @@ keyboard-focus on browsers that do support*/
         pointer-events: auto;
     }
 
+    @media screen and (max-width: 350px) {
+        /* Your CSS styles for screens less than or equal to 400px here */
+        .grid {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+    }
+
     @media screen and (min-width: 53em) {
         .content {
             width: 38%;
