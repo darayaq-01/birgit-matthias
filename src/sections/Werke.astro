@@ -6,29 +6,29 @@ import Container from '@components/Container.astro';
 
 <Container classAstro='min-h-screen' id='werke'>
     <header class='ml-32'>
-        <h2 class='text-3xl pb-16 font-bold'>
+        <h2 class='pb-16 text-3xl font-bold'>
             <span class='border-b-2 border-white pb-1'>Werke</span>
         </h2>
     </header>
 
     <article
-        class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-white p-4 md:p-10 lg:min-w-max'
+        class='grid grid-cols-1 gap-4 bg-white p-4 md:grid-cols-2 md:p-10 lg:max-w-fit lg:grid-cols-3'
     >
         {
             werkeData.map((w) => (
                 <a
                     href={w.slug}
-                    class='flex relative aspect-square gap-10 hover:drop-shadow '
+                    class='relative flex aspect-square gap-10 hover:drop-shadow'
                 >
                     <Image
                         alt='gallery'
-                        class='absolute inset-0 w-full h-full object-cover object-center '
+                        class='absolute inset-0 h-full w-full object-cover object-center'
                         src={w.imageUrl}
                         height={w.height}
                         width={w.width}
                     />
-                    <article class='flex flex-col justify-center items-center p-8 relative z-10 w-full '>
-                        <h3 class='p-6 break-words text-shadow-custom text-3xl md:text-4xl text-balance text-center text-white font-extrabold leading-relaxed border-b-4  hover:scale-110 border-white w-fit hyphens-auto'>
+                    <article class='relative z-10 flex w-full flex-col items-center justify-center p-8'>
+                        <h3 class='text-shadow-custom w-fit hyphens-auto text-balance break-words border-b-4 border-white p-6 text-center text-3xl font-extrabold leading-relaxed text-white hover:scale-110 md:text-4xl'>
                             {w.title}
                         </h3>
                     </article>

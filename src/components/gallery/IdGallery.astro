@@ -1,4 +1,5 @@
 ---
+// Details of the selected picture
 import { Picture } from 'astro:assets';
 // import MiniGrid from '../../components/MiniGrid.astro'
 import LayoutArt from '@layouts/LayoutArt.astro';
@@ -21,24 +22,27 @@ const photoNumber = images?.id.toString().padStart(2, '0');
 ---
 
 <LayoutArt title={title}>
+    <!-- TODO check if this section is necessary. Double section -->
     <section class='h-full'>
         <header>
-            <h2 class='text-3xl py-8 pl-20 font-bold'>
+            <h2 class='py-8 pl-20 text-3xl font-bold'>
                 <span class='border-b-2 border-white pb-1'>Werke</span>
             </h2>
         </header>
         <div
-            class='flex flex-col md:flex-row justify-evenly bg-white py-12 px-10'
+            class='flex flex-col justify-evenly bg-white px-10 py-12 md:flex-row'
         >
-            <div class='flex w-1/3 flex-col md:justify-between items-center'>
+            <div
+                class='flex w-full flex-col items-center md:w-1/3 md:justify-between'
+            >
                 <!-- titulo, numero, descripción -->
                 <div
                     transition:name={`photo-details-${images?.id}`}
                     class='py-2'
                 >
                     <div>
-                        <h2 class='text-2xl mb-4 mt-2'>
-                            <span class='italic font-extrabold'
+                        <h2 class='mb-4 mt-2 text-2xl'>
+                            <span class='font-extrabold italic'
                                 >{images?.title}</span
                             >{images?.year === 0 ? null : `, ${images?.year}`}
                         </h2>
@@ -53,16 +57,15 @@ const photoNumber = images?.id.toString().padStart(2, '0');
                 <div class='h-28 self-start'>
                     <a href={url}>
                         <Arrow
-                            class='w-14 mb-6 mt-6 md:w-6 m-auto hover:scale-150 transition-all duration-300 ease-in-out'
+                            class='w-6 transition-all duration-300 ease-in-out hover:scale-150 md:w-10 lg:w-14'
                         />
                     </a>
-
                     <!-- <MiniGrid currentPhotoId={photo?.id} /> -->
                 </div>
             </div>
             <div class='flex-1'>
                 <Picture
-                    class='shadow-2xl shadow-gray-800 aspect-auto max-w-3/4 pointer-events-none'
+                    class='max-w-3/4 pointer-events-none aspect-auto shadow-2xl shadow-gray-800'
                     src={images?.imageUrl ?? ''}
                     formats={['webp', 'avif']}
                     alt={images?.title ?? ''}

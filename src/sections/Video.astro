@@ -4,14 +4,14 @@ import Container from '@components/Container.astro';
 
 <Container classAstro='min-h-fit py-10'>
     <header class='ml-32'>
-        <h2 class='text-3xl pb-16 font-bold'>
+        <h2 class='pb-16 text-3xl font-bold'>
             <span class='border-b-2 border-white pb-1'>Video</span>
         </h2>
     </header>
-    <div class='relative w-full h-56 bg-gray-600 rounded-lg animate-pulse'>
+    <div class='relative h-96 w-full animate-pulse rounded-lg bg-gray-600'>
         <div class='absolute inset-0 flex items-center justify-center'>
             <svg
-                class='w-12 h-12 text-gray-400'
+                class='h-12 w-12 text-gray-400'
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
@@ -41,7 +41,7 @@ const { classAstro, ...rest } = Astro.props;
 
 <section class={`relative ${classAstro}`} {...rest}>
     <div class="video-container" style="width: 100%; height: 0; padding-bottom: 56.25%;">
-        <video id="video" class="absolute top-0 left-0 w-full h-full" controls>
+        <video id="video" class="absolute left-0 top-0 h-full w-full" controls>
             <source data-src="https://your-cdn.com/path/to/your/video.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
