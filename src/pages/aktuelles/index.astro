@@ -23,7 +23,7 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
     <Container classAstro='w-[60%] flex flex-col place-items-center pt-56'>
         <article>
             <h1
-                class='text-5xl font-bold lg:text-3xl w-fit pl-4 underline underline-offset-8 my-10'
+                class='my-10 w-fit pl-4 text-5xl font-bold underline underline-offset-8 lg:text-3xl'
             >
                 Aktuelle Ausstellungen
             </h1>
@@ -34,7 +34,7 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
                     ausstellungen.map((post) => (
                         <li class='list-none p-4'>
                             <div class='mb-6 mt-2 pb-10 pt-4'>
-                                <h3 class='text-3xl lg:text-2xl text-balance font-bold'>
+                                <h3 class='text-balance text-3xl font-bold lg:text-2xl'>
                                     {post.data.title}
                                 </h3>
                                 <div class='prose-base lg:prose-2xl'>
@@ -53,7 +53,7 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
         </article>
         <article class='mt-10'>
             <h1
-                class='text-5xl font-bold lg:text-3xl w-fit pl-4 underline underline-offset-8 my-10'
+                class='my-10 w-fit pl-4 text-5xl font-bold underline underline-offset-8 lg:text-3xl'
             >
                 Presse
             </h1>
@@ -62,16 +62,16 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
                     <p>Es gibt keine aktuellen posts.</p>
                 ) : (
                     presse.map((post) => (
-                        <li class='p-4 list-none shadow-sm hover:shadow-gray-400 hover:shadow-lg transition duration-300 ease-in-out'>
+                        <li class='list-none p-4 shadow-sm transition duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-400'>
                             <a class='' href={`/aktuelles/${post.slug}/`}>
                                 <div class='mb-6 mt-2 pb-10 pt-4'>
-                                    <h3 class='uppercase text-balance text-2xl'>
+                                    <h3 class='text-balance text-2xl uppercase'>
                                         {post.data.category}
                                     </h3>
-                                    <h3 class='text-3xl lg:text-2xl text-balance font-bold'>
+                                    <h3 class='text-balance text-3xl font-bold lg:text-2xl'>
                                         {post.data.title}
                                     </h3>
-                                    <p class='pb-4 pt-2 prose-base lg:prose-xl'>
+                                    <p class='prose-base pb-4 pt-2 lg:prose-xl'>
                                         <FormattedDate
                                             date={post.data.pubDate}
                                         />
@@ -82,7 +82,7 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
                                         src={post.data.cover}
                                         alt={post.data.coverAlt}
                                     />
-                                    <div class='prose-base line-clamp-4 lg:prose-2xl text-wrap'>
+                                    <div class='prose-base line-clamp-4 text-wrap lg:prose-2xl'>
                                         {post.data.description}
                                     </div>
                                 </div>
