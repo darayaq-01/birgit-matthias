@@ -36,13 +36,13 @@ const currentPath = Astro.url.pathname;
             <!-- hamburger button -->
             <div class='block lg:hidden'>
                 <MenuIcon
-                    class='my-class h-8 w-8 text-white font-bold hover:text-black]'
+                    class='my-class hover:text-black] h-8 w-8 font-bold text-red-700 lg:text-white'
                 />
             </div>
         </div>
         <MenuItems class='mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto'>
             <ul
-                class='flex my-9 lg:my-0 flex-col gap-8 text-[1.3rem] lg:flex-row'
+                class='my-9 flex flex-col gap-8 text-[1.3rem] lg:my-0 lg:flex-row'
             >
                 {
                     menuItems

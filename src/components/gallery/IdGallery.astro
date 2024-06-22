@@ -1,8 +1,10 @@
 ---
+// Details of the selected picture
 import { Picture } from 'astro:assets';
-// import MiniGrid from '../../components/MiniGrid.astro'
-import LayoutArt from '@layouts/LayoutArt.astro';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
 import Arrow from '@assets/UI/Arrow.astro';
+// import MiniGrid from '../../components/MiniGrid.astro'
 
 const { title, data, url, year } = Astro.props;
 
@@ -20,58 +22,70 @@ const photoNumber = images?.id.toString().padStart(2, '0');
 // const nextPhoto = malereiData[photoIndex + 1];
 ---
 
-<LayoutArt title={title}>
-    <section class='h-full'>
-        <header>
-            <h2 class='text-3xl py-8 pl-20 font-bold'>
-                <span class='border-b-2 border-white pb-1'>Werke</span>
-            </h2>
-        </header>
-        <div
-            class='flex flex-col md:flex-row justify-evenly bg-white py-12 px-10'
-        >
-            <div class='flex w-1/3 flex-col md:justify-between items-center'>
-                <!-- titulo, numero, descripción -->
+<Layout
+    title={title}
+    backgroundColor='bg-white'
+    navbarProps='bg-white/60 backdrop-blur-sm drop-shadow-md'
+>
+    <Container classAstro='w-[60%] flex flex-col place-items-center pt-56'>
+        <!-- TODO check if this section is necessary. Double section -->
+        <section class='h-full'>
+            <header>
+                <h2 class='py-8 pl-20 text-3xl font-bold'>
+                    <span class='border-b-2 border-white pb-1'>Werke</span>
+                </h2>
+            </header>
+            <div
+                class='flex flex-col justify-evenly bg-white px-10 py-12 md:flex-row'
+            >
                 <div
-                    transition:name={`photo-details-${images?.id}`}
-                    class='py-2'
+                    class='flex w-full flex-col items-center md:w-1/3 md:justify-between'
                 >
-                    <div>
-                        <h2 class='text-2xl mb-4 mt-2'>
-                            <span class='italic font-extrabold'
-                                >{images?.title}</span
-                            >{images?.year === 0 ? null : `, ${images?.year}`}
-                        </h2>
+                    <!-- titulo, numero, descripción -->
+                    <div
+                        transition:name={`photo-details-${images?.id}`}
+                        class='py-2'
+                    >
+                        <div>
+                            <h2 class='mb-4 mt-2 text-2xl'>
+                                <span class='font-extrabold italic'
+                                    >{images?.title}</span
+                                >{
+                                    images?.year === 0
+                                        ? null
+                                        : `, ${images?.year}`
+                                }
+                            </h2>
+                        </div>
+
+                        <p>
+                            {images?.description}
+                        </p>
                     </div>
 
-                    <p>
-                        {images?.description}
-                    </p>
+                    <!-- arrow back to section -->
+                    <div class='h-28 self-start'>
+                        <a href={url}>
+                            <Arrow
+                                class='w-6 transition-all duration-300 ease-in-out hover:scale-150 md:w-10 lg:w-14'
+                            />
+                        </a>
+                        <!-- <MiniGrid currentPhotoId={photo?.id} /> -->
+                    </div>
                 </div>
-
-                <!-- arrow back to section -->
-                <div class='h-28'>
-                    <a href={url}>
-                        <Arrow
-                            class='w-6 m-auto hover:scale-150 transition-all duration-300 ease-in-out'
-                        />
-                    </a>
-
-                    <!-- <MiniGrid currentPhotoId={photo?.id} /> -->
+                <div class='flex-1'>
+                    <Picture
+                        class='max-w-3/4 pointer-events-none aspect-auto shadow-2xl shadow-gray-800'
+                        src={images?.imageUrl ?? ''}
+                        formats={['webp', 'avif']}
+                        alt={images?.title ?? ''}
+                        transition:name={`photo-${images?.id}`}
+                        id={images?.id.toString()}
+                        title={images?.title}
+                        oncontextmenu='return false'
+                    />
                 </div>
             </div>
-            <div class='flex-1'>
-                <Picture
-                    class='shadow-2xl shadow-gray-800 aspect-auto max-w-3/4 pointer-events-none'
-                    src={images?.imageUrl ?? ''}
-                    formats={['webp', 'avif']}
-                    alt={images?.title ?? ''}
-                    transition:name={`photo-${images?.id}`}
-                    id={images?.id.toString()}
-                    title={images?.title}
-                    oncontextmenu='return false'
-                />
-            </div>
-        </div>
-    </section>
-</LayoutArt>
+        </section>
+    </Container>
+</Layout>
