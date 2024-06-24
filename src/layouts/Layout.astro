@@ -34,12 +34,12 @@ import ObserverScript from '@helpers/ObserverScript.astro';
     </head>
     <body
         class:list={[
-            'bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen flex flex-col',
+            'bg-[#c4bab5]  x-auto min-h-screen flex flex-col',
             backgroundColor,
         ]}
     >
         <Navbar linkLogoClass='linkLogoClass' headerNavClass=`${navbarProps}` />
-        <main class='flex-grow'></main><slot />
+        <main class='flex-grow'><slot /></main>
         <Footer />
         <GlobalStyles />
         <ObserverScript />
@@ -55,7 +55,7 @@ import ObserverScript from '@helpers/ObserverScript.astro';
         overflow-y: scroll;
         line-height: 1;
         margin: 0;
-        background-size: 224px;
+        background-size: 224px; /* TODO is it necessary? */
         --color-text: #000;
         --color-link: #000;
         --color-link-hover: #000;

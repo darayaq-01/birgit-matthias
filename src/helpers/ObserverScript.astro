@@ -2,7 +2,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         const sentinel = document.getElementById('sentinel');
         const navbarElement = document.getElementById('navbar');
-        // const logoElement = navbarElement?.querySelector('.logoClass');
         const linkElement = navbarElement?.querySelector('.linkLogoClass');
 
         const observerOptions = {
@@ -16,13 +15,9 @@
                 if (!entry.isIntersecting) {
                     linkElement?.classList.remove('initial-scroll');
                     linkElement?.classList.add('on-scroll');
-                    // logoElement?.classList.remove('initial-scroll-svg');
-                    // logoElement?.classList.add('on-scroll');
                 } else {
                     linkElement?.classList.add('initial-scroll');
                     linkElement?.classList.remove('on-scroll');
-                    // logoElement?.classList.add('initial-scroll-svg');
-                    // logoElement?.classList.remove('on-scroll');
                 }
             });
         };
