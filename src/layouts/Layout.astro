@@ -4,12 +4,14 @@ interface Props {
     descriptionPage?: string;
     backgroundColor?: string;
     navbarProps?: string;
+    logoClassLayout?: string;
 }
 const {
     title,
     descriptionPage = 'Birgit Matthias Malerei',
     backgroundColor = 'bg-[#c4bab5]',
     navbarProps,
+    logoClassLayout,
 } = Astro.props;
 
 import Footer from '@sections/Footer.astro';
@@ -38,7 +40,11 @@ import ObserverScript from '@helpers/ObserverScript.astro';
             backgroundColor,
         ]}
     >
-        <Navbar linkLogoClass='linkLogoClass' headerNavClass=`${navbarProps}` />
+        <!-- 'linkLogoClass' as class is used to target the Logo with JS -->
+        <Navbar
+            linkLogoClass=`linkLogoClass ${logoClassLayout}`
+            headerNavClass=`${navbarProps}`
+        />
         <main class='flex-grow'><slot /></main>
         <Footer />
         <GlobalStyles />
@@ -364,7 +370,7 @@ keyboard-focus on browsers that do support*/
             width: 38%;
         }
         .grid {
-            grid-template-columns: repeat(4, 24%);
+            grid-template-columns: repeat(3, 32%);
         }
         .grid__cell--padded {
             padding: var(--grid-padding);
