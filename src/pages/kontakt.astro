@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
+import Form from '@components/Form.astro';
 ---
 
 <Layout
@@ -8,9 +9,10 @@ import Container from '@components/Container.astro';
     backgroundColor='bg-white'
     navbarProps='bg-white/60 backdrop-blur-sm drop-shadow-md'
 >
-    <Container classAstro='w-[60%] flex flex-col place-items-center pt-56'>
-        <section class='mx-32 mt-10 h-dvh bg-white py-24 pl-24'>
-            <h2 class='my-4 text-2xl font-bold'>BIRGIT MATTHIAS</h2>
+    <Container classAstro='w-[60%] flex place-items-center pt-56 gap-8'>
+        <Form articleClassForm='h-dvh border' />
+        <article class='h-dvh border'>
+            <h2 class='prose-2xl pb-8 font-bold uppercase'>BIRGIT MATTHIAS</h2>
             <ul class='prose text-balance'>
                 <li>
                     Gunta-Stölzl-Str. 15 <br />
@@ -18,8 +20,12 @@ import Container from '@components/Container.astro';
                 </li>
                 <li>Tel. 0 36 43 – 77 57 90</li>
                 <li>atelier@birgit-matthias.de</li>
-                <li>www.birgit-matthias.de</li>
+                <li>
+                    <a href='/' rel='noopener noreferrer'>
+                        www.birgit-matthias.de</a
+                    >
+                </li>
             </ul>
-        </section>
+        </article>
     </Container>
 </Layout>

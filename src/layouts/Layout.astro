@@ -5,6 +5,7 @@ interface Props {
     backgroundColor?: string;
     navbarProps?: string;
     logoClassLayout?: string;
+    mainSecctionClass?: string;
 }
 const {
     title,
@@ -12,6 +13,7 @@ const {
     backgroundColor = 'bg-[#c4bab5]',
     navbarProps,
     logoClassLayout,
+    mainSecctionClass,
 } = Astro.props;
 
 import Footer from '@sections/Footer.astro';
@@ -45,7 +47,7 @@ import ObserverScript from '@helpers/ObserverScript.astro';
             linkLogoClass=`linkLogoClass ${logoClassLayout}`
             headerNavClass=`${navbarProps}`
         />
-        <main class='flex-grow'><slot /></main>
+        <main class:list={['flex-grow', mainSecctionClass]}><slot /></main>
         <Footer />
         <GlobalStyles />
         <ObserverScript />
