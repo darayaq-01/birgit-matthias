@@ -12,5 +12,8 @@ export default defineConfig({
     // optimizeHoistedScript: true
   },
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
+  vite: {
+    envPrefix: "KEY_FORM"
+  }
 });
