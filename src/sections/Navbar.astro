@@ -36,7 +36,7 @@ const currentPath = Astro.url.pathname;
             <!-- hamburger button -->
             <div class='block lg:hidden'>
                 <MenuIcon
-                    class='my-class hover:text-black] h-8 w-8 font-bold text-red-700 lg:text-white'
+                    class='my-class hover:text-black] h-8 w-8 font-bold text-[--primary-color] lg:text-white'
                 />
             </div>
         </div>
@@ -52,7 +52,7 @@ const currentPath = Astro.url.pathname;
                                 <a
                                     data-link
                                     href={item?.path}
-                                    class={`navbar-link flex uppercase text-white  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_2px_2px_1px_rgb(30_28_28_/_97%)] ${currentPath === item.path ? 'active-item' : ''}`}
+                                    class={`navbar-link flex uppercase text-gray-700  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out  ${currentPath === item.path ? 'active-item' : ''}`}
                                 >
                                     {item.title}
                                 </a>

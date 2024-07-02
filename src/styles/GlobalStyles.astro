@@ -14,7 +14,7 @@
         --primary-color: #ec008c;
     }
     body {
-        max-width: 1440px;
+        /* max-width: 1440px; */
         margin: 0 auto;
         overflow-x: hidden;
     }
@@ -24,9 +24,13 @@
     .on-scroll {
         background-color: white;
         color: black;
+        transition-duration: 1000ms;
+        transition: all 0.5s ease-out;
     }
     .initial-scroll {
         background-color: var(--primary-color);
+        transition-duration: 1000ms;
+        transition: all 0.5s ease-out;
         color: white;
     }
 </style>

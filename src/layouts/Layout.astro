@@ -4,12 +4,14 @@ interface Props {
     descriptionPage?: string;
     backgroundColor?: string;
     navbarProps?: string;
+    logoClassLayout?: string;
 }
 const {
     title,
     descriptionPage = 'Birgit Matthias Malerei',
     backgroundColor = 'bg-[#c4bab5]',
     navbarProps,
+    logoClassLayout,
 } = Astro.props;
 
 import Footer from '@sections/Footer.astro';
@@ -34,12 +36,16 @@ import ObserverScript from '@helpers/ObserverScript.astro';
     </head>
     <body
         class:list={[
-            'bg-[#c4bab5] border border-[#885d47c7] shadow-2xl shadow-gray-80 x-auto min-h-screen flex flex-col',
+            'bg-[#c4bab5]/80  x-auto min-h-screen flex flex-col',
             backgroundColor,
         ]}
     >
-        <Navbar linkLogoClass='linkLogoClass' headerNavClass=`${navbarProps}` />
-        <main class='flex-grow'></main><slot />
+        <!-- 'linkLogoClass' as class is used to target the Logo with JS -->
+        <Navbar
+            linkLogoClass=`linkLogoClass md:mt-40 drop-shadow-sm mt-0 md:bg-white bg-transparent ${logoClassLayout}`
+            headerNavClass=`bg-white/60 backdrop-blur-sm drop-shadow-md h-30 md:h-16 ${navbarProps}`
+        />
+        <main class='flex-grow'><slot /></main>
         <Footer />
         <GlobalStyles />
         <ObserverScript />
@@ -55,7 +61,7 @@ import ObserverScript from '@helpers/ObserverScript.astro';
         overflow-y: scroll;
         line-height: 1;
         margin: 0;
-        background-size: 224px;
+        background-size: 224px; /* TODO is it necessary? */
         --color-text: #000;
         --color-link: #000;
         --color-link-hover: #000;
@@ -168,7 +174,7 @@ keyboard-focus on browsers that do support*/
     .grid {
         display: grid;
         /* --grid-border-radius: 8px; */
-        grid-template-columns: repeat(2, 50%);
+        grid-template-columns: repeat(2, 49%);
     }
 
     .grid--large {
@@ -364,7 +370,7 @@ keyboard-focus on browsers that do support*/
             width: 38%;
         }
         .grid {
-            grid-template-columns: repeat(4, 25%);
+            grid-template-columns: repeat(3, 32%);
         }
         .grid__cell--padded {
             padding: var(--grid-padding);
