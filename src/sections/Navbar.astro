@@ -52,7 +52,7 @@ const currentPath = Astro.url.pathname;
                                 <a
                                     data-link
                                     href={item?.path}
-                                    class={`navbar-link flex uppercase text-white  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out [text-shadow:_2px_2px_1px_rgb(30_28_28_/_97%)] ${currentPath === item.path ? 'active-item' : ''}`}
+                                    class={`navbar-link flex uppercase text-gray-700  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out  ${currentPath === item.path ? 'active-item' : ''}`}
                                 >
                                     {item.title}
                                 </a>

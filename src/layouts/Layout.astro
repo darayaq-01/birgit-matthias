@@ -42,8 +42,8 @@ import ObserverScript from '@helpers/ObserverScript.astro';
     >
         <!-- 'linkLogoClass' as class is used to target the Logo with JS -->
         <Navbar
-            linkLogoClass=`linkLogoClass ${logoClassLayout}`
-            headerNavClass=`${navbarProps}`
+            linkLogoClass=`linkLogoClass md:mt-40 drop-shadow-sm mt-0 md:bg-white bg-transparent ${logoClassLayout}`
+            headerNavClass=`bg-white/60 backdrop-blur-sm drop-shadow-md h-30 md:h-16 ${navbarProps}`
         />
         <main class='flex-grow'><slot /></main>
         <Footer />
