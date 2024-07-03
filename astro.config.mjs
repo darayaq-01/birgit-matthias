@@ -14,6 +14,9 @@ export default defineConfig({
   output: "server",
   adapter: netlify(),
   vite: {
-    envPrefix: "KEY_FORM"
-  }
+    define: {
+      'process.env.KEY_FORM': JSON.stringify(process.env.KEY_FORM),
+      'process.env.PUBLIC_API_FORM': JSON.stringify(process.env.PUBLIC_API_FORM)
+    }
+  },
 });
