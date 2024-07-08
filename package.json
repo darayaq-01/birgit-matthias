@@ -13,10 +13,12 @@
     "@astrojs/mdx": "3.0.0",
     "@astrojs/netlify": "5.2.1",
     "@astrojs/tailwind": "5.1.0",
+    "@netlify/plugin-lighthouse": "6.0.0",
     "@tailwindcss/typography": "0.5.13",
     "astro": "4.8.6",
     "astro-navbar": "2.3.2",
     "clsx": "2.1.1",
+    "netlify-cli": "^17.32.1",
     "tailwindcss": "3.4.3",
     "tailwindcss-animate": "1.0.7"
   },
