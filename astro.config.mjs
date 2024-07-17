@@ -13,10 +13,7 @@ export default defineConfig({
   },
   output: "server",
   adapter: netlify(),
-  vite: {
-    define: {
-      'process.env.KEY_FORM': JSON.stringify(process.env.KEY_FORM),
-      'process.env.PUBLIC_API_FORM': JSON.stringify(process.env.PUBLIC_API_FORM)
-    }
+  experimental: {
+    contentCollectionCache: true
   },
 });
