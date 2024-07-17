@@ -35,6 +35,9 @@ importers:
       netlify-cli:
         specifier: ^17.32.1
         version: 17.32.1(@types/node@20.14.9)
+      sharp:
+        specifier: ^0.33.4
+        version: 0.33.4
       tailwindcss:
         specifier: 3.4.3
         version: 3.4.3(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.3))
@@ -12358,7 +12361,6 @@ snapshots:
       '@img/sharp-wasm32': 0.33.4
       '@img/sharp-win32-ia32': 0.33.4
       '@img/sharp-win32-x64': 0.33.4
-    optional: true
 
   shebang-command@2.0.0:
     dependencies:
