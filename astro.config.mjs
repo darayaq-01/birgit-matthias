@@ -16,4 +16,10 @@ export default defineConfig({
   experimental: {
     contentCollectionCache: true
   },
+  vite: {
+    define: {
+      'process.env.KEY_FORM': JSON.stringify(process.env.KEY_FORM),
+      'process.env.PUBLIC_API_FORM': JSON.stringify(process.env.PUBLIC_API_FORM)
+    }
+  },
 });
