@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { articleClassForm } = Astro.props;
+
+export const prerender = true;
 ---
 
 <article class:list={[articleClassForm]}>
