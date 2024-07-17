@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
-import netlify from "@astrojs/netlify";
+import netlify from "@astrojs/netlify/functions";
 
 
 // https://astro.build/config
@@ -13,10 +13,4 @@ export default defineConfig({
   },
   output: "server",
   adapter: netlify(),
-  vite: {
-    define: {
-      'process.env.KEY_FORM': JSON.stringify(process.env.KEY_FORM),
-      'process.env.PUBLIC_API_FORM': JSON.stringify(process.env.PUBLIC_API_FORM)
-    }
-  },
 });
