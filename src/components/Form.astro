@@ -10,28 +10,6 @@ const { articleClassForm } = Astro.props;
     <h2 class='prose-2xl pb-8 font-bold uppercase'>Kontakt</h2>
 
     <form
-        name='contact'
-        method='POST'
-        data-netlify='true'
-        netlify-honeypot='bot-field'
-    >
-        <input type='hidden' name='form-name' value='contact' />
-
-        <label for='name'>Name</label>
-        <input type='text' id='name' name='name' required />
-
-        <label for='email'>Email</label>
-        <input type='email' id='email' name='email' required />
-
-        <label for='message'>Message</label>
-        <textarea id='message' name='message'></textarea>
-
-        <button type='submit'>Send</button>
-    </form>
-</article>
-
-<!-- 
-<form
         name='kontakt'
         method='POST'
         data-netlify='true'
@@ -39,7 +17,7 @@ const { articleClassForm } = Astro.props;
         action='/success'
         class='needs-validation flex flex-col rounded-lg'
     >
-        <input type='hidden' name='form-name' value='contact' />
+        <input type='hidden' name='form-name' value='kontakt' />
 
         <div class='mb-4 flex flex-col'>
             <label for='email' class='prose-sm text-gray-600'>Email</label>
@@ -65,5 +43,27 @@ const { articleClassForm } = Astro.props;
             class='prose rounded border-0 bg-[#ec008c]/50 px-6 py-2 text-lg font-bold uppercase text-white hover:bg-[#ec008c] focus:outline-none'
             >Send</button
         >
+    </form>
+</article>
+
+<!-- 
+<form
+        name='contact'
+        method='POST'
+        data-netlify='true'
+        netlify-honeypot='bot-field'
+    >
+        <input type='hidden' name='form-name' value='contact' />
+
+        <label for='name'>Name</label>
+        <input type='text' id='name' name='name' required />
+
+        <label for='email'>Email</label>
+        <input type='email' id='email' name='email' required />
+
+        <label for='message'>Message</label>
+        <textarea id='message' name='message'></textarea>
+
+        <button type='submit'>Send</button>
     </form>
 -->
