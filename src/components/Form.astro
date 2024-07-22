@@ -7,7 +7,7 @@ const { articleClassForm } = Astro.props;
 ---
 
 <article class:list={[articleClassForm]}>
-    <h2 class='prose-2xl pb-8 font-bold uppercase'>Kontakt</h2>
+    <h2 class='w-fit pb-4 pt-8 text-3xl font-bold uppercase'>Kontakt</h2>
 
     <form
         name='kontakt'
@@ -19,7 +19,7 @@ const { articleClassForm } = Astro.props;
     >
         <input type='hidden' name='form-name' value='kontakt' />
 
-        <div class='mb-4 flex flex-col'>
+        <div class='lg:prose-3xl prose prose-2xl mb-4 flex flex-col'>
             <label for='email' class='prose-sm text-gray-600'>Email</label>
             <input
                 type='email'

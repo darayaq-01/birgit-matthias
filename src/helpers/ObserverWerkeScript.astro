@@ -1,0 +1,29 @@
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sentinel = document.getElementById('sentinel2');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5,
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    console.log('not intersecting');
+                } else {
+                    console.log('intersecting');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(
+            observerCallback,
+            observerOptions
+        );
+        if (sentinel) {
+            observer.observe(sentinel);
+        }
+    });
+</script> -->

@@ -9,7 +9,6 @@ interface Props {
     linkLogoClass?: string;
 }
 const { logoClass, headerNavClass, linkLogoClass, ...rest } = Astro.props;
-
 const currentPath = Astro.url.pathname;
 ---
 
@@ -17,7 +16,7 @@ const currentPath = Astro.url.pathname;
     data-header
     id='navbar'
     class:list={[
-        'fixed w-full  pt-3 px-20 flex flex-col items-center justify-between lg:flex-row top-0 z-50',
+        'fixed w-full pt-3 px-20 flex flex-col items-center justify-between lg:flex-row top-0 z-50',
         headerNavClass,
     ]}
 >
@@ -36,7 +35,7 @@ const currentPath = Astro.url.pathname;
             <!-- hamburger button -->
             <div class='block lg:hidden'>
                 <MenuIcon
-                    class='my-class hover:text-black] h-8 w-8 font-bold text-[--primary-color] lg:text-white'
+                    class='my-class h-8 w-8 font-bold text-[--primary-color] hover:text-black lg:text-white'
                 />
             </div>
         </div>
@@ -52,7 +51,7 @@ const currentPath = Astro.url.pathname;
                                 <a
                                     data-link
                                     href={item?.path}
-                                    class={`navbar-link flex uppercase text-gray-700  hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out  ${currentPath === item.path ? 'active-item' : ''}`}
+                                    class={`navbar-link flex uppercase text-gray-700 hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out ${currentPath === item.path ? 'active-item' : ''}`}
                                 >
                                     {item.title}
                                 </a>
@@ -63,9 +62,3 @@ const currentPath = Astro.url.pathname;
         </MenuItems>
     </Astronav>
 </header>
-
-<style>
-    .active-item {
-        color: var(--primary-color);
-    }
-</style>
