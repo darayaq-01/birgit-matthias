@@ -10,7 +10,6 @@ const { articleClassForm } = Astro.props;
     <h2 class='prose-2xl pb-8 font-bold uppercase'>Kontakt</h2>
 
     <form
-        id='contact-form'
         name='kontakt'
         method='POST'
         data-netlify='true'
@@ -19,7 +18,7 @@ const { articleClassForm } = Astro.props;
         data-netlify-recaptcha='true'
         class='needs-validation flex flex-col rounded-lg'
     >
-        <input type='hidden' name='form-name' value='kontakt' />
+        <input type='hidden' name='form-name' value='Kontakt' />
 
         <div class='mb-4 flex flex-col'>
             <label for='email' class='prose-sm text-gray-600'>Email</label>
@@ -47,23 +46,3 @@ const { articleClassForm } = Astro.props;
         >
     </form>
 </article>
-
-<script is:inline>
-    document
-        .getElementById('contact-form')
-        .addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const form = event.target;
-            const formData = new FormData(form);
-
-            fetch('/', {
-                method: 'POST',
-                body: formData,
-            })
-                .then(() => {
-                    window.location.href = form.action;
-                })
-                .catch((error) => console.error('Error:', error));
-        });
-</script>
