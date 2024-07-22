@@ -14,11 +14,10 @@ const { articleClassForm } = Astro.props;
         method='POST'
         data-netlify='true'
         netlify-honeypot='bot-field'
-        action='/success'
-        data-netlify-recaptcha='true'
+        action='/success/'
         class='needs-validation flex flex-col rounded-lg'
     >
-        <input type='hidden' name='form-name' value='Kontakt' />
+        <input type='hidden' name='form-name' value='kontakt' />
 
         <div class='mb-4 flex flex-col'>
             <label for='email' class='prose-sm text-gray-600'>Email</label>
