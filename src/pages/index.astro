@@ -15,15 +15,15 @@ import ImageBackground from '@assets/background-about.jpg';
 <Layout title='Birgit Mathias Malerei'>
     <Hero>
         <div
-            class='flex flex-col justify-center items-end h-full drop-shadow-2xl'
+            class='flex h-full flex-col items-end justify-center drop-shadow-2xl'
         >
             <CallToAction />
         </div>
     </Hero>
-    <div id='sentinel' class='w-full h-1'></div>
+    <div id='sentinel' class='h-1 w-full'></div>
     <main>
         <div
-            class='bg-cover bg-no-repeat aspect-auto'
+            class='aspect-auto bg-cover bg-no-repeat'
             style=`background-image: url(${ImageBackground.src}); height: {ImageBackground.height}; width: {ImageBackground.width}; alt="background";`
         >
             <Description />

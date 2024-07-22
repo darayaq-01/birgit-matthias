@@ -1,33 +1,72 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const sentinel = document.getElementById('sentinel');
-        const navbarElement = document.getElementById('navbar');
-        const linkElement = navbarElement?.querySelector('.linkLogoClass');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '10px',
-            threshold: 0,
+        // config obeserver
+        const createObserver = (target, callback, options) => {
+            if (target) {
+                const observer = new IntersectionObserver(callback, options);
+                observer.observe(target);
+            }
         };
 
-        const observerCallback = (entries) => {
+        // Callback 1st observer
+        const handleNavbarVisibility = (entries) => {
+            const linkElement = document.querySelector(
+                '#navbar .linkLogoClass'
+            );
             entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    linkElement?.classList.remove('initial-scroll');
-                    linkElement?.classList.add('on-scroll');
-                } else {
-                    linkElement?.classList.add('initial-scroll');
-                    linkElement?.classList.remove('on-scroll');
+                if (linkElement) {
+                    if (!entry.isIntersecting) {
+                        linkElement.classList.remove('initial-scroll');
+                        linkElement.classList.add('on-scroll');
+                    } else {
+                        linkElement.classList.add('initial-scroll');
+                        linkElement.classList.remove('on-scroll');
+                    }
                 }
             });
         };
 
-        const observer = new IntersectionObserver(
-            observerCallback,
-            observerOptions
+        // Callback 2nd observer
+        const handleSentinelVisibility = (entries) => {
+            entries.forEach((entry) => {
+                const werkeMenuItem = document.querySelector(
+                    '[data-link][href="/#werke"]'
+                );
+                const homeMenuItem = document.querySelector(
+                    '[data-link][href="/"]'
+                );
+                if (entry.isIntersecting) {
+                    werkeMenuItem?.classList.add('active-item');
+                    homeMenuItem?.classList.remove('active-item');
+                } else {
+                    werkeMenuItem?.classList.remove('active-item');
+                    homeMenuItem?.classList.add('active-item');
+                }
+            });
+        };
+
+        // Config options
+        const observerOptions1 = {
+            root: null,
+            rootMargin: '10px',
+            threshold: 0,
+        };
+        const observerOptions2 = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2,
+        };
+
+        // Create and configure observers
+        createObserver(
+            document.getElementById('sentinel'),
+            handleNavbarVisibility,
+            observerOptions1
         );
-        if (sentinel) {
-            observer.observe(sentinel);
-        }
+        createObserver(
+            document.getElementById('werke'),
+            handleSentinelVisibility,
+            observerOptions2
+        );
     });
 </script>
