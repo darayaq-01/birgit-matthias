@@ -27,3 +27,11 @@ export type dataCTA = {
     date: string
     link?: string
 }
+
+export type linksTypes = {
+    name: string;
+    url: string;
+    imgSrc?: string;
+    imgHeight?: number;
+    alt?: string;
+}

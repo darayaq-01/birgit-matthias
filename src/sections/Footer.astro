@@ -9,7 +9,7 @@ const currentPath = Astro.url.pathname;
     <Container>
         <ul class='flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-10'>
             {
-                links.map((item) => (
+                links.slice(0, 4).map((item) => (
                     <li>
                         <a
                             href={item.url}

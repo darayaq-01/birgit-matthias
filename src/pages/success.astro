@@ -1,1 +1,28 @@
-Thanks for your message!
+---
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+import { links } from '@consts/links';
+import Link from '@components/ui/Link.astro';
+
+const lastLink = links[links.length - 1];
+---
+
+<Layout
+    title='Kontakt'
+    backgroundColor='bg-white'
+    navbarProps='bg-white/60 backdrop-blur-sm drop-shadow-md'
+>
+    <Container
+        classAstro='flex flex-col md:flex-row place-items-center pt-56 gap-8 md:gap-16 h-[calc(75vh-4rem)]'
+    >
+        <p class='prose text-balance'>
+            Vielen Dank für Ihre Nachricht. Wenn Sie nicht bald eine Antwort
+            erhalten, versuchen Sie Birgit direkt über ihre E-Mail-Adresse zu
+            schreiben: <a
+                class='inline-block outline-1 delay-150 duration-300 ease-in-out hover:font-bold hover:text-[--primary-color] hover:transition'
+                href=`${lastLink.url}`>{lastLink.name}</a
+            >
+        </p>
+        <Link style='primary' href='/'>Züruk zum unsere Startsite</Link>
+    </Container>
+</Layout>
