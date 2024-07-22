@@ -1,4 +1,4 @@
-import type { dataCTA } from "@utils/types";
+import type { dataCTA } from "@utils/types.d.ts";
 
 export const INFO_CTA: dataCTA[] = [
     {
