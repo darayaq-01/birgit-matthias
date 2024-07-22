@@ -5,26 +5,37 @@ import { Image } from 'astro:assets';
 type Props = CollectionEntry<'presse'>['data'];
 
 const { title, cover, coverAlt } = Astro.props;
-
-import LayoutArt from '@layouts/LayoutArt.astro';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
 import Link from '@components/ui/Link.astro';
 ---
 
-<LayoutArt title={title}>
-    <section class='flex min-h-screen items-center justify-center bg-gray-100'>
-        <div class='m-6 rounded bg-white p-8 shadow-lg'>
-            <div class=''>
+<Layout
+    title={title}
+    backgroundColor='bg-white'
+    navbarProps='bg-white/60 backdrop-blur-sm drop-shadow-md'
+>
+    <Container
+        classAstro='w-fit lg:w-[60%] flex flex-col place-items-center pt-28 md:pt-56 lg:pt-28 '
+    >
+        <div class='rounded bg-white p-8 shadow-lg md:m-6'>
+            <div>
                 {cover && <Image width={1020} src={cover} alt={coverAlt} />}
             </div>
 
             <div class='my-8'>
-                <h1 class='py-4 text-3xl'>{title}</h1>
+                <h2 class='w-fit py-8 text-3xl font-bold'>
+                    {title}
+                </h2>
             </div>
-            <article class='prose lg:prose-xl'>
-                <slot />
-            </article><div class='py-6'>
-                <Link href='/aktuelles'>« Züruk</Link>
+            <article class='lg:prose-3xl prose prose-2xl'>
+                <p class='max-w-prose'>
+                    <slot />
+                </p>
+            </article>
+            <div class='pb-6 pt-12'>
+                <Link href='/aktuelles' class='md:prose-2xl'>« Züruk</Link>
             </div>
         </div>
-    </section>
-</LayoutArt>
+    </Container>
+</Layout>
