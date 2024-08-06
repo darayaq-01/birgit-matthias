@@ -8,72 +8,12 @@ import Container from '@components/Container.astro';
             <span class='border-b-2 border-white pb-1'>Video</span>
         </h2>
     </header>
-    <div class='relative h-96 w-full animate-pulse rounded-lg bg-gray-600'>
-        <div class='absolute inset-0 flex items-center justify-center'>
-            <svg
-                class='h-12 w-12 text-gray-400'
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-            >
-                <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
-                    d='M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z'
-                ></path>
-                <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
-                    d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
-            </svg>
-        </div>
-        <span class='sr-only'>Loading...</span>
-    </div>
-
-    <!-- 
-
----
-const { classAstro, ...rest } = Astro.props;
----
-
-<section class={`relative ${classAstro}`} {...rest}>
-    <div class="video-container" style="width: 100%; height: 0; padding-bottom: 56.25%;">
-        <video id="video" class="absolute left-0 top-0 h-full w-full" controls>
-            <source data-src="https://your-cdn.com/path/to/your/video.webm" type="video/webm">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const video = document.getElementById('video');
-        const videoSource = video.querySelector('source');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    videoSource.src = videoSource.dataset.src;
-                    video.load();
-                    observer.unobserve(video);
-                }
-            });
-        }, {
-            threshold: 0.25
-        });
-
-        observer.observe(video);
-    });
-</script>
-
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-
-
-
- -->
+    <video
+        class='aspect-video object-cover object-center md:pt-24'
+        autoplay
+        muted
+        loop
+        preload='auto'
+        controls
+        src='/video.mp4'></video>
 </Container>
