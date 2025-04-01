@@ -16,10 +16,7 @@ const presse = defineCollection({
                 .string()
                 .optional()
                 .transform((str) => (str ? new Date(str) : undefined)),
-            cover: image().refine((img) => img.width >= 100, {
-                // change to the actual minimum width
-                message: 'Cover image must be at least 1080 pixels wide!'
-            }),
+            cover: image(),
             coverAlt: z.string(),
             link: z.string(),
         })
@@ -43,9 +40,7 @@ const ausstellungen = defineCollection({
                 .string()
                 .optional()
                 .transform((str) => (str ? new Date(str) : undefined)),
-            cover: image().refine((img) => img.width >= 100, { // change to the actual minimum width
-                message: 'Cover image must be at least 1080 pixels wide!'
-            }),
+            cover: image(),
             coverAlt: z.string()
         })
 })
