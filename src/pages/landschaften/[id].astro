@@ -1,0 +1,14 @@
+---
+import IdGallery from '@components/gallery/IdGallery.astro';
+import { landschaftenData } from '@consts/landschaftenData';
+
+export async function getStaticPaths() {
+    return landschaftenData.map((item) => ({
+        params: { id: item.id.toString() },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<IdGallery title={item.title} data={landschaftenData} url='/landschaften' />
