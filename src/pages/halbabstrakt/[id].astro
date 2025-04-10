@@ -1,0 +1,14 @@
+---
+import IdGallery from '@components/gallery/IdGallery.astro';
+import { halbabstraktData } from '@consts/halbabstraktData';
+
+export async function getStaticPaths() {
+    return halbabstraktData.map((item) => ({
+        params: { id: item.id.toString() },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<IdGallery title={item.title} c data={halbabstraktData} url='/halbabstrakt' />

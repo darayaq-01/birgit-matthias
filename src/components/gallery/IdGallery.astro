@@ -4,22 +4,11 @@ import { Picture } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import Arrow from '@assets/UI/Arrow.astro';
-// import MiniGrid from '../../components/MiniGrid.astro'
 
 const { title, data, url, year } = Astro.props;
 
-export async function getStaticPaths() {
-    return data.map((el) => ({ params: { id: el.id } }));
-}
-export const prerender = true;
-
 const { id } = Astro.params;
 const images = data.find((image) => image.id == id);
-const photoIndex = data.findIndex((images) => images.id == id);
-const photoNumber = images?.id.toString().padStart(2, '0');
-
-// const prevPhoto = malereiData[photoIndex - 1];
-// const nextPhoto = malereiData[photoIndex + 1];
 ---
 
 <Layout title={title} backgroundColor='bg-white' navbarProps='bg-white/70'>

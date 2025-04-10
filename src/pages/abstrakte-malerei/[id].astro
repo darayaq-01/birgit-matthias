@@ -1,0 +1,14 @@
+---
+import IdGallery from '@components/gallery/IdGallery.astro';
+import { malereiData } from '@consts/abstrakteMalereiData';
+
+export async function getStaticPaths() {
+    return malereiData.map((item) => ({
+        params: { id: item.id.toString() },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<IdGallery title={item.title} data={malereiData} url='/abstrakte-malerei' />
