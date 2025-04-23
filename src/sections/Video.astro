@@ -1,5 +1,19 @@
 ---
 import Container from '@components/Container.astro';
+import VideoContainer from '@components/VideoContainer.svelte';
+
+import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
+import { videoQuery } from '@api/query.js';
+
+// Fetch en el lado del servidor
+let videoData;
+try {
+    const response = await fetchDatoCMS(videoQuery);
+    videoData = response.data;
+} catch (error) {
+    console.error('Error fetching video:', error);
+    videoData = null;
+}
 ---
 
 <Container classAstro='min-h-fit py-10'>
@@ -8,12 +22,20 @@ import Container from '@components/Container.astro';
             <span class='border-b-2 border-white pb-1'>Video</span>
         </h2>
     </header>
-    <video
-        class='aspect-video object-cover object-center md:pt-24'
-        autoplay
-        muted
-        loop
-        preload='auto'
-        controls
-        src='/video.mp4'></video>
+
+    {
+        videoData ? (
+            <VideoContainer client:load videoData={videoData} />
+        ) : (
+            <div class='error'>Error cargando el video</div>
+        )
+    }
 </Container>
+
+<style>
+    .error {
+        color: #dc3545;
+        padding: 1rem;
+        border: 1px solid currentColor;
+    }
+</style>
