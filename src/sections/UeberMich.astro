@@ -1,7 +1,19 @@
 ---
+import { StructuredText } from '@datocms/astro/StructuredText';
+import { executeQuery } from '@datocms/cda-client';
+
 import { Picture } from 'astro:assets';
 import imageComponent from '@assets/birgit.avif';
 import Container from '@components/Container.astro';
+
+import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
+import { dataQuery } from '@api/query.js';
+
+const json = await fetchDatoCMS(dataQuery);
+if (!json) {
+    throw new Error('Failed to fetch data');
+}
+const data = json.data.ueberMich;
 ---
 
 <Container
@@ -11,12 +23,14 @@ import Container from '@components/Container.astro';
         <header class='ml-32'>
             <h2 class='text-3xl pb-2 md:pb-16 font-bold'>
                 <span class='border-b-2 text-white border-white pb-1'
-                    >Über mich</span
+                    >{data.title}</span
                 >
             </h2>
         </header>
         <div class='w-full prose prose-2xl py-10'>
-            <p class='text-pretty'>
+            <StructuredText data={data.description} />
+            <!--
+             <p class='text-pretty'>
                 Ich bin freie Künstlerin und wohne und arbeite in Weimar.
             </p>
             <p class='text-pretty'>
@@ -47,7 +61,8 @@ import Container from '@components/Container.astro';
             </p>
             <p class='text-pretty'>
                 Seit Oktober 2015 bin ich hauptberuflich freie Malerin
-            </p>
+            </p> 
+            -->
         </div>
     </article>
 

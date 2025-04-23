@@ -35,3 +35,20 @@ export type linksTypes = {
     imgHeight?: number;
     alt?: string;
 }
+
+declare namespace Dato {
+    type Video = {
+        mp4Url?: string;
+        muxAssetId?: string;
+        streamingUrl: string;
+        muxPlaybackId: string;
+    };
+
+    type VideoSection = {
+        videoSection: {
+            videoArtist: {
+                video: Video;
+            };
+        };
+    };
+}
