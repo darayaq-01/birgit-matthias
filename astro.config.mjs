@@ -11,5 +11,5 @@ export default defineConfig({
   },
 
   adapter: netlify(),
-  integrations: [svelte({ extensions: ['.svelte'] })],
+  integrations: [svelte()],
 });
