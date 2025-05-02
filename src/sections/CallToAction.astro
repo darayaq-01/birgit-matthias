@@ -1,21 +1,39 @@
 ---
-import { INFO_CTA } from '@consts/INFO_CTA';
+import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
+import { nextEventQuery } from '@api/query.js';
+import { StructuredText } from '@datocms/astro/StructuredText';
+
+const json = await fetchDatoCMS(nextEventQuery);
+if (!json) {
+    throw new Error('Failed to fetch data');
+}
+const data = json.data.nextEvent;
+console.log({ data });
 ---
 
-<section>
-    {
-        INFO_CTA.map((cta) => {
-            return (
-                <div class='flex flex-col md:flex-row bg-[#1e0576]'>
-                    <div class='px-7 py-5 font-normal text-white '>
-                        <h1 class='text-pretty mb-4 text-4xl font-bold underline leading-none tracking-tight '>
-                            {cta.title}
-                        </h1>
-                        <p class='text-2xl leading-normal'>{cta.venue}</p>
-                        <p class='text-2xl leading-normal'>{cta.date}</p>
-                    </div>
+{
+    data.title === '' ? null : (
+        <section>
+            <div class='flex flex-col md:flex-row bg-[#1e0576]'>
+                <div class='px-7 py-5 font-normal text-white'>
+                    <h1 class='text-pretty mb-4 text-4xl font-bold underline leading-none tracking-tight'>
+                        {data.title}
+                    </h1>
+                    <p class='text-2xl leading-normal'>{data.venue}</p>
+                    <p class='text-2xl leading-normal'>{data.dateEvent}</p>
+
+                    {data.description && (
+                        <div class='text-2xl leading-normal'>
+                            <StructuredText data={data.description} />
+                        </div>
+                    )}
+                    {data.linkEvent && (
+                        <div class=' leading-normal underline hover:font-bold hover:transition-all hover:duration-300'>
+                            <StructuredText data={data.linkEvent} />
+                        </div>
+                    )}
                 </div>
-            );
-        })
-    }
-</section>
+            </div>
+        </section>
+    )
+}
