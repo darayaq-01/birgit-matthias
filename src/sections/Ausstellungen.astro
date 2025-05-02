@@ -2,6 +2,17 @@
 import { Picture } from 'astro:assets';
 import imageComponent from '@assets/ausstellungen.avif';
 import Container from '@components/Container.astro';
+
+import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
+import { ausstellungQuery } from '@api/query.js';
+import { StructuredText } from '@datocms/astro/StructuredText';
+
+const json = await fetchDatoCMS(ausstellungQuery);
+if (!json) {
+    throw new Error('Failed to fetch data');
+}
+const data = json.data.ausstellungen;
+console.log(data);
 ---
 
 <Container
@@ -23,7 +34,14 @@ import Container from '@components/Container.astro';
 
     <article class='flex-1 h-fit md:py-5'>
         <div class='md:my-10 max-w-prose'>
-            <h3 class='prose prose-2xl py-5 font-bold'>Einzelausstellungen</h3>
+            <h3 class='prose prose-2xl py-5 font-bold'>{data.title}</h3>
+
+            <div class='prose prose-2xl list-none test'>
+                <StructuredText data={data.einzelausstellungen} />
+            </div>
+
+            <hr class='my-10' />
+
             <ul class='prose prose-2xl'>
                 <li class='flex gap-6 my-2'>
                     <div>2016</div>
@@ -53,15 +71,24 @@ import Container from '@components/Container.astro';
         </div>
         <div>
             <h3 class='prose prose-2xl py-5 font-bold'>
-                Ausstellungsbeteiligungen
+                {data.title2}
             </h3>
-            <p class='text-pretty prose prose-2xl max-w-prose'>
+            <StructuredText data={data.list2} />
+            <!-- <p class='text-pretty prose prose-2xl max-w-prose'>
                 Mal- und Zeichenschule Weimar: In den Werkschauen, Aus-
                 leihungen an fördernde Unternehmen wie Grafe, Blanken- hain und
                 Bayer AG, Weimar, Thüringer Landtag, Gruppenausstellungen mit
                 dem Malkurs Roger Bonnard im Erbenhof, Weimar und Seebachstift,
                 Weimar.
-            </p>
+            </p> -->
         </div>
     </article>
 </Container>
+<style>
+    .test & {
+        ul {
+            list-style-type: none;
+            border: 1px solid red;
+        }
+    }
+</style>
