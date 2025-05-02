@@ -1,6 +1,5 @@
 ---
 import { StructuredText } from '@datocms/astro/StructuredText';
-import { executeQuery } from '@datocms/cda-client';
 
 import { Picture } from 'astro:assets';
 import imageComponent from '@assets/birgit.avif';
@@ -29,40 +28,6 @@ const data = json.data.ueberMich;
         </header>
         <div class='w-full prose prose-2xl py-10'>
             <StructuredText data={data.description} />
-            <!--
-             <p class='text-pretty'>
-                Ich bin freie Künstlerin und wohne und arbeite in Weimar.
-            </p>
-            <p class='text-pretty'>
-                Nach dem Abitur 1984 in Lübeck habe ich eine Tischlerlehre
-                absolviert, während der ich an der Werkkunstschule Lübeck
-                Mappenvorbereitungskurse bei Detlef Moraht besucht habe.
-            </p>
-            <p class='text-pretty'>
-                Ab 1987 Innenarchitekturstudium an der Akademie der bildenden
-                Künste in Stuttgart darauf 1989 Auslandsaufenthalt in den USA,
-                Los Angeles.
-            </p>
-            <p class='text-pretty'>
-                Von 1990-1993 Studium der Betriebswirtschaft in Kiel, dazu
-                externe Prüfung zur Bankkauffrau. Parallel dazu weitere Malkurse
-                bei Detlef Moraht in Lübeck.
-            </p>
-            <p class='text-pretty'>
-                1996 Umzug nach Frankfurt a.M. – mehrere Aufenthalte an der
-                Europäischen Akademie für bildende Kunst e.V. in Trier im Rahmen
-                der Sommerakademien: Zeichnen, abstrakte Malerei, Bildhauerei.
-            </p>
-            <p class='text-pretty'>
-                Ab 1998 Beginn freie Malerei in eigenem Atelier und 2000 Umzug
-                nach Weimar, Kurs im Hofatelier Niedergrunstedt und regelmäßige
-                Kurse an der Mal- und Zeichenschule Weimar vorwiegend bei Roger
-                Bonnard, Karsten Kunert und Peter Stechert.
-            </p>
-            <p class='text-pretty'>
-                Seit Oktober 2015 bin ich hauptberuflich freie Malerin
-            </p> 
-            -->
         </div>
     </article>
 

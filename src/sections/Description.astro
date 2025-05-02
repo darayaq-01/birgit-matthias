@@ -1,35 +1,21 @@
 ---
 import Container from '@components/Container.astro';
+
+import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
+import { descriptionQuery } from '@api/query.js';
+import { StructuredText } from '@datocms/astro/StructuredText';
+
+const json = await fetchDatoCMS(descriptionQuery);
+if (!json) {
+    throw new Error('Failed to fetch data');
+}
+const data = json.data.description;
 ---
 
 <Container classAstro='w-fit flex place-items-center'>
     <article
         class='prose prose-2xl lg:prose-3xl bg-slate-200/80 px-4 lg:max-w-full p-14 md:py-32 h-full'
     >
-        <p class='max-w-prose'>
-            Ich arbeite hauptsächlich abstrakt mit Acryl auf Leinwand. Die
-            Formate sind in der Regel groß gewählt.
-        </p>
-        <p class='max-w-prose'>
-            Abstrakte Malerei ist für mich Komponieren und Erfinden, Verwenden
-            und Verfremden bekannter Seh- und Malweisen, Spielen mit Impulsen,
-            die bei dem Malprozess entstehen und Schaffen neuer Realitäten –
-            vielleicht vergleichbar mit der Komposition von Musik, nur mit Farbe
-            und Form.
-        </p>
-
-        <p class='max-w-prose'>
-            Den Begriff der „halbabstrakten Malerei“ habe ich kreiert, um den
-            Stil meiner Bilder zu definieren.
-        </p>
-        <p class='max-w-prose'>
-            Vordergründig abstrakte Bilder erhalten eine zusätzliche Ebene,
-            indem sie konkrete Inhalte erahnen lassen.
-        </p>
-
-        <p class='max-w-prose'>
-            Mir geht es um die tiefe Schönheit der Welt, der Menschen und der
-            Natur, diese zu ergründen und mit Farben sichtbar zu machen.
-        </p>
+        <StructuredText data={data.descriptionContent} />
     </article>
 </Container>
