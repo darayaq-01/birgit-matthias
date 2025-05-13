@@ -5,7 +5,7 @@ import VideoContainer from '@components/VideoContainer.svelte';
 import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
 import { videoQuery } from '@api/query.js';
 
-// Fetch en el lado del servidor
+// Fetch server-side data
 let videoData;
 try {
     const response = await fetchDatoCMS(videoQuery);
