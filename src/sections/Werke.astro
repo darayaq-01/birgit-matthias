@@ -4,7 +4,7 @@ import { werkeData } from '@consts/werkeData';
 import Container from '@components/Container.astro';
 ---
 
-<Container classAstro='min-h-screen' id='werke'>
+<Container classAstro=' mt-16 ' id='werke'>
     <header class='ml-32'>
         <h2 class='pb-16 text-3xl font-bold'>
             <span class='border-b-2 border-white pb-1'>Werke</span>
@@ -12,23 +12,23 @@ import Container from '@components/Container.astro';
     </header>
 
     <article
-        class='grid grid-cols-1 gap-4 bg-white p-4 md:grid-cols-2 md:p-10 lg:grid-cols-3'
+        class='flex flex-col lg:w-fit lg:flex-row gap-4 bg-white p-4 md:p-10'
     >
         {
             werkeData.map((w) => (
                 <a
                     href={w.slug}
-                    class='relative flex aspect-square gap-10 hover:drop-shadow'
+                    class='relative flex aspect-square lg:w-1/3 gap-10 hover:drop-shadow'
                 >
                     <Image
                         alt='gallery'
-                        class='absolute inset-0 h-full w-full object-cover object-center'
+                        class='absolute inset-0 h-full w-fit object-cover object-center'
                         src={w.imageUrl}
                         height={w.height}
                         width={w.width}
                     />
-                    <article class='relative z-10 flex w-full flex-col items-center justify-center p-8'>
-                        <h3 class='text-shadow-custom w-fit hyphens-auto text-balance break-words border-b-4 border-white p-6 text-center text-2xl font-extrabold leading-relaxed text-white hover:scale-110 md:text-base lg:text-4xl'>
+                    <article class='relative z-10 flex w-full flex-col items-center justify-center p-2'>
+                        <h3 class='text-shadow-custom w-fit hyphens-auto text-balance break-words border-b-4 border-white p-6 lg:p-2 text-center text-4xl lg:text-2xl font-extrabold leading-relaxed text-white hover:scale-110'>
                             {w.title}
                         </h3>
                     </article>

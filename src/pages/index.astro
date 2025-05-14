@@ -23,16 +23,13 @@ import ImageDescription from '@assets/background-about.jpg';
     </Hero>
     <div id='sentinel' class='h-1 w-full'></div>
     <main>
-        <div
-            class='aspect-auto bg-cover bg-no-repeat'
-            style=`background-image: url(${ImageDescription.src}); height: {ImageDescription.height}; width: {ImageDescription.width}; alt="background";`
-        >
+        <Werke data-section id='werke' />
+        <Ausstellungen />
+        <div class='bg-white'>
             <Description />
         </div>
         <UeberMich />
         <Video />
-        <Ausstellungen />
-        <Werke data-section id='werke' />
     </main>
 </Layout>
 <Footer />
