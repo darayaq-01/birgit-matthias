@@ -1,9 +1,9 @@
 ---
 import IdGallery from '@components/gallery/IdGallery.astro';
-import { landschaftenData } from '@consts/landschaftenData';
+import { auftragsarbeitenData } from '@consts/__auftragsarbeitenData';
 
 export async function getStaticPaths() {
-    return landschaftenData.map((item) => ({
+    return auftragsarbeitenData.map((item) => ({
         params: { id: item.id.toString() },
         props: { item },
     }));
@@ -11,4 +11,8 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 ---
 
-<IdGallery title={item.title} data={landschaftenData} url='/landschaften' />
+<IdGallery
+    title={item.title}
+    data={auftragsarbeitenData}
+    url='/auftragsarbeiten'
+/>
