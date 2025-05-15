@@ -12,6 +12,6 @@
               streamingUrl={videoData.videoSection.videoArtist.video.streamingUrl}
           />
       {:else}
-          <p>Video no available</p>
+          <p>Video not available</p>
       {/if}
   </article>

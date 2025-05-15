@@ -31,7 +31,7 @@ export type dataCTA = {
 export type linksTypes = {
     name: string;
     url: string;
-    imgSrc?: string;
+    imgSrc?: any;
     imgHeight?: number;
     alt?: string;
 }

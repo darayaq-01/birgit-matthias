@@ -25,7 +25,11 @@ try {
 
     {
         videoData ? (
-            <VideoContainer client:load videoData={videoData} />
+            <VideoContainer
+                client:load
+                videoData={videoData}
+                class='aspect-video'
+            />
         ) : (
             <div class='error'>Error loading video</div>
         )
