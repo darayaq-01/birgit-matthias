@@ -4,7 +4,7 @@ import { werkeData } from '@consts/werkeData';
 import Container from '@components/Container.astro';
 ---
 
-<Container classAstro=' mt-16 ' id='werke'>
+<Container classAstro='mt-16' id='werke'>
     <header class='ml-32'>
         <h2 class='pb-16 text-3xl font-bold'>
             <span class='border-b-2 border-white pb-1'>Werke</span>
@@ -12,7 +12,7 @@ import Container from '@components/Container.astro';
     </header>
 
     <article
-        class='flex flex-col lg:w-fit lg:flex-row gap-4 bg-white p-4 md:p-10'
+        class='flex flex-col lg:w-full lg:flex-row gap-4 bg-white p-4 md:p-10'
     >
         {
             werkeData.map((w) => (
