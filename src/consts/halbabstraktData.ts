@@ -13,6 +13,10 @@ import FinnischerSommer from '@assets/gallery/halbabstrakt/Finnischer-Sommer.jpg
 import Frühsommeraufgang from '@assets/gallery/halbabstrakt/Frühsommeraufgang.jpg';
 import HeuteimZirkusErdbeerenaufSommerhimmelJuni2016 from '@assets/gallery/halbabstrakt/Heute-im-Zirkus-Erdbeeren-auf-Sommerhimmel-Juni-2016.jpg';
 import SpringIIFeb2017 from '@assets/gallery/halbabstrakt/Spring-II-Feb-2017.jpg';
+import meeresphantasie from '@assets/gallery/auftragsarbeiten/Meeresphantasie-Diptychon-Jan-2016-1-648x460.jpg';
+import japanischerWinter from '@assets/gallery/auftragsarbeiten/Japanischer-Winter-648x448.jpg';
+import hochsommerHinterHamburg from '@assets/gallery/auftragsarbeiten/Hochsommer-hinter-Hamburg-648x447.jpg';
+import japanischerHerbst from '@assets/gallery/auftragsarbeiten/Japanischer-Herbst-648x451.jpg';
 
 export const halbabstraktData: detailsArtwork[] = [
     {
@@ -152,6 +156,50 @@ export const halbabstraktData: detailsArtwork[] = [
         slug: "Spring-II-Feb-2017",
         title: "Spring II Feb 2017",
         imageUrl: SpringIIFeb2017,
+        description: "",
+        year: 0,
+        price: 0,
+        sold: false,
+        folder: "halbabstrakt"
+    },
+    {
+        id: 14,
+        slug: "meeresphantasie",
+        title: "Meeresphantasie",
+        imageUrl: meeresphantasie,
+        description: "",
+        year: 0,
+        price: 0,
+        sold: false,
+        folder: "halbabstrakt"
+    },
+    {
+        id: 15,
+        slug: "japanischerWinter",
+        title: "Japanischer Winter",
+        imageUrl: japanischerWinter,
+        description: "",
+        year: 0,
+        price: 0,
+        sold: false,
+        folder: "halbabstrakt"
+    },
+    {
+        id: 16,
+        slug: "hochsommerHinterHamburg",
+        title: "Hochsommer hinter Hamburg",
+        imageUrl: hochsommerHinterHamburg,
+        description: "",
+        year: 0,
+        price: 0,
+        sold: false,
+        folder: "halbabstrakt"
+    },
+    {
+        id: 17,
+        slug: "japanischerHerbst",
+        title: "Japanischer Herbst",
+        imageUrl: japanischerHerbst,
         description: "",
         year: 0,
         price: 0,
