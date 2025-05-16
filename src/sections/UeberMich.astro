@@ -31,11 +31,20 @@ const data = json.data.ueberMich;
         </div>
     </article>
 
-    <div class='md:self-start md:w-[40%] px-4'>
+    <!-- <div class='md:self-start md:w-[40%] px-4'>
         <Picture
             src={imageComponent}
             formats={['avif', 'webp']}
             alt='Presentation of a own Art.'
+        />
+    </div> -->
+
+    <div class='md:self-start md:w-[40%] aspect-w-16 aspect-h-9 bg-gray-300'>
+        <img
+            src={imageComponent.src}
+            alt='Descripción'
+            class='object-cover w-full h-full hidden'
+            onload="this.style.display='block'; this.previousElementSibling.style.display='none'"
         />
     </div>
 </Container>
