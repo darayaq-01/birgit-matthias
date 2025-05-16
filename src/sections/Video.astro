@@ -23,17 +23,19 @@ try {
         </h2>
     </header>
 
-    {
-        videoData ? (
-            <VideoContainer
-                client:load
-                videoData={videoData}
-                class='aspect-video'
-            />
-        ) : (
-            <div class='error'>Error loading video</div>
-        )
-    }
+    <div class='object-cover aspect-w-16 aspect-h-9 bg-gray-300 mb-8'>
+        {
+            videoData ? (
+                <VideoContainer
+                    client:load
+                    videoData={videoData}
+                    class='aspect-video'
+                />
+            ) : (
+                <div class='error'>Error loading video</div>
+            )
+        }
+    </div>
 </Container>
 
 <style>

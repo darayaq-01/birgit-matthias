@@ -1,5 +1,4 @@
 ---
-import { Picture } from 'astro:assets';
 import imageComponent from '@assets/ausstellungen.avif';
 import Container from '@components/Container.astro';
 
@@ -23,12 +22,15 @@ const data = json.data.ausstellungen;
                 <span class='border-b-2 border-white pb-1'>Ausstellungen</span>
             </h2>
         </header>
-        <Picture
-            src={imageComponent}
-            formats={['avif', 'webp']}
-            alt='Presentation of a own Art.'
-            class='md:py-8'
-        />
+
+        <div class='aspect-w-16 aspect-h-9 bg-gray-300'>
+            <img
+                src={imageComponent.src}
+                alt='Descripción'
+                class='object-cover w-full h-full hidden'
+                onload="this.style.display='block'; this.previousElementSibling.style.display='none'"
+            />
+        </div>
     </div>
 
     <article class='flex-1 h-fit md:py-5'>
