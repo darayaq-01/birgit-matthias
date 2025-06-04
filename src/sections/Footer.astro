@@ -7,22 +7,26 @@ import { links } from '@consts/links';
 const currentPath = Astro.url.pathname;
 ---
 
-<footer class='lg:max-w-screen py-14 pr-12 text-sm md:h-28 lg:my-10'>
+<footer
+    class='lg:max-w-screen pr-12 text-sm bg-[#c4bab5]/80 h-fit mb-0 border border-red-500'
+>
     <Container>
-        <ul class='flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-10'>
+        <ul
+            class='flex flex-col py-14 gap-4 sm:flex-row sm:items-center sm:gap-10'
+        >
             {
                 links.slice(0, 4).map((item) => (
                     <li>
                         <a
                             href={item.url}
                             rel='noopener noreferrer'
-                            class={`footer-link md:prose-xl uppercase text-gray-600 hover:text-black hover:underline w-fit hover:scale-110 transition-all duration-300 ease-in-out ${currentPath === item.url ? 'line-through' : ''}`}
+                            class={`footer-link md:prose uppercase text-gray-600 hover:text-black hover:underline w-fit hover:scale-110 transition-all duration-300 ease-in-out ${currentPath === item.url ? 'line-through' : ''}`}
                         >
                             {item.imgSrc ? (
                                 <img
                                     src={item.imgSrc}
                                     height={item.imgHeight}
-                                    width={100}
+                                    width={0}
                                     alt={item.alt}
                                     class='aspect-auto object-contain hover:scale-110'
                                 />
@@ -42,7 +46,7 @@ const currentPath = Astro.url.pathname;
                     <Facebook
                         fill='currentColor'
                         class:list={[
-                            `h-8 w-auto hover:scale-105 transition-all duration-300 ease-in-out hover:text-black`,
+                            `h-6 w-auto hover:scale-105 transition-all duration-300 ease-in-out hover:text-black`,
                         ]}
                     />
                 </a>
@@ -56,7 +60,7 @@ const currentPath = Astro.url.pathname;
                     <Instagram
                         fill='currentColor'
                         class:list={[
-                            `h-8 w-auto hover:scale-105 transition-all duration-300 ease-in-out hover:text-black`,
+                            `h-6 w-auto hover:scale-105 transition-all duration-300 ease-in-out hover:text-black`,
                         ]}
                     />
                 </a>
