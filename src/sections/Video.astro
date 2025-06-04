@@ -16,7 +16,7 @@ try {
 }
 ---
 
-<Container classAstro='min-h-fit py-10'>
+<Container classAstro='h-screen items-center'>
     <header class='ml-32'>
         <h2 class='pb-16 text-3xl font-bold'>
             <span class='border-b-2 border-white pb-1'>Video</span>
@@ -25,14 +25,14 @@ try {
 
     <div class='object-cover aspect-w-16 aspect-h-9 bg-gray-300 mb-8'>
         {
-            videoData ? (
+            !videoData ? (
+                <div class='error'>Error loading video</div>
+            ) : (
                 <VideoContainer
                     client:load
                     videoData={videoData}
                     class='aspect-video'
                 />
-            ) : (
-                <div class='error'>Error loading video</div>
             )
         }
     </div>
