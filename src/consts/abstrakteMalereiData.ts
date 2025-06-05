@@ -1,23 +1,23 @@
 import type { detailsArtwork } from '@utils/types.d.ts';
 
-import thankgoditsxmas from '@assets/gallery/abstrakte-malerei/Thank-God-Its-X-Mas-Feb-2017.jpg';
-import ohneTitel from '@assets/gallery/abstrakte-malerei/Ohne-Titel-Feb-2017.jpg';
-import atlantis from '@assets/gallery/abstrakte-malerei/Atlantis.jpg';
-import splash from '@assets/gallery/abstrakte-malerei/Splash-I-II.jpg';
-import radioCity from '@assets/gallery/abstrakte-malerei/Radio-City-I-II.jpg';
-import hafen from '@assets/gallery/abstrakte-malerei/Hafen-bei-Nacht-in-Frankreich-Mrz-2016.jpg';
-import armee from '@assets/gallery/abstrakte-malerei/Armee-ohne-Eigenschaften-IV.jpg';
-import abstractLava from '@assets/gallery/abstrakte-malerei/Abstract-Lava-I-Jul.-2015-Acryl-auf-Leinwand-100x150.jpg';
-import leSoleil from '@assets/gallery/abstrakte-malerei/Le-Soleil-Feb-2017.jpg';
-import coolDesert from '@assets/gallery/abstrakte-malerei/Cool-Desert-Jan-2016.jpg';
-import landscapeRot from '@assets/gallery/abstrakte-malerei/Landscape-rot-Okt.-2017-Acryl-auf-Leinwand-130x90.jpg';
-import abstractFeb from '@assets/gallery/abstrakte-malerei/Abstract-Feb.-15-und-Feb.-18-Mischtechnik-auf-Pappe-und-Leinwand-100x70-I.jpg';
-import cathedral from '@assets/gallery/abstrakte-malerei/Cathedral-Okt.17-II-Acryl-auf-Leinwand.jpg';
-import thank from '@assets/gallery/abstrakte-malerei/thank....-New-Years-Eve-Dez-2016.jpg';
-import winterfahrt from '@assets/gallery/abstrakte-malerei/Winterfahrt-durchs-Alte-Land-Feb.-2018-Acryl-auf-Leinwand-120x80-II.jpg';
-import friederike from '@assets/gallery/abstrakte-malerei/Friederike-Jan.-2018-Acryl-auf-Leinwand-120x80.jpg';
-import armee2 from '@assets/gallery/abstrakte-malerei/Armee-ohne-Eigenschaften-II.jpg';
-import abstraktSki from '@assets/gallery/abstrakte-malerei/Abstrakt-Ski-Jan-2017.jpg';
+import thankgoditsxmas from '@assets/gallery/abstrakt/Thank-God-Its-X-Mas-Feb-2017.jpg';
+import ohneTitel from '@assets/gallery/abstrakt/Ohne-Titel-Feb-2017.jpg';
+import atlantis from '@assets/gallery/abstrakt/Atlantis.jpg';
+import splash from '@assets/gallery/abstrakt/Splash-I-II.jpg';
+import radioCity from '@assets/gallery/abstrakt/Radio-City-I-II.jpg';
+import hafen from '@assets/gallery/abstrakt/Hafen-bei-Nacht-in-Frankreich-Mrz-2016.jpg';
+import armee from '@assets/gallery/abstrakt/Armee-ohne-Eigenschaften-IV.jpg';
+import abstractLava from '@assets/gallery/abstrakt/Abstract-Lava-I-Jul.-2015-Acryl-auf-Leinwand-100x150.jpg';
+import leSoleil from '@assets/gallery/abstrakt/Le-Soleil-Feb-2017.jpg';
+import coolDesert from '@assets/gallery/abstrakt/Cool-Desert-Jan-2016.jpg';
+import landscapeRot from '@assets/gallery/abstrakt/Landscape-rot-Okt.-2017-Acryl-auf-Leinwand-130x90.jpg';
+import abstractFeb from '@assets/gallery/abstrakt/Abstract-Feb.-15-und-Feb.-18-Mischtechnik-auf-Pappe-und-Leinwand-100x70-I.jpg';
+import cathedral from '@assets/gallery/abstrakt/Cathedral-Okt.17-II-Acryl-auf-Leinwand.jpg';
+import thank from '@assets/gallery/abstrakt/thank....-New-Years-Eve-Dez-2016.jpg';
+import winterfahrt from '@assets/gallery/abstrakt/Winterfahrt-durchs-Alte-Land-Feb.-2018-Acryl-auf-Leinwand-120x80-II.jpg';
+import friederike from '@assets/gallery/abstrakt/Friederike-Jan.-2018-Acryl-auf-Leinwand-120x80.jpg';
+import armee2 from '@assets/gallery/abstrakt/Armee-ohne-Eigenschaften-II.jpg';
+import abstraktSki from '@assets/gallery/abstrakt/Abstrakt-Ski-Jan-2017.jpg';
 
 export const malereiData: detailsArtwork[] = [
     {
@@ -29,7 +29,7 @@ export const malereiData: detailsArtwork[] = [
         year: 2017,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 2,
@@ -40,7 +40,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 3,
@@ -51,7 +51,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 4,
@@ -62,7 +62,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 5,
@@ -73,7 +73,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 6,
@@ -84,7 +84,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 7,
@@ -95,7 +95,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 8,
@@ -106,7 +106,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 9,
@@ -117,7 +117,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 10,
@@ -128,7 +128,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 11,
@@ -139,7 +139,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 12,
@@ -150,7 +150,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 13,
@@ -161,7 +161,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 14,
@@ -172,7 +172,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 15,
@@ -183,7 +183,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 16,
@@ -194,7 +194,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 17,
@@ -205,7 +205,7 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     },
     {
         id: 18,
@@ -216,5 +216,5 @@ export const malereiData: detailsArtwork[] = [
         year: 0,
         price: 0,
         sold: false,
-        folder: "abstrakte-malerei"
+        folder: "abstrakt"
     }]
