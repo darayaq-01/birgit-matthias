@@ -1,41 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Decap CMS</title>
-
-    <!-- Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  </head>
-  <body>
-    <script>
-      // Espera a que Identity se cargue
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-
-      // Evita errores en deploy previews
-      const allowedHostnames = [
-        "birgitmatthias-malerei.netlify.app",
-        "www.birgitmatthias.de", // (si usas dominio personalizado)
-        "localhost"
-      ];
-
-      if (allowedHostnames.includes(window.location.hostname)) {
-        window.CMS_MANUAL_INIT = true;
-        CMS.init();
-      } else {
-        document.body.innerHTML = "<p style='font-family: sans-serif; color: red; padding: 2rem;'>Diese Vorschau unterstützt kein CMS-Login. Bitte öffnen Sie <a href='https://birgitmatthias-malerei.netlify.app/admin'>diese URL</a>.</p>";
-      }
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Decap CMS</title>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+  <script>
+    CMS.init();
+  </script>
+</body>
 </html>
