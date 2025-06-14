@@ -1,8 +1,11 @@
 backend:
   name: github
-  repo: darayaq-01/birgit-matthias # The GitHub repository where the content will be stored
+  repo: darayaq-01/birgit-matthias
   branch: main
   auth_scope: repo
+  base_url: https://birgitmatthias-malerei.netlify.app
+  client_id: Ov23liguKngPQM00zerv
+
 
 media_folder: "/public/uploads" # Location where files will be stored in the repo
 public_folder: "/uploads" # The src attribute for uploaded media
