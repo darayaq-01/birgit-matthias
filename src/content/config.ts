@@ -17,8 +17,8 @@ const presse = defineCollection({
                 .optional()
                 .transform((str) => (str ? new Date(str) : undefined)),
             cover: image(),
-            coverAlt: z.string(),
-            link: z.string(),
+            coverAlt: z.string().optional(),
+            link: z.string().optional(),
         })
 })
 
@@ -40,8 +40,8 @@ const ausstellungen = defineCollection({
                 .string()
                 .optional()
                 .transform((str) => (str ? new Date(str) : undefined)),
-            cover: image(),
-            coverAlt: z.string()
+            cover: image().optional(),
+            coverAlt: z.string().optional()
         })
 })
 export const collections = { presse, ausstellungen }
