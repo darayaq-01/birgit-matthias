@@ -1,9 +1,10 @@
 backend:
   name: github
-  repo: birgitmatthias/birgitmatthias-astro-website # reemplaza con tu repo real
+  repo: darayaq-01/birgit-matthias
   branch: main
   use_graphql: true
-
+  client_id: Ov23liguKngPQM00zerv
+  
 media_folder: "/public/uploads"
 public_folder: "/uploads"
 site_url: "https://birgitmatthias-malerei.netlify.app"
