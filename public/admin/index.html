@@ -4,16 +4,24 @@
     <meta charset="UTF-8" />
     <title>Decap CMS</title>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   </head>
   <body>
+    <h1>Admin lädt...</h1>
     <script>
       fetch("/admin/config.yml")
-        .then((res) => res.text())
-        .then((yamlText) => {
-          const config = window.jsyaml.load(yamlText);
+        .then(res => {
+          if (!res.ok) throw new Error("Fehler beim Laden von config.yml");
+          return res.text();
+        })
+        .then(yamlText => {
+          const config = jsyaml.load(yamlText);
           CMS.init({ config });
+        })
+        .catch(error => {
+          document.body.innerHTML = "<h1>Fehler beim Laden des CMS</h1><pre>" + error.message + "</pre>";
+          console.error("CMS-Fehler:", error);
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   </body>
 </html>
