@@ -1,18 +1,14 @@
 backend:
   name: github
-  repo: darayaq-01/birgit-matthias
+  repo: birgitmatthias/birgitmatthias-astro-website # reemplaza con tu repo real
   branch: main
-  auth_scope: repo
-  base_url: https://birgitmatthias-malerei.netlify.app
-  client_id: Ov23liguKngPQM00zerv
+  use_graphql: true
 
-
-media_folder: "/public/uploads" # Location where files will be stored in the repo
-public_folder: "/uploads" # The src attribute for uploaded media
-site_url: "https://birgitmatthias-malerei.netlify.app" # The URL of the site 
-site_name: "Birgit Matthias Malerei" # The name of the site
-site_description: "Offizielle Website von Birgit Matthias, Malerin aus Berlin. Entdecken Sie ihre Werke, Ausstellungen und Pressemitteilungen." # Description of the site
-
+media_folder: "/public/uploads"
+public_folder: "/uploads"
+site_url: "https://birgitmatthias-malerei.netlify.app"
+site_name: "Birgit Matthias Malerei"
+site_description: "Offizielle Website von Birgit Matthias, Malerin aus Berlin. Entdecken Sie ihre Werke, Ausstellungen und Pressemitteilungen."
 
 collections:
   - name: "presse"
