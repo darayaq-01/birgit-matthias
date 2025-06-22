@@ -2,26 +2,21 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Decap CMS</title>
+    <title>Birgit Matthias – CMS</title>
     <script src="https://unpkg.com/decap-cms@3.1.3/dist/decap-cms.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 2rem;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
-    <h1>Admin lädt...</h1>
+    <h1>CMS wird geladen...</h1>
     <script>
-      fetch("/admin/config.yml")
-        .then(res => {
-          if (!res.ok) throw new Error("Fehler beim Laden von config.yml");
-          return res.text();
-        })
-        .then(yamlText => {
-          const config = jsyaml.load(yamlText);
-          CMS.init({ config });
-        })
-        .catch(error => {
-          document.body.innerHTML = "<h1>Fehler beim Laden des CMS</h1><pre>" + error.message + "</pre>";
-          console.error("CMS-Fehler:", error);
-        });
+      CMS.init(); // usa automáticamente /admin/config.yml
     </script>
   </body>
 </html>
