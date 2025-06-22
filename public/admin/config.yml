@@ -1,12 +1,10 @@
 backend:
-  name: gitaway
-  repo: darayaq-01/birgit-matthias
+  name: git-gateway
   branch: main
-  media_folder: "/public/uploads"
-  public_folder: "/uploads"
-  site_url: "https://birgitmatthias-malerei.netlify.app"
-  site_name: "Birgit Matthias Malerei"
-  site_description: "Offizielle Website von Birgit Matthias, Malerin aus Berlin. Entdecken Sie ihre Werke, Ausstellungen und Pressemitteilungen."
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
 
 collections:
   - name: "presse"
