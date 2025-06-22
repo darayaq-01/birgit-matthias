@@ -8,7 +8,7 @@ public_folder: "/uploads"
 site_url: "https://birgitmatthias-malerei.netlify.app"
 site_name: "Birgit Matthias Malerei"
 site_description: "Offizielle Website von Birgit Matthias, Malerin aus Berlin. Entdecken Sie ihre Werke, Ausstellungen und Pressemitteilungen."
-logo_url: "/uploads/logo.png"  # opcional, si tienes un logo
+# logo_url: "/uploads/logo.png"  # opcional, si tienes un logo
 
 collections:
   - name: "presse"
