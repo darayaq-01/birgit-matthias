@@ -1,7 +1,9 @@
 backend:
   name: git-gateway
+  repo: darayaq-01/birgit-matthias
   branch: main
 
+local_backend: true
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
