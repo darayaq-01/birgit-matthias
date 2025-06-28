@@ -2,7 +2,6 @@ backend:
   name: github
   repo: darayaq-01/birgit-matthias
   branch: main
-  auth_type: implicit
 
 local_backend: true
 media_folder: "public/uploads"
@@ -12,7 +11,7 @@ public_folder: "/uploads"
 collections:
   - name: "presse"
     label: "Presse"
-    folder: "content/presse"
+    folder: "src/content/presse"
     create: true
     slug: "{{slug}}"
     fields:
@@ -27,7 +26,7 @@ collections:
 
   - name: "ausstellungen"
     label: "Ausstellungen"
-    folder: "content/ausstellungen"
+    folder: "src/content/ausstellungen"
     create: true
     slug: "{{slug}}"
     fields:
