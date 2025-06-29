@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content'
+import { optional } from 'astro:schema'
 
 const presse = defineCollection({
     // Type-check frontmatter using a schema
@@ -9,14 +10,14 @@ const presse = defineCollection({
             description: z.string().optional(),
             // Transform string to Date object
             pubDate: z
-                .string()
-                .or(z.date())
-                .transform((val) => new Date(val)),
-            updatedDate: z
-                .string()
+                .union([z.string(), z.date()])
                 .optional()
-                .transform((str) => (str ? new Date(str) : undefined)),
-            cover: image(),
+                .transform((val) => (val ? new Date(val) : undefined)),
+            updatedDate: z
+                .union([z.string(), z.date()])
+                .optional()
+                .transform((val) => (val ? new Date(val) : undefined)),
+            cover: image().optional(),
             coverAlt: z.string().optional(),
             link: z.string().optional(),
         })
@@ -33,13 +34,13 @@ const ausstellungen = defineCollection({
             description: z.string().optional(),
             // Transform string to Date object
             pubDate: z
-                .string()
-                .or(z.date())
-                .transform((val) => new Date(val)),
-            updatedDate: z
-                .string()
+                .union([z.string(), z.date()])
                 .optional()
-                .transform((str) => (str ? new Date(str) : undefined)),
+                .transform((val) => (val ? new Date(val) : undefined)),
+            updatedDate: z
+                .union([z.string(), z.date()])
+                .optional()
+                .transform((val) => (val ? new Date(val) : undefined)),
             cover: image().optional(),
             coverAlt: z.string().optional()
         })
