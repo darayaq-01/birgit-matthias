@@ -1,5 +1,4 @@
 import { defineCollection, z } from 'astro:content'
-import { optional } from 'astro:schema'
 
 const presse = defineCollection({
     // Type-check frontmatter using a schema
@@ -27,7 +26,7 @@ const presse = defineCollection({
 
 const ausstellungen = defineCollection({
     // Type-check frontmatter using a schema
-    schema: ({ image }) =>
+    schema: () =>
         z.object({
             title: z.string(),
             category: z.string(),
@@ -45,4 +44,20 @@ const ausstellungen = defineCollection({
             coverAlt: z.string().optional()
         })
 })
-export const collections = { presse, ausstellungen }
+
+const collectionImages = defineCollection({
+    // Type-check frontmatter using a schema
+    schema: () =>
+        z.object({
+            title: z.string(),
+            slug: z.string(),
+            description: z.string().optional(),
+            category: z.string(),
+            price: z.number().optional(),
+            sold: z.boolean().optional(),
+            year: z.number().optional(),
+            imageUrl: z.string().optional(),
+            imageAlt: z.string().optional()
+        })
+})
+export const collections = { presse, ausstellungen, collectionImages }
