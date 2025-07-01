@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
 
 type Props = CollectionEntry<'presse'>['data'];
 
@@ -16,7 +15,7 @@ import Link from '@components/ui/Link.astro';
     >
         <div class='rounded bg-white p-8 shadow-lg md:m-6'>
             <div>
-                {cover && <Image width={1020} src={cover} alt={coverAlt} />}
+                {cover && <img width={1020} src={cover} alt={coverAlt} />}
             </div>
 
             <div class='my-8'>
