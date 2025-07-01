@@ -12,6 +12,6 @@ description: >-
 
   Ein unverbindliches Hereinschnuppern für Kunstinteressierte und alle, die mal hinter die „Künstlerkulissen“ schauen möchten.
 pubDate: 2018-09-20T18:30:00.000Z
-cover: public/uploads/TDOA_2018-768x582.webp
+cover: /uploads/TDOA_2018-768x582.webp
 coverAlt: Tag des offenen Ateleirs Weimer
 ---

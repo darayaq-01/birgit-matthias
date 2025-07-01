@@ -17,6 +17,6 @@ description: >-
 
   neue Werke mit dem Ausstellungstitel „zwischen Stilleben und Abstraktion“.“
 pubDate: 2018-06-06T08:00:00.000Z
-cover: public/uploads/birgit_matthias_2018.jpg
+cover: /uploads/birgit_matthias_2018.jpg
 coverAlt: Birgit
 ---
