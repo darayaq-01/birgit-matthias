@@ -50,7 +50,7 @@ const collectionImages = defineCollection({
     schema: () =>
         z.object({
             title: z.string(),
-            slug: z.string(),
+            slug: z.string().optional(),
             description: z.string().optional(),
             category: z.string(),
             price: z.number().optional(),
