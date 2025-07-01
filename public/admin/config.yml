@@ -4,8 +4,8 @@ backend:
   branch: main
 
 local_backend: true
-media_folder: "public/uploads"
-public_folder: "public/uploads"
+media_folder: "/uploads"
+public_folder: "/uploads"
 
 
 collections:
