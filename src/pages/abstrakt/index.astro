@@ -1,6 +1,12 @@
 ---
 import IndexGallery from '@components/gallery/IndexGallery.astro';
 import { malereiData } from '@consts/abstrakteMalereiData';
+
+import { getCollection } from 'astro:content';
+
+const collectionImages = await getCollection('collectionImages');
+
+console.log('collectionImages', collectionImages);
 ---
 
 <IndexGallery
