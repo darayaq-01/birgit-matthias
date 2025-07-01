@@ -40,7 +40,7 @@ const ausstellungen = defineCollection({
             updatedDate: z
                 .union([z.string(), z.date()])
                 .optional()
-                .transform((val) => (val ? new Date(val) : undefined)),
+                .transform((val) => (val ? new Date(val) : undefined)).optional(),
             cover: z.string().optional(),
             coverAlt: z.string().optional()
         })

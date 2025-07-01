@@ -16,12 +16,12 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
-      - { label: "Kategorie", name: "category", widget: "string" }
+      - { label: "Kategorie", name: "category", widget: "string", required: false  }
       - { label: "Beschreibung", name: "description", widget: "text", required: false }
       - { label: "Veröffentlichungsdatum", name: "pubDate", widget: "datetime" }
       - { label: "Aktualisiert am", name: "updatedDate", widget: "datetime", required: false }
-      - { label: "Coverbild", name: "cover", widget: "image" }
-      - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string" }
+      - { label: "Coverbild", name: "cover", widget: "image", required: false  }
+      - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string", required: false  }
       - { label: "Externer Link", name: "link", widget: "string", required: false }
 
   - name: "ausstellungen"
@@ -31,9 +31,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
-      - { label: "Kategorie", name: "category", widget: "string" }
+      - { label: "Kategorie", name: "category", widget: "string", required: false  }
       - { label: "Beschreibung", name: "description", widget: "text", required: false }
       - { label: "Veröffentlichungsdatum", name: "pubDate", widget: "datetime" }
       - { label: "Aktualisiert am", name: "updatedDate", widget: "datetime", required: false }
-      - { label: "Coverbild", name: "cover", widget: "image" }
-      - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string" }
+      - { label: "Coverbild", name: "cover", widget: "image", required: false  }
+      - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string", required: false  }
