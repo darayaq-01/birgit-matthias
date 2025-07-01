@@ -37,3 +37,18 @@ collections:
       - { label: "Aktualisiert am", name: "updatedDate", widget: "datetime", required: false }
       - { label: "Coverbild", name: "cover", widget: "image", required: false  }
       - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string", required: false  }
+
+  - name: "collectionImages"
+    label: "collectionImages"
+    folder: "src/content/collectionImages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Beschreibung", name: "description", widget: "text", required: false }
+      - { label: "Kategorie", name: "category", widget: "string", required: false  }
+      - { label: "Preis", name: "price", widget: "number", required: false }
+      - { label: "Verkauft", name: "sold", widget: "boolean", required: false }
+      - { label: "Jahr", name: "year", widget: "number", required: false }
+      - { label: "Bild", name: "imageUrl", widget: "image", required: true }
+      - { label: "Alt-Text für Bild", name: "imageAlt", widget: "string", required: true }  
