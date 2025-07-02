@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 const collectionImages = await getCollection('collectionImages');
 
 const gegenstaendlichImages = collectionImages
-    .filter((entry) => entry.data.category.toLowerCase() === 'gegenständlich')
+    .filter((entry) => entry.data.category.toLowerCase() === 'gegenstaendlich')
     .map((entry) => ({
         id: entry.slug,
         folder: entry.data.category.toLowerCase(),
