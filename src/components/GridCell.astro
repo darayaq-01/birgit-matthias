@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import type { detailsArtwork } from '@utils/types.d.ts';
 
 interface Props {
@@ -15,7 +14,7 @@ const { noId, data, dataIndex, isCurrent } = Astro.props;
 <div class:list={[`grid__cell`, { 'grid__cell--current': isCurrent }]}>
     <div class='grid__cell-img'>
         <a href={`/${data.folder}/${data.id}`}>
-            <Image
+            <img
                 class='grid__cell-img-inner'
                 id={noId ? undefined : `art-${data.id}`}
                 src={data.imageUrl}

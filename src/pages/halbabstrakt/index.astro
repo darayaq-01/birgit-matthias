@@ -1,10 +1,26 @@
 ---
 import IndexGallery from '@components/gallery/IndexGallery.astro';
-import { halbabstraktData } from '@consts/halbabstraktData';
+import { getCollection } from 'astro:content';
+
+const collectionImages = await getCollection('collectionImages');
+
+const halbabstraktImages = collectionImages
+    .filter((entry) => entry.data.category.toLowerCase() === 'halbabstrakt')
+    .map((entry) => ({
+        id: entry.slug,
+        folder: entry.data.category.toLowerCase(),
+        title: entry.data.title,
+        description: entry.data.description,
+        imageUrl: entry.data.imageUrl,
+        imageAlt: entry.data.imageAlt,
+        price: entry.data.price,
+        sold: entry.data.sold,
+        year: entry.data.year,
+    }));
 ---
 
 <IndexGallery
     title='Halbabstrakt'
     header='Halbabstrakt'
-    dataArt={halbabstraktData}
+    dataArt={halbabstraktImages}
 />

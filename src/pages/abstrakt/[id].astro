@@ -1,14 +1,19 @@
 ---
 import IdGallery from '@components/gallery/IdGallery.astro';
-import { malereiData } from '@consts/abstrakteMalereiData';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-    return malereiData.map((item) => ({
-        params: { id: item.id.toString() },
-        props: { item },
+    const entries = await getCollection('collectionImages');
+    return entries.map((entry) => ({
+        params: { id: entry.slug },
     }));
 }
-const { item } = Astro.props;
+
+const { id } = Astro.params;
+const collection = await getCollection('collectionImages');
+const item = collection.find((entry) => entry.slug === id);
+
+if (!item) throw new Error(`No se encontró el item con id ${id}`);
 ---
 
-<IdGallery title={item.title} data={malereiData} url='/abstrakt' />
+<IdGallery item={item} url='/abstrakt' />
