@@ -1,10 +1,11 @@
 ---
-title: "Concierto de Verano"
-venue: "Teatro Municipal"
+title: "New event"
+venue: "Place"
 dateEvent: "2025-08-10"
+dateEnd: "2025-10-22
 description: >
-  Este es el evento más esperado del verano. Habrá muchas sorpresas.
-linkEvent: "[Compra tu entrada aquí](https://miweb.com/evento)"
+  Nice event for everyone
+linkEvent: "[More info here](https://miweb.com/event)"
 ---
 
-Texto adicional si lo deseas (no necesario si usas solo el frontmatter).
+More description of the event
