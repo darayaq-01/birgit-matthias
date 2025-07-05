@@ -56,11 +56,9 @@ collections:
       - { label: "Bild", name: "imageUrl", widget: "image", required: true }
       - { label: "Alt-Text für Bild", name: "imageAlt", widget: "string", required: true }  
 
-  - name: "event"
+  - name: "events"
     label: "Nächster Event"
     file: "src/content/events/next.md"
-    create: true
-    slug: "{{slug}}"
     fields:
       - { name: "title", label: "Titel", widget: "string" }
       - { name: "venue", label: "Ort", widget: "string" }
