@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content'
+import { version } from 'typescript'
 
 const presse = defineCollection({
     // Type-check frontmatter using a schema
@@ -60,4 +61,25 @@ const collectionImages = defineCollection({
             imageAlt: z.string().optional()
         })
 })
-export const collections = { presse, ausstellungen, collectionImages }
+
+const events = defineCollection({
+    // Type-check frontmatter using a schema
+    schema: () =>
+        z.object({
+            title: z.string(),
+            venue: z.string().optional(),
+            dateEvent: z
+                .union([z.string(), z.date()])
+                .optional()
+                .transform((val) => (val ? new Date(val) : undefined)),
+            dateEnd: z
+                .union([z.string(), z.date()])
+                .optional()
+                .transform((val) => (val ? new Date(val) : undefined)),
+            description: z.string().optional(),
+            link: z.string().optional(),
+            active: z.boolean().default(() => true),
+        })
+})
+
+export const collections = { presse, ausstellungen, collectionImages, events }
