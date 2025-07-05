@@ -56,14 +56,17 @@ collections:
       - { label: "Bild", name: "imageUrl", widget: "image", required: true }
       - { label: "Alt-Text für Bild", name: "imageAlt", widget: "string", required: true }  
 
-  - name: "events"
-    label: "Nächster Event"
-    file: "src/content/events/next.md"
-    fields:
-      - { name: "title", label: "Titel", widget: "string" }
-      - { name: "venue", label: "Ort", widget: "string" }
-      - { name: "dateEvent", label: "Datum des Events", widget: "datetime" }
-      - { name: "dateEnd", label: "Enddatum des Events", widget: "datetime", required: false }
-      - { name: "description", label: "Beschreibung", widget: "text" }
-      - { name: "linkEvent", label: "Link", widget: "markdown" }
-      - { name: "active", label: "Aktiv", widget: "boolean", default: true }
+- name: "events"
+  label: "Nächster Event"
+  files:
+    - label: "Nächster Event"
+      name: "next"
+      file: "src/content/events/next.md"
+      fields:
+        - { name: "title", label: "Titel", widget: "string" }
+        - { name: "venue", label: "Ort", widget: "string" }
+        - { name: "dateEvent", label: "Datum des Events", widget: "datetime" }
+        - { name: "dateEnd", label: "Enddatum des Events", widget: "datetime", required: false }
+        - { name: "description", label: "Beschreibung", widget: "text" }
+        - { name: "linkEvent", label: "Link", widget: "markdown" }
+        - { name: "active", label: "Aktiv", widget: "boolean", default: true }
