@@ -1,65 +1,54 @@
 ---
-// Details of the selected picture
-import { Picture } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import Arrow from '@assets/UI/Arrow.astro';
 
-const { title, data, url, year } = Astro.props;
-
-const { id } = Astro.params;
-const images = data.find((image) => image.id == id);
+const { item, url } = Astro.props;
 ---
 
-<Layout title={title} backgroundColor='bg-white' navbarProps='bg-white/70'>
+<Layout
+    title={item.data.title}
+    backgroundColor='bg-white'
+    navbarProps='bg-white/70'
+>
     <Container
         classAstro='md:w-[60%] flex flex-col place-items-center pt-36 md:pt-56'
     >
-        <!-- TODO check if this section is necessary. Double section -->
         <section class='h-full'>
             <header>
                 <h2 class='py-8 text-3xl font-bold md:pl-20'>
                     <span class='border-b-2 border-white pb-1'>Werke</span>
                 </h2>
             </header>
+
             <div
                 class='flex w-full flex-col justify-evenly gap-8 bg-white md:flex-row md:px-10 md:py-12'
             >
                 <div class='flex-1'>
-                    <Picture
+                    <img
                         class='md:max-w-3/4 pointer-events-none aspect-auto w-max shadow-2xl shadow-gray-800'
-                        src={images?.imageUrl ?? ''}
-                        formats={['webp', 'avif']}
-                        alt={images?.title ?? ''}
-                        transition:name={`photo-${images?.id}`}
-                        id={images?.id.toString()}
-                        title={images?.title}
+                        src={item.data.imageUrl}
+                        alt={item.data.imageAlt ?? item.data.title}
+                        title={item.data.title}
+                        id={item.slug}
                         oncontextmenu='return false'
                     />
                 </div>
-                <!-- text & arrow -->
+
                 <div
                     class='flex w-full flex-col pl-8 md:w-1/3 md:justify-between'
                 >
-                    <div
-                        transition:name={`photo-details-${images?.id}`}
-                        class='py-2'
-                    >
+                    <div class='py-2'>
                         <div>
                             <h2
                                 class='mb-4 mt-2 text-balance text-2xl md:text-base'
                             >
-                                <span class='italic'>{images?.title}</span>{
-                                    images?.year === 0
-                                        ? null
-                                        : `, ${images?.year}`
-                                }
+                                <span class='italic'>{item.data.title}</span>
+                                {item.data.year ? `, ${item.data.year}` : ''}
                             </h2>
                         </div>
 
-                        <p>
-                            {images?.description}
-                        </p>
+                        <p>{item.data.description}</p>
                     </div>
                     <div class='h-28 self-start'>
                         <a href={url}>
@@ -67,10 +56,8 @@ const images = data.find((image) => image.id == id);
                                 class='w-8 transition-all duration-300 ease-in-out hover:scale-150 md:w-10'
                             />
                         </a>
-                        <!-- <MiniGrid currentPhotoId={photo?.id} /> -->
                     </div>
                 </div>
-                <!-- picture -->
             </div>
         </section>
     </Container>

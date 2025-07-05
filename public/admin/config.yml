@@ -46,7 +46,10 @@ collections:
     fields:
       - { label: "Titel", name: "title", widget: "string" }
       - { label: "Beschreibung", name: "description", widget: "text", required: false }
-      - { label: "Kategorie", name: "category", widget: "string", required: false  }
+      - { label: "Kategorie", name: "category", widget: "select",
+        options: ["gegenstaendlich", "abstrakt", "halbabstrakt"],
+        hint: "Wählen Sie eine Kategorie für die Pressemitteilung aus.",
+        required: true, default: "Gegenständlich" }
       - { label: "Preis", name: "price", widget: "number", required: false }
       - { label: "Verkauft", name: "sold", widget: "boolean", required: false }
       - { label: "Jahr", name: "year", widget: "number", required: false }
