@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 
 const entry = await getEntry('events', 'next');
-
+console.log(entry);
 if (!entry?.data) {
     throw new Error('No se encontró el evento');
 }
@@ -27,7 +27,7 @@ if (!entry?.data) {
 
                     {entry.data.link && (
                         <div class='leading-normal underline hover:font-bold hover:transition-all hover:duration-300'>
-                            <div set:html={entry.data.link} />
+                            <div>{entry.data.linkEvent}</div>
                         </div>
                     )}
                 </div>

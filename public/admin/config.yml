@@ -72,4 +72,5 @@ collections:
           - { name: "dateEnd", label: "Enddatum des Events", widget: "datetime", required: false }
           - { name: "description", label: "Beschreibung", widget: "text" }
           - { name: "linkEvent", label: "Link", widget: "markdown" }
-          - { name: "active", label: "Aktiv", widget: "boolean", default: true }
+          - { name: "active", label: "Aktiv", widget: "boolean", default: true, required: false }
+        body: linkEvent
