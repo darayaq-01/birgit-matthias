@@ -1,11 +1,9 @@
 ---
-title: New event
-venue: Place
-dateEvent: 2025-08-10
-dateEnd: 2025-10-22
-description: Nice event for everyone almost
-linkEvent: <https://miweb.com/event>
-active: true
+title: Woman Art Weimar
+venue: Marktstraße 6   99423 Weimar
+dateEvent: Di. bis Sa. 11 bis 18 Uhr
+description: WOMEN ART WEIMAR ist eine Galerie mit Werken bildender Künstlerinnen. Die Initiative setzt sich für mehr Sichtbarkeit von Frauen in der Kunst ein.
+linkEvent: womenartweimar.com
 ---
 
-More description of the event
+

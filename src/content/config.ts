@@ -68,16 +68,9 @@ const events = defineCollection({
         z.object({
             title: z.string(),
             venue: z.string().optional(),
-            dateEvent: z
-                .union([z.string(), z.date()])
-                .optional()
-                .transform((val) => (val ? new Date(val) : undefined)),
-            dateEnd: z
-                .union([z.string(), z.date()])
-                .optional()
-                .transform((val) => (val ? new Date(val) : undefined)),
+            dateEvent: z.string(),
             description: z.string().optional(),
-            link: z.string().optional(),
+            linkEvent: z.string().optional(),
             active: z.boolean().default(() => true),
         })
 })
