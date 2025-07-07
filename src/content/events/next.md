@@ -4,7 +4,8 @@ venue: Place
 dateEvent: 2025-08-10
 dateEnd: 2025-10-22
 description: Nice event for everyone
-linkEvent: https://miweb.com/event
+linkEvent: <https://miweb.com/event>
+active: true
 ---
 
 More description of the event
