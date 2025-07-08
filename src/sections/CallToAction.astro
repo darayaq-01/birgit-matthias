@@ -2,7 +2,6 @@
 import { getEntry } from 'astro:content';
 
 const entry = await getEntry('events', 'next');
-console.log(entry);
 if (!entry?.data) {
     throw new Error('No se encontró el evento');
 }
