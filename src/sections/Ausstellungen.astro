@@ -11,6 +11,10 @@ if (!json) {
     throw new Error('Failed to fetch data');
 }
 const data = json.data.ausstellungen;
+
+import { getEntries } from 'astro:content';
+
+const entries = await getEntries('events');
 ---
 
 <Container
