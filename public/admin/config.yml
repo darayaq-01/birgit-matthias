@@ -73,3 +73,37 @@ collections:
           - { name: "linkEvent", label: "Link", widget: "markdown" }
           - { name: "active", label: "Aktiv", widget: "boolean", default: true, required: false }
         body: linkEvent
+
+  - name: "ausstellungenDescription"
+    label: "Ausstellungen"
+    files: 
+      - label: "Ausstellung Beschreibung"
+        name: "ausstellungenDescription"
+        file: "src/content/ausstellungenDescription/ausstellungenDescription.md"
+        fields:
+          - { label: "Titel 1", name: "title1", widget: "string" }
+          - { label: "Description 1", name: "description1", widget: "markdown", }
+          - { label: "Titel 2", name: "title2", widget: "string" }
+          - { label: "Description 2", name: "description2", widget: "markdown" }
+  
+  - name: "description"
+    label: "Beschreibung"
+    files: 
+      - label: "Beschreibung"
+        name: "description"
+        file: "src/content/description/description.md"
+        fields:
+          - { label: "Beschreibung", name: "description", widget: "markdown" }
+
+  - name: "uebermich"
+    label: "Über mich"
+    files: 
+      - label: "Über mich"
+        name: "uebermich"
+        file: "src/content/uebermich.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Beschreibung", name: "description", widget: "markdown" }
+          - { label: "Bild", name: "imageUrl", widget: "image", required: true }
+          - { label: "Alt-Text für Bild", name: "imageAlt", widget: "string", required: true }
+  
