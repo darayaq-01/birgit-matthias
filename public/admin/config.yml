@@ -85,5 +85,6 @@ collections:
           - { name: "description1", label: "Beschreibung", widget: "markdown" }
           - { name: "title2", label: "Titel", widget: "string" }
           - { name: "description2", label: "Beschreibung", widget: "markdown" }
+          - { name: "description3", label: "Beschreibung", widget: "list" }
           - { name: "imageUrl", label: "Bild", widget: "image", required: false }
           - { name: "imageAlt", label: "Alt-Text für Bild", widget: "string", required: false }

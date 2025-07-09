@@ -80,6 +80,7 @@ const ausstellungendescription = defineCollection({
             description1: z.string().optional(),
             title2: z.string().optional(),
             description2: z.string().optional(),
+            description3: z.string().optional(),
             imageUrl: z.string().optional(),
             imageAlt: z.string().optional(),
         })
