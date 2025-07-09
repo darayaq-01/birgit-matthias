@@ -1,18 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
-
-import imageComponent from '@assets/ausstellungen.avif';
 import Container from '@components/Container.astro';
-
-import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
-import { ausstellungQuery } from '@api/query.js';
-import { StructuredText } from '@datocms/astro/StructuredText';
-
-const json = await fetchDatoCMS(ausstellungQuery);
-if (!json) {
-    throw new Error('Failed to fetch data');
-}
-const data = json.data.ausstellungen;
 
 const entry = await getEntry(
     'ausstellungenDescription',
@@ -21,8 +9,15 @@ const entry = await getEntry(
 if (!entry?.data) {
     throw new Error('Error: Not found ausstellungendescription entry');
 }
-const { title1, description1, title2, description2, imageUrl, imageAlt } =
-    entry.data;
+const {
+    title1,
+    description1,
+    title2,
+    description2,
+    description3,
+    imageUrl,
+    imageAlt,
+} = entry.data;
 ---
 
 <Container
@@ -54,7 +49,9 @@ const { title1, description1, title2, description2, imageUrl, imageAlt } =
             <div class='prose prose-xl list-none'>
                 {
                     description1 && (
-                        <p class='text-xl leading-normal'>{description1}</p>
+                        <span class='text-xl leading-normal'>
+                            {description1}
+                        </span>
                     )
                 }
             </div>
@@ -64,11 +61,7 @@ const { title1, description1, title2, description2, imageUrl, imageAlt } =
                 {title2}
             </h3>
             <div class='prose prose-xl list-none'>
-                {
-                    description2 && (
-                        <p class='text-xl leading-normal'>{description2}</p>
-                    )
-                }
+                {description2}
             </div>
         </div>
     </article>
