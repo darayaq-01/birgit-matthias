@@ -73,7 +73,7 @@ const events = defineCollection({
         })
 })
 
-const ausstellungendescription = defineCollection({
+const ausstellungenDescription = defineCollection({
     schema: () =>
         z.object({
             title1: z.string().optional(),
@@ -85,4 +85,13 @@ const ausstellungendescription = defineCollection({
         })
 })
 
-export const collections = { presse, ausstellungen, collectionImages, events, ausstellungendescription }
+
+const description = defineCollection({
+    // Type-check frontmatter using a schema
+    schema: () =>
+        z.object({
+            description: z.string().optional(),
+        })
+})
+
+export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description }
