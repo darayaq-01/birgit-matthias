@@ -1,18 +1,12 @@
 ---
-import { StructuredText } from '@datocms/astro/StructuredText';
-
-import { Picture } from 'astro:assets';
-import imageComponent from '@assets/birgit.avif';
+import { getEntry } from 'astro:content';
 import Container from '@components/Container.astro';
 
-import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
-import { dataQuery } from '@api/query.js';
-
-const json = await fetchDatoCMS(dataQuery);
-if (!json) {
-    throw new Error('Failed to fetch data');
+const entry = await getEntry('uebermich', 'uebermich');
+if (!entry?.data) {
+    throw new Error('Error: Not found uebermich entry');
 }
-const data = json.data.ueberMich;
+const { title, description, imageUrl, imageAlt } = entry.data;
 ---
 
 <Container
@@ -22,27 +16,19 @@ const data = json.data.ueberMich;
         <header class='ml-32'>
             <h2 class='text-3xl pb-2 md:pb-16 font-bold'>
                 <span class='border-b-2 text-white border-white pb-1'
-                    >{data.title}</span
+                    >{title}</span
                 >
             </h2>
         </header>
         <div class='w-full prose prose-2xl py-10'>
-            <StructuredText data={data.description} />
+            {description}
         </div>
     </article>
 
-    <!-- <div class='md:self-start md:w-[40%] px-4'>
-        <Picture
-            src={imageComponent}
-            formats={['avif', 'webp']}
-            alt='Presentation of a own Art.'
-        />
-    </div> -->
-
     <div class='md:self-start md:w-[40%] aspect-w-16 aspect-h-9 bg-gray-300'>
         <img
-            src={imageComponent.src}
-            alt='Descripción'
+            src={imageUrl}
+            alt={imageAlt}
             class='object-cover w-full h-full hidden'
             onload="this.style.display='block'; this.previousElementSibling.style.display='none'"
         />

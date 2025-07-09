@@ -96,3 +96,15 @@ collections:
         file: "src/content/description/description.md"
         fields:
           - { name: "description", label: "Beschreibung", widget: "markdown" }
+
+  - name: "uebermich"
+    label: "Über mich"
+    files:
+      - label: "Über mich"
+        name: "uebermich"
+        file: "src/content/uebermich/uebermich.md"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "description", label: "Beschreibung", widget: "markdown" }
+          - { name: "imageUrl", label: "Bild", widget: "image", required: false }
+          - { name: "imageAlt", label: "Alt-Text für Bild", widget: "string", required: false } 

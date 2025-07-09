@@ -9,15 +9,8 @@ const entry = await getEntry(
 if (!entry?.data) {
     throw new Error('Error: Not found ausstellungendescription entry');
 }
-const {
-    title1,
-    description1,
-    title2,
-    description2,
-    description3,
-    imageUrl,
-    imageAlt,
-} = entry.data;
+const { title1, description1, title2, description2, imageUrl, imageAlt } =
+    entry.data;
 ---
 
 <Container
