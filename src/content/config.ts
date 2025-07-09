@@ -23,8 +23,6 @@ const presse = defineCollection({
         })
 })
 
-
-
 const ausstellungen = defineCollection({
     // Type-check frontmatter using a schema
     schema: () =>
@@ -75,4 +73,16 @@ const events = defineCollection({
         })
 })
 
-export const collections = { presse, ausstellungen, collectionImages, events }
+const ausstellungendescription = defineCollection({
+    schema: () =>
+        z.object({
+            title1: z.string().optional(),
+            description1: z.string().optional(),
+            title2: z.string().optional(),
+            description2: z.string().optional(),
+            imageUrl: z.string().optional(),
+            imageAlt: z.string().optional(),
+        })
+})
+
+export const collections = { presse, ausstellungen, collectionImages, events, ausstellungendescription }

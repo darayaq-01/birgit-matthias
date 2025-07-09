@@ -1,4 +1,6 @@
 ---
+import { getEntry } from 'astro:content';
+
 import imageComponent from '@assets/ausstellungen.avif';
 import Container from '@components/Container.astro';
 
@@ -11,6 +13,16 @@ if (!json) {
     throw new Error('Failed to fetch data');
 }
 const data = json.data.ausstellungen;
+
+const entry = await getEntry(
+    'ausstellungenDescription',
+    'ausstellungendescription'
+);
+if (!entry?.data) {
+    throw new Error('Error: Not found ausstellungendescription entry');
+}
+const { title1, description1, title2, description2, imageUrl, imageAlt } =
+    entry.data;
 ---
 
 <Container
@@ -25,8 +37,8 @@ const data = json.data.ausstellungen;
 
         <div class='aspect-w-16 aspect-h-9 bg-gray-300'>
             <img
-                src={imageComponent.src}
-                alt='Descripción'
+                src={imageUrl}
+                alt={imageAlt}
                 class='object-cover w-full h-full hidden'
                 onload="this.style.display='block'; this.previousElementSibling.style.display='none'"
             />
@@ -35,18 +47,28 @@ const data = json.data.ausstellungen;
 
     <article class='flex-1 h-fit md:py-5'>
         <div class='md:my-10 max-w-prose'>
-            <h3 class='prose prose-xl py-5 font-bold'>{data.title}</h3>
+            <h3 class='prose prose-xl py-5 font-bold'>
+                {title1}
+            </h3>
 
             <div class='prose prose-xl list-none'>
-                <StructuredText data={data.list} />
+                {
+                    description1 && (
+                        <p class='text-xl leading-normal'>{description1}</p>
+                    )
+                }
             </div>
         </div>
         <div>
             <h3 class='prose prose-xl py-5 font-bold'>
-                {data.title2}
+                {title2}
             </h3>
             <div class='prose prose-xl list-none'>
-                <StructuredText data={data.list2} />
+                {
+                    description2 && (
+                        <p class='text-xl leading-normal'>{description2}</p>
+                    )
+                }
             </div>
         </div>
     </article>
