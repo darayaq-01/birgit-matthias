@@ -18,7 +18,6 @@ const {
     imageUrl,
     imageAlt,
 } = entry.data;
-console.log('---->', description3);
 ---
 
 <Container
@@ -64,15 +63,6 @@ console.log('---->', description3);
             <div class='prose prose-xl list-none'>
                 {description2}
             </div>
-            <ul>
-                {
-                    description3.map((desc) => (
-                        <li class='py-2'>
-                            <span class='text-xl leading-normal'>{desc}</span>
-                        </li>
-                    ))
-                }
-            </ul>
         </div>
     </article>
 </Container>
