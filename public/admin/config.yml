@@ -87,3 +87,12 @@ collections:
           - { name: "description2", label: "Beschreibung", widget: "markdown" }
           - { name: "imageUrl", label: "Bild", widget: "image", required: false }
           - { name: "imageAlt", label: "Alt-Text für Bild", widget: "string", required: false }
+   
+  - name: "description"
+    label: "Beschreibung Startseite"
+    files:
+      - label: "Beschreibung Startseite"
+        name: "description"
+        file: "src/content/description/description.md"
+        fields:
+          - { name: "description", label: "Beschreibung", widget: "markdown" }
