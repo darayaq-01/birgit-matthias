@@ -2,10 +2,20 @@
 title1: Einzelausstellungen
 description1: |-
   * 2024 Hufelandklinikum, Weimar
+
+
   * 2024 abacus, Hamburg
+
+
   * 2023 Galerie Rosenfeld, Weimar
+
+
   * 2018 Institut für Angewandte Bauforschung, Weimar
+
+
   * 2016 Galerie im Erbenhof, Weimar
+
+
   * 2017 Gebrüder Hopf, Weimar
 title2: Gruppenausstellungen
 description2: >-
