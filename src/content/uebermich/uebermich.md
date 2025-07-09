@@ -43,4 +43,8 @@ description: >-2
 
 
   Seit Oktober 2015 bin ich hauptberuflich freie Malerin in Weimar mit eigenem Atelier.
+
+imageUrl: /uploads/birgit.webp
+imageAlt: Birgit
 ---
+

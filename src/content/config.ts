@@ -85,7 +85,6 @@ const ausstellungenDescription = defineCollection({
         })
 })
 
-
 const description = defineCollection({
     // Type-check frontmatter using a schema
     schema: () =>
@@ -94,4 +93,15 @@ const description = defineCollection({
         })
 })
 
-export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description }
+const uebermich = defineCollection({
+    // Type-check frontmatter using a schema
+    schema: () =>
+        z.object({
+            title: z.string().optional(),
+            description: z.string().optional(),
+            imageUrl: z.string().optional(),
+            imageAlt: z.string().optional(),
+        })
+})
+
+export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich }
