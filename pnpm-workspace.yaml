@@ -1,3 +1,10 @@
 ignoredBuiltDependencies:
   - '@tailwindcss/oxide'
   - netlify-cli
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - puppeteer
+  - sharp
+  - unix-dgram
