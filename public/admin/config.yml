@@ -109,12 +109,12 @@ collections:
           - { name: "imageUrl", label: "Bild", widget: "image", required: false }
           - { name: "imageAlt", label: "Alt-Text für Bild", widget: "string", required: false }
 
-  - name: "videos"
-    label: "Videos"
+  - name: "video"
+    label: "Video"
     files:
-      - label: "Videos"
-        name: "videos"
-        file: "src/content/videos/videos.md"
+      - label: "Video"
+        name: "video"
+        file: "src/content/videos/video.md"
         fields:
           - { name: "title", label: "Titel", widget: "string" }
           - { name: "videoUrl", label: "Video URL (Mux Playback ID o URL)", widget: "string" }

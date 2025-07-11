@@ -42,9 +42,11 @@ const { title1, description1, title2, description2, imageUrl, imageAlt } =
             <div class='prose prose-xl list-none'>
                 {
                     description1 && (
-                        <span class='text-xl leading-normal'>
-                            {description1}
-                        </span>
+                        <ul class='list-disc pl-5'>
+                            {description1.split('\n').map((item) => (
+                                <li>{item}</li>
+                            ))}
+                        </ul>
                     )
                 }
             </div>
@@ -54,7 +56,15 @@ const { title1, description1, title2, description2, imageUrl, imageAlt } =
                 {title2}
             </h3>
             <div class='prose prose-xl list-none'>
-                {description2}
+                {
+                    description2 && (
+                        <ul class='list-disc pl-5'>
+                            {description2.split('\n').map((item) => (
+                                <li>{item}</li>
+                            ))}
+                        </ul>
+                    )
+                }
             </div>
         </div>
     </article>
