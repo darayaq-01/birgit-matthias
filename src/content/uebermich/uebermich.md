@@ -1,8 +1,6 @@
 ---
 title: " Über mich"
-description: >-2
-   
-
+description: >-
   Ich bin freie Künstlerin und wohne und arbeite in Weimar.
 
 
@@ -43,8 +41,6 @@ description: >-2
 
 
   Seit Oktober 2015 bin ich hauptberuflich freie Malerin in Weimar mit eigenem Atelier.
-
 imageUrl: /uploads/birgit.webp
 imageAlt: Birgit
 ---
-
