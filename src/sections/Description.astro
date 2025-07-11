@@ -9,13 +9,13 @@ if (!entry?.data) {
 const { description } = entry.data;
 ---
 
-<Container classAstro='w-fit h-screen flex place-items-center'>
+<Container classAstro='w-fit lg:h-screen flex place-items-center'>
     <article
-        class='prose prose-2xl lg:prose-3xl bg-slate-200/80 px-4 lg:max-w-full p-14 md:py-32 h-full'
+        class='prose prose-2xl lg:prose-3xl bg-slate-200/80 px-4 lg:max-w-full p-14 md:py-32'
     >
         {
             description && (
-                <div class='prose prose-xl list-none pl-5'>
+                <div class='prose prose-xl pl-5'>
                     {description.split('\n').map((item) => (
                         <p>{item}</p>
                     ))}
