@@ -1,18 +1,14 @@
 ---
+import { getEntry } from 'astro:content';
+import '@mux/mux-player';
 import Container from '@components/Container.astro';
 import VideoContainer from '@components/VideoContainer.svelte';
 
-import { fetchDatoCMS } from '@api/fetchDatoCMS.js';
-import { videoQuery } from '@api/query.js';
-
-let videoData;
-try {
-    const response = await fetchDatoCMS(videoQuery);
-    videoData = response.data;
-} catch (error) {
-    console.error('Error fetching video:', error);
-    videoData = null;
+const videoEntry = await getEntry('video', 'video');
+if (!videoEntry?.data) {
+    throw new Error('Error: Not found video entry');
 }
+const videoData = videoEntry.data;
 ---
 
 <Container classAstro='h-screen items-center'>
@@ -22,7 +18,7 @@ try {
         </h2>
     </header>
 
-    <div class='object-cover aspect-w-16 aspect-h-9 bg-gray-300 mb-8'>
+    <div class='mb-8'>
         {
             !videoData ? (
                 <div class='error'>Error loading video</div>
@@ -30,7 +26,7 @@ try {
                 <VideoContainer
                     client:load
                     videoData={videoData}
-                    class='aspect-video'
+                    class='aspect-video w-full'
                 />
             )
         }
