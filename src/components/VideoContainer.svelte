@@ -22,15 +22,6 @@
       style="aspect-ratio: 16/9; width: 100%;"
       metadata-video-title={videoData.title}
     >
-      {#if videoData?.captionsUrl}
-        <track 
-          kind="captions" 
-          src={videoData.captionsUrl} 
-          label="Deutsch" 
-          srclang="de" 
-          default
-        />
-      {/if}
     </mux-player>
   {:else if videoData?.videoUrl}
     <!-- Fallback para URLs externas -->

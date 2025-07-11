@@ -118,5 +118,4 @@ collections:
         fields:
           - { name: "title", label: "Titel", widget: "string" }
           - { name: "videoUrl", label: "Video URL (Mux Playback ID o URL)", widget: "string" }
-          - { name: "thumbnail", label: "Miniaturbild (Poster)", widget: "image", required: false }
           - { name: "captionsUrl", label: "Untertitel URL", widget: "string", required: false }

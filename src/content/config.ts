@@ -55,8 +55,8 @@ const collectionImages = defineCollection({
             price: z.number().optional(),
             sold: z.boolean().optional(),
             year: z.number().optional(),
-            imageUrl: z.string().optional(),
-            imageAlt: z.string().optional()
+            imageUrl: z.string(),
+            imageAlt: z.string()
         })
 })
 
@@ -76,7 +76,7 @@ const events = defineCollection({
 const ausstellungenDescription = defineCollection({
     schema: () =>
         z.object({
-            title1: z.string().optional(),
+            title1: z.string(),
             description1: z.string().optional(),
             title2: z.string().optional(),
             description2: z.string().optional(),
@@ -89,7 +89,7 @@ const description = defineCollection({
     // Type-check frontmatter using a schema
     schema: () =>
         z.object({
-            description: z.string().optional(),
+            description: z.string(),
         })
 })
 
@@ -97,7 +97,7 @@ const uebermich = defineCollection({
     // Type-check frontmatter using a schema
     schema: () =>
         z.object({
-            title: z.string().optional(),
+            title: z.string(),
             description: z.string().optional(),
             imageUrl: z.string().optional(),
             imageAlt: z.string().optional(),
@@ -110,7 +110,6 @@ const video = defineCollection({
         z.object({
             title: z.string(),
             videoUrl: z.string(),
-            thumbnail: z.string().optional(),
             captionsUrl: z.string().optional(),
         })
 })
