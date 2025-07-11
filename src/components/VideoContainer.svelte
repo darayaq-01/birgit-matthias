@@ -1,17 +1,48 @@
 <script>
-  import { VideoPlayer } from '@datocms/svelte';
+  import '@mux/mux-player'; // Importa el componente web
+  export let videoData = null;
+
+  // Identifica si es un playback ID de Mux o URL externa
+  const isMuxPlaybackId = videoData?.videoUrl && !videoData.videoUrl.startsWith('https://');
+  const playbackId = isMuxPlaybackId ? videoData.videoUrl : null;
   
-  export let videoData = null; // Mejor nombre descriptivo
-  </script>
-  
-  <article>
-      {#if videoData?.videoSection?.videoArtist?.video}
-          <VideoPlayer 
-              data={videoData.videoSection.videoArtist.video}
-              playbackId={videoData.videoSection.videoArtist.video.muxPlaybackId} 
-              streamingUrl={videoData.videoSection.videoArtist.video.streamingUrl}
-          />
-      {:else}
-          <p>Video not available</p>
+  // Miniaturas (prioriza la personalizada)
+  const poster = videoData?.thumbnail || 
+                 (playbackId ? `https://image.mux.com/${playbackId}/thumbnail.jpg` : '');
+</script>
+
+<article>
+  {#if playbackId}
+    <mux-player
+      playback-id={playbackId}
+      stream-type="on-demand"
+      {poster}
+      controls
+      preload="metadata"
+      style="aspect-ratio: 16/9; width: 100%;"
+      metadata-video-title={videoData.title}
+    >
+      {#if videoData?.captionsUrl}
+        <track 
+          kind="captions" 
+          src={videoData.captionsUrl} 
+          label="Deutsch" 
+          srclang="de" 
+          default
+        />
       {/if}
-  </article>
+    </mux-player>
+  {:else if videoData?.videoUrl}
+    <!-- Fallback para URLs externas -->
+       <!-- svelte-ignore a11y-media-has-caption -->
+    <video
+      controls
+      poster={poster}
+      style="aspect-ratio: 16/9; width: 100%;"
+    >
+      <source src={videoData.videoUrl} type="video/mp4" />
+    </video>
+  {:else}
+    <p>Video nicht verfügbar</p>
+  {/if}
+</article>
