@@ -110,12 +110,11 @@ collections:
           - { name: "imageAlt", label: "Alt-Text für Bild", widget: "string", required: false }
 
   - name: "videos"
+    label: "Videos"
     files:
       - label: "Videos"
         name: "videos"
-        folder: "src/content/videos"
-        create: true
-        slug: "{{slug}}"
+        file: "src/content/videos/videos.md"
         fields:
           - { name: "title", label: "Titel", widget: "string" }
           - { name: "videoUrl", label: "Video URL (Mux Playback ID o URL)", widget: "string" }
