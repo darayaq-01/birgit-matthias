@@ -15,13 +15,19 @@ const { title, description, imageUrl, imageAlt } = entry.data;
     <article class='h-fit md:w-[55%]'>
         <header class='ml-32'>
             <h2 class='text-3xl pb-2 md:pb-16 font-bold'>
-                <span class='border-b-2 text-white border-white pb-1'
-                    >{title}</span
-                >
+                <span class='border-b-2pb-1'>{title}</span>
             </h2>
         </header>
         <div class='w-full prose prose-2xl py-10'>
-            {description}
+            {
+                description && (
+                    <div class='prose prose-xl pl-5'>
+                        {description.split('\n').map((item) => (
+                            <p>{item}</p>
+                        ))}
+                    </div>
+                )
+            }
         </div>
     </article>
 
