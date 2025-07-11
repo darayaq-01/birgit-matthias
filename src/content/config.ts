@@ -104,4 +104,15 @@ const uebermich = defineCollection({
         })
 })
 
-export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich }
+const video = defineCollection({
+    // Type-check frontmatter using a schema
+    schema: () =>
+        z.object({
+            title: z.string(),
+            videoUrl: z.string(),
+            thumbnail: z.string().optional(),
+            captionsUrl: z.string().optional(),
+        })
+})
+
+export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video }
