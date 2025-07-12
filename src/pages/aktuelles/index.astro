@@ -41,7 +41,10 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
                             </h3>
                             <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
                                 <p class='max-w-prose'>
-                                    {post.data.description}
+                                    {post.data.description &&
+                                        post.data.description
+                                            .split('\n')
+                                            .map((item) => <p>{item}</p>)}
                                 </p>
                             </div>
                             <img
@@ -87,7 +90,12 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
                                     />
                                     <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
                                         <p class='max-w-prose'>
-                                            {post.data.description}
+                                            {post.data.description &&
+                                                post.data.description
+                                                    .split('\n')
+                                                    .map((item) => (
+                                                        <p>{item}</p>
+                                                    ))}
                                         </p>
                                     </div>
                                 </div>
