@@ -3,7 +3,7 @@ title: " Über mich"
 description: >-
   Ich bin freie Künstlerin und wohne und arbeite in Weimar.
 
-  Nach dem Abitur besuchte ich an der Werkkunstschule Lübeck erste Kurse bei Detlef Moraht. Darauf hin nahm ich ein Innenarchitekturstudium an der Akademie der bildenden Künste in Stuttgart auf. Es folgte ein erster Auslandsaufenthalt in den USA, Los Angeles.
+  Nach dem Abitur besuchte ich an der Werkkunstschule Lübeck erste Kurse bei Detlef Moraht. Darauf hin nahm ich ein Innenarchitektur-Studium an der Akademie der bildenden Künste in Stuttgart auf. Es folgte ein erster Auslandsaufenthalt in den USA, Los Angeles.
 
   Von 1990-1993 Studium der Betriebswirtschaft in Kiel, dazu externe Prüfung zur Bankkauffrau. Parallel dazu Teilnahme an weiteren Malkursen bei Detlef Moraht in Lübeck.
 
