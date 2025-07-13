@@ -1,7 +1,7 @@
 ---
 title: " Thank God It's X-Mas, 2017  F"
-description: Feb. 2017
+description: adfhadfgasfdgGs afgfrgfsG
 category: gegenstaendlich
-imageUrl: /uploads/thank-god-its-x-mas-feb-2017.jpg
+imageUrl: /uploads/Armee-ohne-Eigenschaften-IV.jpg
 imageAlt: x-mas
 ---
