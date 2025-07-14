@@ -1,7 +1,7 @@
 ---
 title: Portrait
-category: halbabstrakt
+category: gegenstaendlich
+sortOrder: 2
 imageUrl: /uploads/portrait-768x1024.jpg
 imageAlt: Portrait
-sortOrder: 2
 ---
