@@ -1,7 +1,7 @@
 ---
-title: An der Schaabe
-category: gegenstaendlich
-sortOrder: 1
-imageUrl: /uploads/An-der-Schaabe.jpg
-imageAlt: Picture...
+title: Gegenständlich
+category: Startseite
+sortOrder: 3
+imageUrl: /uploads/Der-Wolf-im-Schafspelz-Feb-2017.jpg
+imageAlt: gegenstaendlich
 ---
