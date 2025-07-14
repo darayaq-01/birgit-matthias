@@ -1,8 +1,6 @@
 ---
-import { werkeData } from '@consts/werkeData';
-import Container from '@components/Container.astro';
-
 import { getCollection } from 'astro:content';
+import Container from '@components/Container.astro';
 
 const collectionImages = await getCollection('collectionImages');
 
@@ -41,7 +39,7 @@ werkeStartseite.sort(sortOrder);
                 >
                     <img
                         alt={w.imageAlt}
-                        class='absolute inset-0 h-full w-fit object-cover object-center'
+                        class='absolute inset-0 h-full w-full object-cover object-center'
                         src={w.imageUrl}
                     />
                     <article class='relative z-10 flex w-full flex-col items-center justify-center p-2'>
