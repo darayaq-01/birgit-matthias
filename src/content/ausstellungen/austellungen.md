@@ -1,8 +1,9 @@
 ---
-title: Austellungen
-category: aus1
-description: Description optional here
-pubDate: 2025-06-29T17:16:00.000Z
-cover: ""
+title: Women Art Weimar
+category: Vernissage
+description: Beteiligung an der Vernissage des Künstlerinnen-Kolektivs
+  "WomenArtWeimar" mit zwei aktuellen Werken.
+pubDate: 2025-07-14T13:23:00.000Z
+cover: /uploads/bildschirmfoto-2025-07-14-um-13.18.29.png
 coverAlt: cover
 ---
