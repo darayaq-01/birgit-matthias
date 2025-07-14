@@ -6,7 +6,7 @@ const presse = defineCollection({
     schema: () =>
         z.object({
             title: z.string(),
-            category: z.string(),
+            category: z.string().optional(),
             description: z.string().optional(),
             // Transform string to Date object
             pubDate: z
