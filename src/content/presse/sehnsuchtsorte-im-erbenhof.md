@@ -1,5 +1,5 @@
 ---
 title: '"Sehnsuchtsorte" im Erbenhof'
-pubDate: 2025-07-14T10:43:00.000Z
+pubDate: 2016-08-01T15:32:00.000Z
 cover: /uploads/presse_erbenhof.jpg
 ---
