@@ -116,4 +116,5 @@ const video = defineCollection({
         })
 })
 
+
 export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video }

@@ -49,7 +49,7 @@ collections:
       - label: "Kategorie"
         name: "category"
         widget: "select"
-        options: ["gegenstaendlich", "abstrakt", "halbabstrakt"]
+        options: ["gegenstaendlich", "abstrakt", "halbabstrakt", "Startseite"]
         hint: "Wählen Sie eine Kategorie für die Pressemitteilung aus."
         required: true
         default: "Gegenständlich"
