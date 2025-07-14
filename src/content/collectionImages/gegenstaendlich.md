@@ -1,7 +1,7 @@
 ---
 title: Gegenständlich
-category: startseite
+category: gegenstaendlich
+sortOrder: 3
 imageUrl: /uploads/Early-Spring-Japanische-Frühling.webp
 imageAlt: Picture...
-sortOrder: 3
 ---
