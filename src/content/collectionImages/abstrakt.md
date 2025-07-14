@@ -1,6 +1,6 @@
 ---
 title: Abstrakt
-category: abstrakt
+category: Startseite
 sortOrder: 1
 imageUrl: /uploads/Landscape-rot-Okt.-2017-Acryl-auf-Leinwand-130x90.webp
 imageAlt: Picture...
