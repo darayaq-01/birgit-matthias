@@ -4,4 +4,5 @@ description: adfhadfgasfdgGs afgfrgfsG
 category: gegenstaendlich
 imageUrl: /uploads/Armee-ohne-Eigenschaften-IV.jpg
 imageAlt: x-mas
+sortOrder: 3
 ---

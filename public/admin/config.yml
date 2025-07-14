@@ -53,6 +53,7 @@ collections:
         hint: "Wählen Sie eine Kategorie für die Pressemitteilung aus."
         required: true
         default: "Gegenständlich"
+      - { label: "Sortierung", name: "sortOrder", widget: "number", required: false }
       - { label: "Preis", name: "price", widget: "number", required: false }
       - { label: "Verkauft", name: "sold", widget: "boolean", required: false }
       - { label: "Jahr", name: "year", widget: "number", required: false }
