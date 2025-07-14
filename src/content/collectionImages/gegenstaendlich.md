@@ -1,7 +1,7 @@
 ---
-title: Gegenständlich
-category: Startseite
-sortOrder: 3
-imageUrl: /uploads/Early-Spring-Japanische-Frühling.webp
+title: An der Schaabe
+category: gegenstaendlich
+sortOrder: 1
+imageUrl: /uploads/An-der-Schaabe.jpg
 imageAlt: Picture...
 ---
