@@ -10,6 +10,7 @@ const abstraktImages = collectionImages
         id: entry.slug,
         folder: entry.data?.category.toLowerCase(),
         title: entry.data?.title,
+        sortOrder: entry.data?.sortOrder,
         description: entry.data?.description,
         imageUrl: entry.data?.imageUrl,
         imageAlt: entry.data?.imageAlt,
@@ -17,6 +18,9 @@ const abstraktImages = collectionImages
         sold: entry.data?.sold,
         year: entry.data?.year,
     }));
+const sortOrder = (a: { sortOrder: number }, b: { sortOrder: number }) =>
+    a.sortOrder - b.sortOrder || 0;
+abstraktImages.sort(sortOrder);
 ---
 
 <IndexGallery

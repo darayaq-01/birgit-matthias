@@ -49,6 +49,8 @@ const collectionImages = defineCollection({
     schema: () =>
         z.object({
             title: z.string(),
+            sortOrder: z.number().default(() => 0), // Default sort order to 0
+            folder: z.string().optional(),
             slug: z.string().optional(),
             description: z.string().optional(),
             category: z.string(),
