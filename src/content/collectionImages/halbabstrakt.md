@@ -1,5 +1,5 @@
 ---
-title: Halbsasbstrakt
+title: Halbasbstrakt
 category: startseite
 sortOrder: 2
 imageUrl: /uploads/Finnischer-Sommer.jpg
