@@ -1,7 +1,7 @@
 ---
-title: Halbabstrakt
-category: Startseite
+title: Finnischer Sommer
+category: halbabstrakt
 sortOrder: 2
-imageUrl: /uploads/Japanischer-Winter-648x448.webp
+imageUrl: /uploads/Finnischer-Sommer.jpg
 imageAlt: Picture...
 ---
