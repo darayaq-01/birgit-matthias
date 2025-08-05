@@ -116,5 +116,15 @@ const video = defineCollection({
         })
 })
 
+const impressum = defineCollection({
+    // Type-check frontmatter using a schema
+    schema: () =>
+        z.object({
+            contactList: z.string().optional(),
+            contactMedia: z.string().optional(),
+            legalNotice: z.string().describe("markdown").optional(),
+        })
+})
 
-export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video }
+
+export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video, impressum }
