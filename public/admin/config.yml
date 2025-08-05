@@ -121,3 +121,14 @@ collections:
           - { name: "title", label: "Titel", widget: "string" }
           - { name: "videoUrl", label: "Video URL (Mux Playback ID o URL)", widget: "string" }
           - { name: "captionsUrl", label: "Untertitel URL", widget: "string", required: false }
+
+  - name: "impressum"
+    label: "Impressum"
+    files:
+      - label: "Impressum"
+        name: "impressum"
+        file: "src/content/impressum/impressum.md"
+        fields:
+          - { name: "contactList", label: "Kontaktliste", widget: "list" }
+          - { name: "contactMedia", label: "Kontakt Medien", widget: "list"  }
+          - { name: "legalNotice", label: "Rechtlicher Hinweis", widget: "markdown" }

@@ -4,7 +4,7 @@ import type { linksTypes } from '@utils/types.d.ts';
 export const links: linksTypes[] = [
     {
         name: 'Impressum',
-        url: '/impresum',
+        url: '/impressum',
     },
     {
         name: 'Datenschutz',

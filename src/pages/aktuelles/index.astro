@@ -35,24 +35,24 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
                     <p>Es gibt keine aktuellen Ausstellungen.</p>
                 ) : (
                     ausstellungen.map((post) => (
-                        <li class='list-none p-4'>
+                        <ul class='list-none p-4'>
                             <h3 class='mb-4 mt-8 w-fit text-pretty text-3xl font-bold'>
                                 {post.data.title}
                             </h3>
                             <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
-                                <p class='max-w-prose'>
+                                <li class='max-w-prose'>
                                     {post.data.description &&
                                         post.data.description
                                             .split('\n')
                                             .map((item) => <p>{item}</p>)}
-                                </p>
+                                </li>
                             </div>
                             <img
                                 width={600}
                                 src={post.data.cover}
                                 alt={post.data.coverAlt}
                             />
-                        </li>
+                        </ul>
                     ))
                 )
             }

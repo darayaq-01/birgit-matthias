@@ -1,0 +1,119 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('impressum', 'impressum');
+if (!entry?.data) {
+    throw new Error('Error: Not found impressum entry');
+}
+const { contactList, contactMedia, legalNotice } = entry.data;
+---
+
+<Layout
+    title='Impressum'
+    backgroundColor='bg-white'
+    navbarProps='bg-white/70 h-30 md:h-34 lg:h-16'
+>
+    <Container
+        classAstro='w-fit md:w-5/6 lg:w-[60%] flex flex-col pt-32 md:pt-56 mb-8'
+    >
+        <section>
+            <h2
+                class='mb-4 mt-8 w-fit pl-4 text-3xl font-bold underline underline-offset-8'
+            >
+                Impressum
+            </h2>
+
+            <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
+                <ul class='list-none p-4'>
+                    <li class='max-w-prose'>Angaben gemäß § 5 TMG:</li>
+                    <li class='max-w-prose'>Birgit Matthias</li>
+                    <li class='max-w-prose'>Gunta-Stölzl-Str. 15</li>
+                    <li class='max-w-prose'>99425 Weimar</li>
+                </ul>
+            </div>
+
+            <h3 class='mb-4 mt-8 w-fit pl-4 text-3xl font-bold'>Kontakt:</h3>
+            <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
+                <ul class='list-none p-4'>
+                    <li class='max-w-prose'>Telefon: +49 3643 77 57 90</li>
+                    <li class='max-w-prose'>
+                        E-Mail: atelier@birgit-matthias.de
+                    </li>
+                    <li class='max-w-prose'>Haftungsausschluss (Disclaimer)</li>
+                </ul>
+            </div>
+
+            <h3
+                class='mb-4 mt-8 w-fit pl-4 text-3xl font-bold underline underline-offset-8'
+            >
+                Haftung für Inhalte
+            </h3>
+
+            <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
+                {
+                    legalNotice && (
+                        <div class='prose prose-xl pl-5'>
+                            {legalNotice.split('\n').map((item) => (
+                                <p>{item}</p>
+                            ))}
+                        </div>
+                    )
+                }
+            </div>
+
+            <!-- <p>
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene
+                Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+                verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+                Diensteanbieter jedoch nicht verpflichtet, übermittelte oder
+                gespeicherte fremde Informationen zu überwachen oder nach
+                Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
+                hinweisen. Verpflichtungen zur Entfernung oder Sperrung der
+                Nutzung von Informationen nach den allgemeinen Gesetzen bleiben
+                hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst
+                ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
+                möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen
+                werden wir diese Inhalte umgehend entfernen.
+            </p>
+            <h3>Haftung für Links</h3>
+            <p>
+                Unser Angebot enthält Links zu externen Webseiten Dritter, auf
+                deren Inhalte wir keinen Einfluss haben. Deshalb können wir für
+                diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+                Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+                oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten
+                wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
+                überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der
+                Verlinkung nicht erkennbar. Eine permanente inhaltliche
+                Kontrolle der verlinkten Seiten ist jedoch ohne konkrete
+                Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
+                Bekanntwerden von Rechtsverletzungen werden wir derartige Links
+                umgehend entfernen.
+            </p>
+
+            <h3>Urheberrecht</h3>
+            <p>
+                Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
+                diesen Seiten unterliegen dem deutschen Urheberrecht. Die
+                Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+                Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der
+                schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                Downloads und Kopien dieser Seite sind nur für den privaten,
+                nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf
+                dieser Seite nicht vom Betreiber erstellt wurden, werden die
+                Urheberrechte Dritter beachtet. Insbesondere werden Inhalte
+                Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
+                Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
+                entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
+                werden wir derartige Inhalte umgehend entfernen.
+            </p>
+
+            Quelle: <a href='https://www.e-recht24.de' rel='noopener noreferrer'
+                >https://www.e-recht24.de</a
+            > -->
+        </section>
+    </Container>
+</Layout>
