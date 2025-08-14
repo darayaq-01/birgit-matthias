@@ -12,4 +12,7 @@ export default defineConfig({
 
   adapter: netlify(),
   integrations: [svelte()],
+  redirects: {
+    '/admin': '/admin/index.html'
+  }
 });

@@ -6,7 +6,7 @@ const presse = defineCollection({
     schema: () =>
         z.object({
             title: z.string(),
-            category: z.string(),
+            category: z.string().optional(),
             description: z.string().optional(),
             // Transform string to Date object
             pubDate: z
@@ -49,14 +49,16 @@ const collectionImages = defineCollection({
     schema: () =>
         z.object({
             title: z.string(),
+            sortOrder: z.number().default(() => 0), // Default sort order to 0
+            folder: z.string().optional(),
             slug: z.string().optional(),
             description: z.string().optional(),
             category: z.string(),
             price: z.number().optional(),
             sold: z.boolean().optional(),
             year: z.number().optional(),
-            imageUrl: z.string().optional(),
-            imageAlt: z.string().optional()
+            imageUrl: z.string(),
+            imageAlt: z.string()
         })
 })
 
@@ -76,7 +78,7 @@ const events = defineCollection({
 const ausstellungenDescription = defineCollection({
     schema: () =>
         z.object({
-            title1: z.string().optional(),
+            title1: z.string(),
             description1: z.string().optional(),
             title2: z.string().optional(),
             description2: z.string().optional(),
@@ -89,7 +91,7 @@ const description = defineCollection({
     // Type-check frontmatter using a schema
     schema: () =>
         z.object({
-            description: z.string().optional(),
+            description: z.string(),
         })
 })
 
@@ -97,11 +99,32 @@ const uebermich = defineCollection({
     // Type-check frontmatter using a schema
     schema: () =>
         z.object({
-            title: z.string().optional(),
+            title: z.string(),
             description: z.string().optional(),
             imageUrl: z.string().optional(),
             imageAlt: z.string().optional(),
         })
 })
 
-export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich }
+const video = defineCollection({
+    // Type-check frontmatter using a schema
+    schema: () =>
+        z.object({
+            title: z.string(),
+            videoUrl: z.string(),
+            captionsUrl: z.string().optional(),
+        })
+})
+
+const impressum = defineCollection({
+    // Type-check frontmatter using a schema
+    schema: () =>
+        z.object({
+            contactList: z.string().optional(),
+            contactMedia: z.string().optional(),
+            legalNotice: z.string().describe("markdown").optional(),
+        })
+})
+
+
+export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video, impressum }
