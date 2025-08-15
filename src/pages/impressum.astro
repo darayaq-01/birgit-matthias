@@ -9,6 +9,7 @@ if (!entry?.data) {
     throw new Error('Error: Not found impressum entry');
 }
 const { contactList, contactMedia, legalNotice } = entry.data;
+console.log('---->', contactList, contactMedia, legalNotice);
 ---
 
 <Layout
@@ -28,21 +29,22 @@ const { contactList, contactMedia, legalNotice } = entry.data;
 
             <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
                 <ul class='list-none p-4'>
-                    <li class='max-w-prose'>Angaben gemäß § 5 TMG:</li>
-                    <li class='max-w-prose'>Birgit Matthias</li>
-                    <li class='max-w-prose'>Gunta-Stölzl-Str. 15</li>
-                    <li class='max-w-prose'>99425 Weimar</li>
+                    {
+                        contactList.map((item) => (
+                            <li class='max-w-prose'>{item}</li>
+                        ))
+                    }
                 </ul>
             </div>
 
             <h3 class='mb-4 mt-8 w-fit pl-4 text-3xl font-bold'>Kontakt:</h3>
             <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
                 <ul class='list-none p-4'>
-                    <li class='max-w-prose'>Telefon: +49 3643 77 57 90</li>
-                    <li class='max-w-prose'>
-                        E-Mail: atelier@birgit-matthias.de
-                    </li>
-                    <li class='max-w-prose'>Haftungsausschluss (Disclaimer)</li>
+                    {
+                        contactMedia.map((item) => (
+                            <li class='max-w-prose'>{item}</li>
+                        ))
+                    }
                 </ul>
             </div>
 
@@ -63,6 +65,9 @@ const { contactList, contactMedia, legalNotice } = entry.data;
                     )
                 }
             </div>
+            <!-- to delete -->
+
+            <!-- till delete -->
 
             <!-- <p>
                 Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene
