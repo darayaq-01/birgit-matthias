@@ -4,7 +4,7 @@ category: " PRESSEMITTEILUNG"
 description: >-
   Das IAB- Institut für Angewandte Bauforschung Weimar gGmbH, Über der Nonnenwiese 1, 99428 Weimar hatte am 06. Juni 2018 zur Vernissage der Weimarer Malerin Birgit Matthias eingeladen.
 pubDate: 2018-06-06T08:00:00.000Z
-cover: /uploads/birgit_matthias_2018.jpg
+cover: /uploads/birgit_matthias_2018.webp
 coverAlt: Birgit
 ---
 

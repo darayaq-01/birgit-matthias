@@ -1,7 +1,7 @@
 ---
 title: An der Schaabe
-category: gegenstaendlich
+category: halbabstrakt
 sortOrder: 0
-imageUrl: /uploads/An-der-Schaabe.jpg
+imageUrl: /uploads/An-der-Schaabe.webp
 imageAlt: An der Schaabe
 ---

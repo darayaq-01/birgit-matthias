@@ -2,6 +2,6 @@
 title: Gegenständlich
 category: Startseite
 sortOrder: 3
-imageUrl: /uploads/Der-Wolf-im-Schafspelz-Feb-2017.jpg
+imageUrl: /uploads/Der Wolf im Schafspelz.webp
 imageAlt: gegenstaendlich
 ---

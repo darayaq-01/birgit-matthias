@@ -2,6 +2,6 @@
 title: Atlantis
 category: abstrakt
 sortOrder: 0
-imageUrl: /uploads/Atlantis.jpg
+imageUrl: /uploads/Atlantis.webp
 imageAlt: Atlantis
 ---
