@@ -1,0 +1,7 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--prefix=/opt/buildhome/.asdf/installs/nodejs/22.0.0"
