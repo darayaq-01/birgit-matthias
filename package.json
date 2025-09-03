@@ -10,26 +10,26 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "6.4.1",
+    "@astrojs/netlify": "6.5.9",
     "@astrojs/svelte": "7.1.0",
     "@astrojs/tailwind": "6.0.2",
     "@datocms/astro": "^0.6.2",
     "@datocms/cda-client": "0.2.7",
     "@datocms/svelte": "^4.2.2",
-    "@mux/mux-player": "3.5.1",
-    "@netlify/plugin-lighthouse": "6.0.1",
+    "@mux/mux-player": "3.5.3",
+    "@netlify/plugin-lighthouse": "6.0.3",
     "@tailwindcss/typography": "0.5.16",
-    "@tailwindcss/vite": "4.1.11",
-    "astro": "5.11.0",
+    "@tailwindcss/vite": "4.1.12",
+    "astro": "5.13.5",
     "astro-navbar": "2.4.0",
     "clsx": "2.1.1",
-    "decap-cms-app": "^3.7.1",
-    "netlify-cli": "22.2.1",
-    "sharp": "0.34.2",
-    "svelte": "^5.35.2",
-    "tailwindcss": "4.1.11",
+    "decap-cms-app": "^3.8.3",
+    "netlify-cli": "23.5.0",
+    "sharp": "0.34.3",
+    "svelte": "^5.38.6",
+    "tailwindcss": "4.1.12",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   },
   "devDependencies": {
     "@tailwindcss/forms": "0.5.10"
@@ -38,5 +38,5 @@
     "node": ">=22.0.0",
     "pnpm": ">=10.0.0"
   },
-  "packageManager": "pnpm@10.12.4"
+  "packageManager": "pnpm@10.15.1"
 }
