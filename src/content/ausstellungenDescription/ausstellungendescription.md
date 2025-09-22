@@ -16,6 +16,6 @@ description2: >-
   2016-2018 Ausleihungen an Grafe, Blankenhain und Bayer AG, Weimar, Thüringer Landtag
 
   2015 Erbenhof, Weimar und Seebachstift, Weimar.
-imageUrl: /uploads/vernissage.webp
+imageUrl: /uploads/An-der-Schaabe.webp
 imageAlt: Birgit
 ---
