@@ -1,6 +1,6 @@
 ---
 title: Abstract  Diptychon
-description: Mischtechnik Auf Jute, 60x80cm, 2023
+description: Mischtechnik Auf Jute, 60x80cm, 2023.
 category: abstrakt
 sortOrder: 0
 year: 2023
