@@ -13,5 +13,5 @@ description: >-
   Vordergründig abstrakte Bilder erhalten eine zusätzliche Ebene, indem sie konkrete Inhalte erahnen lassen.
 
 
-  Mir geht es um die tiefe Schönheit der Welt, der Menschen und der Natur, diese zu ergründen und mit Farben sichtbar zu machen.
+  Mir geht es um die tiefe Schönheit der Welt, der Menschen und der Natur, diese zu ergründen und mit Farben sichtbar zu machen.,
 ---
