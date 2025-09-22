@@ -43,7 +43,7 @@ collections:
     label: "collectionImages"
     folder: "src/content/collectionImages"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.title | slugify}}"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
       - { label: "Beschreibung", name: "description", widget: "text", required: false }
