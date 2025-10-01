@@ -1,9 +1,9 @@
 ---
 title: Faust
-description: Mischtechnik Auf Leinwand, 50 Cm X 70 Cm, 2025
+description: Mischtechnik auf Leinwand, 50 cm x 70 cm, 2025
 category: halbabstrakt
 sortOrder: 0
 year: 2025
 imageUrl: /uploads/Faust.webp
-imageAlt: Faust, Mischtechnik Auf Leinwand, 50 Cm X 70 Cm, 2025
+imageAlt: Faust, Mischtechnik auf Leinwand, 50 cm x 70 cm, 2025
 ---
