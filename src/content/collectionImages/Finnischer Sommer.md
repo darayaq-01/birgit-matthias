@@ -1,6 +1,8 @@
 ---
 title: Finnischer Sommer
-description: Acryl auf Leinwand, 130 cm x 90 cm, 2016
+description: |-
+  Acryl auf Leinwand, 
+  130 cm x 90 cm, 2016
 category: halbabstrakt
 sortOrder: 0
 year: 2016
