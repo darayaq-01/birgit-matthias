@@ -1,5 +1,5 @@
 ---
-title: Mephistopheles Und Faust
+title: Mephistopheles und Faust
 description: Mischtechnik auf Leinwand, jeweils 50 cm x 70 cm, 2024 - 2025
 category: halbabstrakt
 sortOrder: 0
