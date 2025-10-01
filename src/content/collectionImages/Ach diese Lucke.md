@@ -5,5 +5,5 @@ category: abstrakt
 sortOrder: 0
 year: 2015
 imageUrl: /uploads/Ach diese Lucke -GAP.webp
-imageAlt: Ach Diese Lücke „GAP“, Acryl auf Leinwand, 100 cm x 80 cm
+imageAlt: Ach diese Lücke „GAP“, Acryl auf Leinwand, 100 cm x 80 cm
 ---
