@@ -1,5 +1,6 @@
 ---
 title: Splash I+II (Diptychon)
+description: Acryl auf Leinwand, jeweils 100 cm x 150 cm, 2016
 category: abstrakt
 sortOrder: 0
 year: 2016
