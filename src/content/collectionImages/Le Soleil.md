@@ -1,6 +1,8 @@
 ---
 title: Le Soleil
-description: Acryl auf Leinwand, 50 cm X 70 cm, 2017
+description: |-
+  Acryl auf Leinwand, 
+  50 cm X 70 cm, 2017
 category: abstrakt
 sortOrder: 0
 year: 2017
