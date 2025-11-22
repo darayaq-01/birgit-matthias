@@ -1,9 +1,9 @@
 ---
-title: "Ach Diese LüCke   „GAP“, Acryl Auf Leinwand, 100x80cm"
-description: Acryl Auf Leinwand, 100x80cm
+title: Ach diese Lücke „GAP“, Acryl Auf Leinwand, 100 cm x 80 cm
+description: Acryl auf Leinwand, 100 cm x 80 cm
 category: abstrakt
 sortOrder: 0
 year: 2015
 imageUrl: /uploads/Ach diese Lucke -GAP.webp
-imageAlt: Ach Diese LüCke „GAP“, Acryl Auf Leinwand, 100x80cm
+imageAlt: Ach diese Lücke „GAP“, Acryl auf Leinwand, 100 cm x 80 cm
 ---

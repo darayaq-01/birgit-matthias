@@ -1,9 +1,9 @@
 ---
 title: Ohne Titel
-description: Acryl Auf Leinwand, 50 Cm X 70 Cm, 2017
-category: halbabstrakt
+description: Acryl auf Leinwand, 50 cm x 70 cm, 2017
+category: abstrakt
 sortOrder: 0
 year: 2017
 imageUrl: /uploads/Ohne Titel 2017.webp
-imageAlt: Ohne Titel, Acryl Auf Leinwand, 50 Cm X 70 Cm, 2017
+imageAlt: Ohne Titel, Acryl auf Leinwand, 50 cm x 70 cm, 2017
 ---

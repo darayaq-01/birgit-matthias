@@ -1,10 +1,10 @@
 ---
 title: Osterfeuer
-description: Acryl Auf Leinwand, 100cm X 80 Cm, 2023   VERKAUFT
+description: Acryl auf Leinwand, 100 cm x 80 cm, 2023, in Privatbesitz
 category: abstrakt
 sortOrder: 0
-year: 2023
 sold: true
+year: 2023
 imageUrl: /uploads/Osterfeuer.webp
-imageAlt: Osterfeuer, Acryl Auf Leinwand, 100cm X 80 Cm, 2023   VERKAUFT
+imageAlt: Osterfeuer, Acryl auf Leinwand, 100 cm x 80 cm, 2023, in Privatbesitz
 ---

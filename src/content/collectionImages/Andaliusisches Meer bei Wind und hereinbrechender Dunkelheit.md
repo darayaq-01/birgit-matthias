@@ -1,8 +1,9 @@
 ---
-title: Andaliusisches Meer Bei Wind Und Hereinbrechender Dunkelheit (CáDiz)
+title: Andaliusisches Meer bei Wind und hereinbrechender Dunkelheit (Cádiz)
 category: halbabstrakt
 sortOrder: 0
 year: 2023
 imageUrl: /uploads/Andaliusisches Meer bei Wind und hereinbrechender Dunkelheit.webp
-imageAlt: Andaliusisches Meer Bei Wind Und Hereinbrechender Dunkelheit (CáDiz), 2023, Privatbesitz
+imageAlt: Andaliusisches Meer bei Wind und hereinbrechender Dunkelheit (Cádiz),
+  2023, Privatbesitz
 ---

@@ -1,6 +1,6 @@
 ---
-title: UP And DOWN
-description: Acryl Auf Leinwand
+title: UP and DOWN
+description: Acryl auf Leinwand
 category: abstrakt
 sortOrder: 0
 year: 2015

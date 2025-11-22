@@ -1,9 +1,9 @@
 ---
 title: Meeresphantasie III Und IV
-description: Acryl Auf Leinwand, Je 80 Cm X 100 Cm
+description: Acryl auf Leinwand, jeweils 80 cm x 100 cm
 category: halbabstrakt
 sortOrder: 0
 year: 2016
 imageUrl: /uploads/Meeresphantasie III und IV.webp
-imageAlt: Meeresphantasie III Und IV, Acryl Auf Leinwand, Je 80 Cm X 100 Cm
+imageAlt: Meeresphantasie III und IV, Acryl auf Leinwand, jeweils 80 cm x 100 cm
 ---

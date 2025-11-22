@@ -1,9 +1,9 @@
 ---
 title: Wintermalerei
-description: Acryl Auf Leinwand, 130 Cm X 90 Cm, 2016 1
+description: Acryl auf Leinwand, 130 cm x 90 cm, 2016
 category: halbabstrakt
 sortOrder: 0
 year: 2016
 imageUrl: /uploads/Wintermalerei.webp
-imageAlt: Wintermalerei, Acryl Auf Leinwand, 130 Cm X 90 Cm, 2016 1
+imageAlt: Wintermalerei, Acryl auf Leinwand, 130 cm x 90 cm, 2016
 ---

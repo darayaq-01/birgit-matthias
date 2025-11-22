@@ -1,9 +1,9 @@
 ---
 title: Familienaufstellung I
-description: Acryl Auf Leinwand, 130 Cm X 90 Cm, 2017
+description: Acryl auf Leinwand, 130 cm x 90 cm, 2017
 category: halbabstrakt
 sortOrder: 0
 year: 2017
 imageUrl: /uploads/Familienaufstellung I .webp
-imageAlt: Familienaufstellung I; Acryl Auf Leinwand, 130 Cm X 90 Cm, 2017
+imageAlt: Familienaufstellung I, Acryl auf Leinwand, 130 cm x 90 cm, 2017
 ---

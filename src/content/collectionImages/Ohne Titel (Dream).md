@@ -1,9 +1,9 @@
 ---
 title: Ohne Titel (Dream)
-description: Acryl Auf Leinwand, 80 Cm X 120 Cm, 2017
+description: Acryl auf Leinwand, 80 cm x 120 cm, 2017
 category: halbabstrakt
 sortOrder: 0
 year: 2017
 imageUrl: /uploads/Ohne Titel (Dream).webp
-imageAlt: Ohne Titel (Dream), Acryl Auf Leinwand, 80 Cm X 120 Cm, 2017
+imageAlt: Ohne Titel (Dream), Acryl auf Leinwand, 80 cm x 120 cm, 2017
 ---
