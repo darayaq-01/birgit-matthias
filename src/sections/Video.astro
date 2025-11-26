@@ -1,32 +1,32 @@
 ---
-import { getEntry } from 'astro:content';
-import '@mux/mux-player';
-import Container from '@components/Container.astro';
-import VideoContainer from '@components/VideoContainer.svelte';
+import { getEntry } from "astro:content";
+import "@mux/mux-player";
+import Container from "@components/Container.astro";
+import VideoContainer from "@components/VideoContainer.svelte";
 
-const videoEntry = await getEntry('video', 'video');
+const videoEntry = await getEntry("video", "video");
 if (!videoEntry?.data) {
-    throw new Error('Error: Not found video entry');
+    throw new Error("Error: Not found video entry");
 }
 const videoData = videoEntry.data;
 ---
 
-<Container classAstro=' items-center aspect-video mb-20'>
-    <header class='ml-32'>
-        <h2 class='pb-16 text-3xl font-bold'>
-            <span class='border-b-2 border-white pb-1'>Video</span>
+<Container classAstro=" items-center aspect-video mb-20">
+    <header class="ml-32">
+        <h2 class="pb-16 text-3xl font-bold">
+            <span class="border-b-2 border-white pb-1">Video</span>
         </h2>
     </header>
 
-    <div class='mb-8'>
+    <div class="mb-8">
         {
             !videoData ? (
-                <div class='error'>Error loading video</div>
+                <div class="error">Error loading video</div>
             ) : (
                 <VideoContainer
-                    client:load
+                    client:visible
                     videoData={videoData}
-                    class='aspect-video w-full'
+                    class="aspect-video w-full"
                 />
             )
         }
