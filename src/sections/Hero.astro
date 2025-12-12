@@ -1,10 +1,17 @@
 ---
-import ImageBackground from '@assets/birgit-matthias.webp';
+import { getEntry } from 'astro:content';
+// import ImageBackground from '@assets/birgit-matthias.webp';
+
+const entry = await getEntry('hero', 'herocontent');
+if (!entry?.data) {
+    throw new Error('Error: Not found hero entry');
+}
+const { imageUrl, imageAlt } = entry.data;
 ---
 
 <div
     class='bg-center bg-cover bg-no-repeat relative h-dvh mb-20'
-    style=`background-image: url(${ImageBackground.src}); height: {ImageBackground.height}; width: {ImageBackground.width}; alt="Birgit Matthias Malerei";`
+    style=`background-image: url(${imageUrl}); alt=(${imageAlt});`
 >
     <slot />
 </div>

@@ -1,5 +1,4 @@
 import { defineCollection, z } from 'astro:content'
-import { version } from 'typescript'
 
 const presse = defineCollection({
     // Type-check frontmatter using a schema
@@ -124,5 +123,11 @@ const impressum = defineCollection({
     }),
 });
 
+const hero = defineCollection({
+    schema: z.object({
+        imageUrl: z.string(),
+        imageAlt: z.string()
+    }),
+});
 
-export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video, impressum }
+export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video, impressum, hero }
