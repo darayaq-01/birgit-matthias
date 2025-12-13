@@ -1,10 +1,20 @@
 ---
-import ImageBackground from '@assets/birgit-matthias.webp';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('hero', 'herocontent');
+if (!entry?.data) {
+    throw new Error('Fehler: Nicht gefunden hero Eintrag');
+}
+const { imageUrl, imageAlt } = entry.data;
 ---
 
-<div
-    class='bg-center bg-cover bg-no-repeat relative h-dvh mb-20'
-    style=`background-image: url(${ImageBackground.src}); height: {ImageBackground.height}; width: {ImageBackground.width}; alt="Birgit Matthias Malerei";`
->
-    <slot />
+<div class='relative h-dvh mb-20 overflow-hidden'>
+    <img
+        src={imageUrl}
+        alt={imageAlt}
+        class='absolute inset-0 w-full h-full object-cover object-top'
+    />
+    <div class='relative h-full'>
+        <slot />
+    </div>
 </div>

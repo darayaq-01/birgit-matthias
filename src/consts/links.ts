@@ -1,4 +1,4 @@
-import type { linksTypes } from '@utils/types.d.ts';
+import type { linksTypes, socialLinksTypes } from '@utils/types.d.ts';
 
 
 export const links: linksTypes[] = [
@@ -14,4 +14,15 @@ export const links: linksTypes[] = [
         name: "atelier@birgit-matthias.de",
         url: "mailto:atelier@birgit-matthias.de",
     }
-];  
+];
+
+export const socialLinks: socialLinksTypes[] = [
+    {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/birgitmatthias/',
+    },
+    {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/BirgitMatthiasKunst/',
+    },
+]

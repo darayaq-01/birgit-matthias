@@ -35,6 +35,10 @@ export type linksTypes = {
     imgHeight?: number;
     alt?: string;
 }
+export type socialLinksTypes = {
+    name: string;
+    url: string;
+}
 
 declare namespace Dato {
     type Video = {

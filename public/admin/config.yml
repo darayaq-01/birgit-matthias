@@ -9,6 +9,15 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "hero"
+    label: "Hero section"
+    file: "src/content/hero/herocontent.md"
+    create: false
+    slug: "herocontent"
+    fields:
+      - {name: "imageUrl", label: "Bild URL", widget: "image" }
+      - {name: "imageAlt", label: "Alt-Text für Bild", widget: "string" }
+          
   - name: "presse"
     label: "Presse"
     folder: "src/content/presse"
