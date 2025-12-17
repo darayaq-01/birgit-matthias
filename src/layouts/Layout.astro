@@ -45,10 +45,11 @@ import ObserverScript from '@helpers/ObserverScript.astro';
     >
         <!-- 'linkLogoClass' as class is used to target the Logo with JS -->
         <Navbar
-            linkLogoClass=`linkLogoClass lg:mt-40 mt-0 md:bg-white bg-transparent ${logoClassLayout}`
-            headerNavClass=`bg-white  pb-2 h-30 md:h-34 lg:h-16 ${navbarProps}`
+            linkLogoClass=`linkLogoClass lg:mt-12 mt-0 md:bg-white bg-transparent ${logoClassLayout}`
+            headerNavClass=`bg-white pb-2 h-16 md:h-22 lg:h-16 ${navbarProps}`
+            logoClass='h-20 md:h-26'
         />
-        <main class:list={['flex-grow', mainSecctionClass]}><slot /></main>
+        <main class:list={['grow', mainSecctionClass]}><slot /></main>
         <GlobalStyles />
         <ObserverScript />
     </body>
