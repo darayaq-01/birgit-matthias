@@ -8,13 +8,15 @@ if (!entry?.data) {
 const { imageUrl, imageAlt } = entry.data;
 ---
 
-<div class='relative h-dvh mb-20 overflow-hidden'>
+<section
+    class='relative md:h-dvh md:mb-20 overflow-visible pt-20 sm:pt-24 md:pt-0'
+>
     <img
         src={imageUrl}
         alt={imageAlt}
-        class='absolute inset-0 w-full h-full object-cover object-top'
+        class='w-full h-[65vh] md:h-full object-cover object-center md:object-top'
     />
-    <div class='relative h-full'>
+    <div class='relative md:absolute md:inset-0 md:h-full'>
         <slot />
     </div>
-</div>
+</section>
