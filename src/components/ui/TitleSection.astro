@@ -1,0 +1,20 @@
+---
+interface Props {
+    title: string;
+    classHeader?: string;
+    classHeaderTitle?: string;
+}
+
+const { title, classHeader, classHeaderTitle } = Astro.props as Props;
+---
+
+<header class:list={['md:ml-32', classHeader]}>
+    <h2
+        class:list={[
+            'pb-8 md:pb-16 text-pretty text-3xl font-bold',
+            classHeaderTitle,
+        ]}
+    >
+        <span class='border-b-2 border-black md:pb-1'>{title}</span>
+    </h2>
+</header>

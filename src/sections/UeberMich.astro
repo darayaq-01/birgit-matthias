@@ -1,6 +1,8 @@
 ---
 import { getEntry } from 'astro:content';
 import Container from '@components/Container.astro';
+import TitleSection from '@components/ui/TitleSection.astro';
+import ProseTemplate from '@components/ui/ProseTemplate.astro';
 
 const entry = await getEntry('uebermich', 'uebermich');
 if (!entry?.data) {
@@ -13,19 +15,16 @@ const { title, description, imageUrl, imageAlt } = entry.data;
     classAstro='py-20 md:my-20 flex flex-col md:flex-row md:justify-between md:py-20 gap-8'
 >
     <article class='h-fit md:w-[55%]'>
-        <header class='ml-32'>
-            <h2 class='text-3xl pb-2 md:pb-16 font-bold'>
-                <span class='border-b-2pb-1'>{title}</span>
-            </h2>
-        </header>
-        <div class='w-full prose prose-2xl py-10'>
+        <TitleSection title={title} />
+
+        <div class='w-full prose prose-2xl md:py-10'>
             {
                 description && (
-                    <div class='prose prose-xl pl-5'>
+                    <ProseTemplate>
                         {description.split('\n').map((item) => (
                             <p>{item}</p>
                         ))}
-                    </div>
+                    </ProseTemplate>
                 )
             }
         </div>

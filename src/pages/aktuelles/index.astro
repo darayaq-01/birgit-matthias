@@ -2,53 +2,54 @@
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import { getCollection } from 'astro:content';
+import TitleSection from '@components/ui/TitleSection.astro';
+import SubTitleSection from '@components/ui/SubTitleSection.astro';
+import ProseTemplate from '@components/ui/ProseTemplate.astro';
 
 import FormattedDate from '@components/FormattedDate.astro';
 
 // sort posts by date, newest first
 const presse = (await getCollection('presse')).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    (a, b) =>
+        ((b.data.pubDate ?? 0).valueOf?.() ?? 0) -
+        ((a.data.pubDate ?? 0).valueOf?.() ?? 0)
 );
 const ausstellungen = (await getCollection('ausstellungen')).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    (a, b) =>
+        ((b.data.pubDate ?? 0).valueOf?.() ?? 0) -
+        ((a.data.pubDate ?? 0).valueOf?.() ?? 0)
 );
 ---
 
 <Layout
     title='Aktivitäten'
     backgroundColor='bg-white'
-    navbarProps='bg-white/70 h-30 md:h-34 lg:h-16'
+    navbarProps='bg-white/70 h-18 md:h-34 lg:h-16'
     logoClassLayout='lg:mt-40 mt-0 md:bg-white bg-transparent'
 >
     <Container
-        classAstro='w-fit md:w-5/6 lg:w-[60%] flex flex-col   pt-32 md:pt-56 mb-8'
+        classAstro='w-fit md:w-5/6 lg:w-[60%] flex flex-col pt-32 md:pt-56 mb-8'
     >
-        <article>
-            <h2
-                class='mb-4 mt-8 w-fit pl-4 text-3xl font-bold underline underline-offset-8'
-            >
-                Aktuelle Ausstellungen
-            </h2>
+        <article class='border-b-2 border-gray-400 mb-6 pb-4'>
+            <TitleSection title='Aktuelles Ausstellungen' />
 
             {
                 ausstellungen.length === 0 ? (
                     <p>Es gibt keine aktuellen Ausstellungen.</p>
                 ) : (
                     ausstellungen.map((post) => (
-                        <ul class='list-none p-4'>
-                            <h3 class='mb-4 mt-8 w-fit text-pretty text-3xl font-bold'>
-                                {post.data.title}
-                            </h3>
-                            <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
-                                <li class='max-w-prose'>
+                        <ul class='list-none md:py-4'>
+                            <SubTitleSection title={post.data.title} />
+                            <ProseTemplate>
+                                <li>
                                     {post.data.description &&
                                         post.data.description
                                             .split('\n')
                                             .map((item) => <p>{item}</p>)}
                                 </li>
-                            </div>
+                            </ProseTemplate>
                             <img
-                                width={600}
+                                class='object-cover w-fit'
                                 src={post.data.cover}
                                 alt={post.data.coverAlt}
                             />
@@ -58,11 +59,7 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
             }
         </article>
         <article class='mt-10'>
-            <h2
-                class='mb-4 mt-8 w-fit pl-4 text-3xl font-bold underline underline-offset-8'
-            >
-                Presse
-            </h2>
+            <TitleSection title='Presse' />
             {
                 presse.length === 0 ? (
                     <p>Es gibt keine aktuellen posts.</p>
@@ -71,16 +68,17 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
                         <li class='list-none p-4 shadow-sm transition duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-400'>
                             <a href={`/aktuelles/${post.slug}/`}>
                                 <div class='mb-6 mt-2 pb-10 pt-4'>
-                                    <h3 class='mt-8 w-fit text-pretty text-3xl font-bold text-gray-600'>
-                                        {post.data.category}
-                                    </h3>
-                                    <h3 class='w-fit text-pretty py-2 text-3xl font-bold'>
-                                        {post.data.title}
-                                    </h3>
+                                    <SubTitleSection
+                                        title={post.data.category ?? ''}
+                                        classSubTitle='text-gray-600'
+                                    />
+                                    <SubTitleSection title={post.data.title} />
                                     <p class='prose-base lg:prose-xl'>
-                                        <FormattedDate
-                                            date={post.data.pubDate}
-                                        />
+                                        {post.data.pubDate && (
+                                            <FormattedDate
+                                                date={post.data.pubDate}
+                                            />
+                                        )}
                                     </p>
                                     <img
                                         class='my-6'
@@ -88,16 +86,12 @@ const ausstellungen = (await getCollection('ausstellungen')).sort(
                                         src={post.data.cover}
                                         alt={post.data.coverAlt}
                                     />
-                                    <div class='lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4'>
-                                        <p class='max-w-prose'>
-                                            {post.data.description &&
-                                                post.data.description
-                                                    .split('\n')
-                                                    .map((item) => (
-                                                        <p>{item}</p>
-                                                    ))}
-                                        </p>
-                                    </div>
+                                    <ProseTemplate>
+                                        {post.data.description &&
+                                            post.data.description
+                                                .split('\n')
+                                                .map((item) => <p>{item}</p>)}
+                                    </ProseTemplate>
                                 </div>
                             </a>
                         </li>

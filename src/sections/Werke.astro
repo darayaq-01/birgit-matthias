@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Container from '@components/Container.astro';
+import TitleSection from '@components/ui/TitleSection.astro';
+import SubTitleSection from '@components/ui/SubTitleSection.astro';
 
 const collectionImages = await getCollection('collectionImages');
 
@@ -24,34 +26,31 @@ werkeStartseite.sort(sortOrder);
 ---
 
 <Container classAstro='lg:h-screen flex justify-center flex-col' id='werke'>
-    <header class='ml-32'>
-        <h2 class='pb-16 text-3xl font-bold'>
-            <span class='border-b-2 border-white pb-1'>Werke</span>
-        </h2>
-    </header>
-
-    <article class='flex flex-col lg:w-full lg:flex-row gap-4 bg-white'>
-        {
-            werkeStartseite.map((w) => (
-                <a
-                    href={`/${w.id}`}
-                    class='relative flex aspect-square lg:w-1/3 gap-10 hover:drop-shadow'
-                >
-                    <img
-                        alt={w.imageAlt}
-                        class='absolute inset-0 h-full w-full object-cover object-center'
-                        src={w.imageUrl}
-                    />
-                    <article class='relative z-10 flex w-full flex-col items-center justify-center p-2'>
-                        <h3 class='text-shadow-custom w-fit hyphens-auto text-balance wrap-break-word border-b-4 border-white p-6 lg:p-2 text-center text-4xl lg:text-2xl font-extrabold leading-relaxed text-white hover:scale-110'>
-                            {w.title}
-                        </h3>
-                    </article>
-                </a>
-            ))
-        }
-    </article>
+    <TitleSection title='Werke' />
 </Container>
+
+<article class='flex flex-col lg:w-full lg:flex-row gap-4 bg-white'>
+    {
+        werkeStartseite.map((w) => (
+            <a
+                href={`/${w.id}`}
+                class='relative flex aspect-square lg:w-1/3 gap-10 hover:drop-shadow'
+            >
+                <img
+                    alt={w.imageAlt}
+                    class='absolute inset-0 h-full w-full object-cover object-center'
+                    src={w.imageUrl}
+                />
+                <article class='relative z-10 flex w-full flex-col items-center justify-center p-2'>
+                    <SubTitleSection
+                        classSubTitle='text-shadow-custom w-fit hyphens-auto text-balance wrap-break-word border-b-4 border-white p-6 lg:p-2 text-center font-extrabold leading-relaxed text-white hover:scale-110'
+                        title={w.title}
+                    />
+                </article>
+            </a>
+        ))
+    }
+</article>
 
 <style>
     .text-shadow-custom {

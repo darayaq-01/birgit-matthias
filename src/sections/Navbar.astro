@@ -35,13 +35,17 @@ const currentPath = Astro.url.pathname;
             <!-- hamburger button -->
             <div class='block lg:hidden'>
                 <MenuIcon
-                    class='my-class h-8 w-8 font-bold text-[--primary-color] hover:text-black lg:text-white'
+                    id='menu-toggle'
+                    class='hamburger h-8 w-8 font-bold text-[--primary-color] hover:text-black lg:text-white cursor-pointer'
                 />
             </div>
         </div>
-        <MenuItems class='mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto'>
+        <MenuItems
+            id='mobile-menu'
+            class='hidden fixed inset-0 bg-white/95 h-screen items-center justify-center lg:relative lg:inset-auto lg:bg-white lg:h-auto lg:flex lg:mt-0 lg:w-auto'
+        >
             <ul
-                class='my-9 flex flex-col gap-8 text-[1.3rem] lg:my-0 lg:flex-row'
+                class='flex flex-col items-center gap-8 text-[1.3rem] lg:flex-row lg:my-0'
             >
                 {
                     menuItems
@@ -49,9 +53,13 @@ const currentPath = Astro.url.pathname;
                         .map((item) => (
                             <li class='font-bold'>
                                 <a
-                                    data-link
                                     href={item?.path}
-                                    class={`navbar-link flex uppercase text-gray-700 hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out ${currentPath === item.path ? 'active-item' : ''}`}
+                                    class:list={[
+                                        'navbar-link flex uppercase text-gray-700 hover:text-[#EC008C] w-fit hover:scale-110 transition-all duration-300 ease-in-out',
+                                        currentPath === item.path
+                                            ? 'active-item'
+                                            : '',
+                                    ]}
                                 >
                                     {item.title}
                                 </a>
@@ -62,3 +70,58 @@ const currentPath = Astro.url.pathname;
         </MenuItems>
     </Astronav>
 </header>
+
+<script>
+    import { setupMenuToggle } from '@helpers/menuToggle';
+    setupMenuToggle();
+</script>
+
+<style>
+    #mobile-menu:not(.hidden) {
+        display: flex;
+    }
+
+    /* Estilos para el icono hamburguesa */
+    .hamburger {
+        position: relative;
+        z-index: 60;
+        transition: transform 0.3s ease;
+    }
+
+    /* Transiciones suaves para todas las líneas */
+    .hamburger :global(svg) {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hamburger :global(line) {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+    }
+
+    /* Transformar hamburguesa en X cuando está abierto */
+    .hamburger.open :global(line:nth-child(1)) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open :global(line:nth-child(2)) {
+        opacity: 0;
+    }
+
+    .hamburger.open :global(line:nth-child(3)) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Transición suave del menú móvil */
+    #mobile-menu {
+        transition: opacity 0.3s ease;
+    }
+
+    #mobile-menu.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #mobile-menu:not(.hidden) {
+        opacity: 1;
+    }
+</style>
