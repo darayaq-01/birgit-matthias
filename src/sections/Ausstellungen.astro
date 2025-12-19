@@ -1,6 +1,9 @@
 ---
 import { getEntry } from 'astro:content';
 import Container from '@components/Container.astro';
+import TitleSection from '@components/ui/TitleSection.astro';
+import ProseTemplate from '@components/ui/ProseTemplate.astro';
+import SubTitleSection from '@components/ui/SubTitleSection.astro';
 
 const entry = await getEntry(
     'ausstellungenDescription',
@@ -17,11 +20,7 @@ const { title1, description1, title2, description2, imageUrl, imageAlt } =
     classAstro='2xl:h-screen flex flex-col md:flex-row justify-center gap-14 py-20'
 >
     <div class='flex-1 py-1 md:py-3'>
-        <header class='ml-32'>
-            <h2 class='text-3xl pb-16 font-bold'>
-                <span class='border-b-2 border-white pb-1'>Ausstellungen</span>
-            </h2>
-        </header>
+        <TitleSection title='Ausstellungen' />
 
         <div class='aspect-w-16 aspect-h-9 bg-gray-300'>
             <img
@@ -35,11 +34,8 @@ const { title1, description1, title2, description2, imageUrl, imageAlt } =
 
     <article class='flex-1 h-fit md:py-5'>
         <div class='md:my-10 max-w-prose'>
-            <h3 class='prose prose-xl py-5 font-bold'>
-                {title1}
-            </h3>
-
-            <div class='prose prose-xl list-none'>
+            <SubTitleSection title={title1} />
+            <ProseTemplate class='list-none'>
                 {
                     description1 && (
                         <ul class='list-disc pl-5'>
@@ -49,13 +45,11 @@ const { title1, description1, title2, description2, imageUrl, imageAlt } =
                         </ul>
                     )
                 }
-            </div>
+            </ProseTemplate>
         </div>
         <div>
-            <h3 class='prose prose-xl py-5 font-bold'>
-                {title2}
-            </h3>
-            <div class='prose prose-xl list-none'>
+            <SubTitleSection title={title2 ?? ''} />
+            <ProseTemplate class='list-none'>
                 {
                     description2 && (
                         <ul class='list-disc pl-5'>
@@ -65,7 +59,7 @@ const { title1, description1, title2, description2, imageUrl, imageAlt } =
                         </ul>
                     )
                 }
-            </div>
+            </ProseTemplate>
         </div>
     </article>
 </Container>

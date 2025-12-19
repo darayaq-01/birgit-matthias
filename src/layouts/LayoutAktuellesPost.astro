@@ -7,6 +7,8 @@ const { title, cover, coverAlt } = Astro.props;
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import Link from '@components/ui/Link.astro';
+import TitleSection from '@components/ui/TitleSection.astro';
+import ProseTemplate from '@components/ui/ProseTemplate.astro';
 ---
 
 <Layout title={title} backgroundColor='bg-white' navbarProps='bg-white/70'>
@@ -19,15 +21,13 @@ import Link from '@components/ui/Link.astro';
             </div>
 
             <div class='my-8'>
-                <h2 class='w-fit py-8 text-3xl font-bold'>
-                    {title}
-                </h2>
+                <TitleSection title={title} />
             </div>
-            <article class='lg:prose-3xl prose prose-2xl'>
-                <p class='max-w-prose'>
-                    <slot />
-                </p>
-            </article>
+
+            <ProseTemplate>
+                <slot />
+            </ProseTemplate>
+
             <div class='pb-6 pt-12'>
                 <Link href='/aktuelles' class='md:prose-2xl'>« Züruk</Link>
             </div>

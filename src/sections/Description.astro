@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import Container from '@components/Container.astro';
+import ProseTemplate from '@components/ui/ProseTemplate.astro';
 
 const entry = await getEntry('description', 'description');
 if (!entry?.data) {
@@ -15,11 +16,11 @@ const { description } = entry.data;
     >
         {
             description && (
-                <div class='prose prose-xl pl-5'>
+                <ProseTemplate>
                     {description.split('\n').map((item) => (
                         <p>{item}</p>
                     ))}
-                </div>
+                </ProseTemplate>
             )
         }
     </article>
