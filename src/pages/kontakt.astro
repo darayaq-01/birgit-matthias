@@ -5,12 +5,13 @@ import Form from '@components/Form.astro';
 import Footer from '@sections/Footer.astro';
 import TitleSection from '@components/ui/TitleSection.astro';
 import ProseTemplate from '@components/ui/ProseTemplate.astro';
+
 export const prerender = true;
 ---
 
 <Layout title='Kontakt' backgroundColor='bg-white' navbarProps='bg-white/70'>
     <Container
-        classAstro='md:w-[70dvw] flex flex-col md:flex-row place-items-center pt-32 md:pt-56 gap-8 md:gap-16'
+        classAstro='md:lg:w-2/3 flex flex-col md:flex-row place-items-center pt-32 md:pt-56 gap-8'
     >
         <Form
             articleClassForm='h-fit w-full md:w-1/2 md:order-1 order-2 pb-4 mb-6'

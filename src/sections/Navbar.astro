@@ -77,18 +77,31 @@ const currentPath = Astro.url.pathname;
 </script>
 
 <style>
-    #mobile-menu:not(.hidden) {
-        display: flex;
+    @media (max-width: 1023px) {
+        #mobile-menu:not(.hidden) {
+            display: flex;
+        }
+
+        #mobile-menu.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #mobile-menu:not(.hidden) {
+            opacity: 1;
+        }
+
+        #mobile-menu {
+            transition: opacity 0.3s ease;
+        }
     }
 
-    /* Estilos para el icono hamburguesa */
     .hamburger {
         position: relative;
         z-index: 60;
         transition: transform 0.3s ease;
     }
 
-    /* Transiciones suaves para todas las líneas */
     .hamburger :global(svg) {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -98,7 +111,6 @@ const currentPath = Astro.url.pathname;
         transform-origin: center;
     }
 
-    /* Transformar hamburguesa en X cuando está abierto */
     .hamburger.open :global(line:nth-child(1)) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -109,19 +121,5 @@ const currentPath = Astro.url.pathname;
 
     .hamburger.open :global(line:nth-child(3)) {
         transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    /* Transición suave del menú móvil */
-    #mobile-menu {
-        transition: opacity 0.3s ease;
-    }
-
-    #mobile-menu.hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    #mobile-menu:not(.hidden) {
-        opacity: 1;
     }
 </style>
