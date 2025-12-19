@@ -14,6 +14,10 @@ const collection = await getCollection('collectionImages');
 const item = collection.find((entry) => entry.slug === id);
 
 if (!item) throw new Error(`No se encontró el item con id ${id}`);
+
+const backUrl = item.data?.seriesId
+    ? `/halbabstrakt/serie/${item.data.seriesId}`
+    : '/halbabstrakt';
 ---
 
-<IdGallery item={item} url='/halbabstrakt' />
+<IdGallery item={item} url={backUrl} />
