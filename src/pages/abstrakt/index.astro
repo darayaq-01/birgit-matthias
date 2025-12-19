@@ -6,6 +6,7 @@ const collectionImages = await getCollection('collectionImages');
 
 const abstraktImages = collectionImages
     .filter((entry) => entry.data?.category.toLowerCase() === 'abstrakt')
+    .filter((entry) => !entry.data?.seriesId || entry.data?.isSeriesCover)
     .map((entry) => ({
         id: entry.slug,
         folder: entry.data?.category.toLowerCase(),
@@ -17,7 +18,10 @@ const abstraktImages = collectionImages
         price: entry.data?.price,
         sold: entry.data?.sold,
         year: entry.data?.year,
+        isSeries: entry.data?.isSeriesCover || false,
+        seriesId: entry.data?.seriesId || null,
     }));
+
 const sortOrder = (a: { sortOrder: number }, b: { sortOrder: number }) =>
     a.sortOrder - b.sortOrder || 0;
 abstraktImages.sort(sortOrder);

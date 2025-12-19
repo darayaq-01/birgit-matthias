@@ -57,7 +57,10 @@ const collectionImages = defineCollection({
             sold: z.boolean().optional(),
             year: z.number().optional(),
             imageUrl: z.string(),
-            imageAlt: z.string()
+            imageAlt: z.string(),
+            isSeries: z.boolean().optional().default(false),
+            seriesId: z.string().optional(),
+            isSeriesCover: z.boolean().default(false),
         })
 })
 
