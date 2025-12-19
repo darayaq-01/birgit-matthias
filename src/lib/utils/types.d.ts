@@ -18,6 +18,8 @@ export type detailsArtwork = {
     year?: number
     price?: number
     sold?: boolean
+    isSeries?: boolean;
+    seriesId?: string | null;
 }
 
 export type dataCTA = {

@@ -204,4 +204,19 @@ import ObserverScript from '@helpers/ObserverScript.astro';
     .grid--large .grid__cell-img:hover {
         scale: 0.9;
     }
+
+    .grid__cell-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 10;
+        background-color: #2563eb;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        pointer-events: none;
+    }
 </style>

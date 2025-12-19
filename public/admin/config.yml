@@ -69,6 +69,17 @@ collections:
       - { label: "Jahr", name: "year", widget: "number", required: false }
       - { label: "Bild", name: "imageUrl", widget: "image", required: true }
       - { label: "Alt-Text für Bild", name: "imageAlt", widget: "string", required: true }
+      - label: "Serie ID"
+        name: "seriesId"
+        widget: "string"
+        required: false
+        hint: "Wenn dieses Bild zu einer Serie gehört, geben Sie hier die Serie-ID ein (z.B. 'naturaleza', 'stadtlandschaften'). Lassen Sie es leer, wenn es kein Teil einer Serie ist."
+      - label: "Ist Haupt-Bild der Serie"
+        name: "isSeriesCover"
+        widget: "boolean"
+        required: false
+        default: false
+        hint: "Aktivieren Sie dies nur für EIN Bild pro Serie - das Bild, das in der Hauptgalerie angezeigt werden soll."
 
   - name: "events"
     label: "Nächster Event"

@@ -9,11 +9,16 @@ interface Props {
 }
 
 const { noId, data, dataIndex, isCurrent } = Astro.props;
+
+const linkUrl = data.isSeries
+    ? `/abstrakt/serie/${data.seriesId}`
+    : `/${data.folder}/${data.id}`;
 ---
 
 <div class:list={[`grid__cell`, { 'grid__cell--current': isCurrent }]}>
     <div class='grid__cell-img'>
-        <a href={`/${data.folder}/${data.id}`}>
+        {data.isSeries && <span class='grid__cell-badge'>Serie</span>}
+        <a href={linkUrl}>
             <img
                 class='grid__cell-img-inner'
                 id={noId ? undefined : `art-${data.id}`}

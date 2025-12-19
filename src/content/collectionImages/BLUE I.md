@@ -6,4 +6,6 @@ sortOrder: 0
 year: 2024
 imageUrl: /uploads/BLUE I.webp
 imageAlt: BLUE I, Mischtechnik auf Leinwand, 80 cm x 100 cm, 2024
+Serie ID: blue
+Ist Haupt-Bild der Serie: true
 ---
