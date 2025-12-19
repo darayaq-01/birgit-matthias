@@ -6,6 +6,7 @@ const collectionImages = await getCollection('collectionImages');
 
 const halbabstraktImages = collectionImages
     .filter((entry) => entry.data?.category.toLowerCase() === 'halbabstrakt')
+    .filter((entry) => !entry.data?.seriesId || entry.data?.isSeriesCover)
     .map((entry) => ({
         id: entry.slug,
         folder: entry.data?.category.toLowerCase(),
