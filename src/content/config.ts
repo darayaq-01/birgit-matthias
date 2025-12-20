@@ -126,6 +126,12 @@ const impressum = defineCollection({
     }),
 });
 
+const datenschutz = defineCollection({
+    schema: z.object({
+        privacyPolicy: z.string(),
+    }),
+});
+
 const hero = defineCollection({
     schema: z.object({
         imageUrl: z.string(),
@@ -133,4 +139,4 @@ const hero = defineCollection({
     }),
 });
 
-export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video, impressum, hero }
+export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video, impressum, datenschutz, hero }

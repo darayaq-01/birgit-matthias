@@ -152,3 +152,12 @@ collections:
           - { name: "contactList", label: "Kontaktliste", widget: "list" }
           - { name: "contactMedia", label: "Kontakt Medien", widget: "list"  }
           - { name: "legalNotice", label: "Rechtlicher Hinweis", widget: "markdown" }
+
+  - name: "datenschutz"
+    label: "Datenschutz"
+    files:
+      - label: "Datenschutz"
+        name: "datenschutz"
+        file: "src/content/datenschutz/datenschutz.md"
+        fields:
+          - { name: "privacyPolicy", label: "Datenschutzerklärung", widget: "markdown" }
