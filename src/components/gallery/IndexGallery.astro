@@ -3,6 +3,9 @@ import Layout from '@layouts/Layout.astro';
 import GridCell from '@components/GridCell.astro';
 import Arrow from '@assets/UI/Arrow.astro';
 import Container from '@components/Container.astro';
+import TitleSection from '@components/ui/TitleSection.astro';
+import type { detailsArtwork } from '@utils/types';
+
 interface Props {
     title: string;
     header: string;
@@ -18,11 +21,7 @@ const { title, header, dataArt } = Astro.props;
 >
     <Container classAstro=' md:w-[60%] flex flex-col place-items-center pt-56'>
         <section class='h-fit'>
-            <header>
-                <h2 class='py-8 pl-6 text-3xl font-bold md:pl-20'>
-                    <span class='border-b-2 border-white pb-1'>{header}</span>
-                </h2>
-            </header>
+            <TitleSection title={header} />
 
             <div class='grid--large grid bg-white'>
                 <div class='flex items-end px-4 pb-4'>
@@ -35,9 +34,11 @@ const { title, header, dataArt } = Astro.props;
                 </div>
 
                 {
-                    dataArt.map((art, index) => (
-                        <GridCell data={art} dataIndex={index} />
-                    ))
+                    dataArt.map(
+                        (art: detailsArtwork, index: number | undefined) => (
+                            <GridCell data={art} dataIndex={index} />
+                        )
+                    )
                 }
             </div>
         </section>

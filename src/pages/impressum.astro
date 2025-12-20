@@ -1,85 +1,73 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/Container.astro";
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+import TitleSection from '@components/ui/TitleSection.astro';
+import SubTitleSection from '@components/ui/SubTitleSection.astro';
+import ProseTemplate from '@components/ui/ProseTemplate.astro';
 
-import { getEntry } from "astro:content";
+import { getEntry } from 'astro:content';
 
-const entry = await getEntry("impressum", "impressum");
+const entry = await getEntry('impressum', 'impressum');
 if (!entry?.data) {
-    throw new Error("Error: Not found impressum entry");
+    throw new Error('Error: Not found impressum entry');
 }
 const { contactList, contactMedia, legalNotice } = entry.data;
 ---
 
 <Layout
-    title="Impressum"
-    backgroundColor="bg-white"
-    navbarProps="bg-white/70 h-30 md:h-34 lg:h-16"
+    title='Impressum'
+    backgroundColor='bg-white'
+    navbarProps='bg-white/70 h-30 md:h-34 lg:h-16'
 >
     <Container
-        classAstro="w-fit md:w-5/6 lg:w-[60%] flex flex-col pt-32 md:pt-56 mb-8"
+        classAstro='w-fit md:w-5/6 lg:w-[60%] flex flex-col pt-32 md:pt-56 mb-8'
     >
-        <section>
-            <h2
-                class="mb-4 mt-8 w-fit pl-4 text-3xl font-bold underline underline-offset-8"
-            >
-                Impressum
-            </h2>
+        <TitleSection title='Impressum' />
 
-            <div class="lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4">
-                <ul class="list-none p-4">
-                    {
-                        contactList.map((item) => (
-                            <li class="max-w-prose">{item}</li>
-                        ))
-                    }
-                </ul>
-            </div>
+        <ProseTemplate>
+            <ul class='list-none p-4'>
+                {contactList.map((item) => <li class='max-w-prose'>{item}</li>)}
+            </ul>
+        </ProseTemplate>
 
-            <h3 class="mb-4 mt-8 w-fit pl-4 text-3xl font-bold">
-                Programmierung:
-            </h3>
-            <div class="lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4">
-                <ul class="list-none p-4">
-                    <li class="max-w-prose">Daniel Araya</li>
-                    <li class="max-w-prose">
-                        <a
-                            href="https://darayaq.de/"
-                            target="_blank"
-                            rel="noopener noreferrer">https://darayaq.de/</a
-                        >
-                    </li>
-                </ul>
-            </div>
+        <SubTitleSection title='Programmierung' />
 
-            <h3 class="mb-4 mt-8 w-fit pl-4 text-3xl font-bold">Kontakt:</h3>
-            <div class="lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4">
-                <ul class="list-none p-4">
-                    {
-                        contactMedia.map((item) => (
-                            <li class="max-w-prose">{item}</li>
-                        ))
-                    }
-                </ul>
-            </div>
+        <ProseTemplate>
+            <ul class='list-none p-4'>
+                <li>Daniel Araya</li>
+                <li>
+                    <a
+                        href='https://darayaq.de/'
+                        target='_blank'
+                        class='no-underline hover:transition hover:line-through hover:duration-300 hover:ease-in-out'
+                        rel='noopener noreferrer'>https://darayaq.de/</a
+                    >
+                </li>
+            </ul>
+        </ProseTemplate>
 
-            <h3
-                class="mb-4 mt-8 w-fit pl-4 text-3xl font-bold underline underline-offset-8"
-            >
-                Haftung für Inhalte
-            </h3>
-
-            <div class="lg:prose-3xl prose prose-2xl mb-6 mt-2 pb-10 pt-4">
+        <SubTitleSection title='Kontakt' />
+        <ProseTemplate>
+            <ul class='list-none p-4'>
                 {
-                    legalNotice && (
-                        <div class="prose prose-xl pl-5">
-                            {legalNotice.split("\n").map((item) => (
-                                <p>{item}</p>
-                            ))}
-                        </div>
-                    )
+                    contactMedia.map((item) => (
+                        <li class='max-w-prose'>{item}</li>
+                    ))
                 }
-            </div>
-        </section>
+            </ul>
+        </ProseTemplate>
+
+        <SubTitleSection title='Haftung für Inhalte' />
+        <ProseTemplate>
+            {
+                legalNotice && (
+                    <div class='prose prose-xl pl-5'>
+                        {legalNotice.split('\n').map((item) => (
+                            <p>{item}</p>
+                        ))}
+                    </div>
+                )
+            }
+        </ProseTemplate>
     </Container>
 </Layout>
