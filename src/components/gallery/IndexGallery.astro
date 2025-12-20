@@ -19,7 +19,9 @@ const { title, header, dataArt } = Astro.props;
     backgroundColor='bg-white'
     navbarProps='bg-white/60 backdrop-blur-sm drop-shadow-md'
 >
-    <Container classAstro=' md:w-[60%] flex flex-col place-items-center pt-56'>
+    <Container
+        classAstro=' md:w-[60%] flex flex-col place-items-center pt-56 px-4 lg:px-0'
+    >
         <section class='h-fit'>
             <TitleSection title={header} />
 

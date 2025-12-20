@@ -50,7 +50,9 @@ import Footer from '@sections/Footer.astro';
             headerNavClass=`bg-white pb-2 h-16 md:h-22 lg:h-16 ${navbarProps}`
             logoClass='h-20 md:h-26'
         />
-        <main class:list={['grow', mainSecctionClass]}><slot /></main>
+        <main class:list={['grow', mainSecctionClass]}>
+            <slot />
+        </main>
         <GlobalStyles />
         <ObserverScript />
         <Footer />

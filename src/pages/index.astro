@@ -7,10 +7,9 @@ import UeberMich from '@sections/UeberMich.astro';
 import Video from '@sections/Video.astro';
 import Ausstellungen from '@sections/Ausstellungen.astro';
 import Werke from '@sections/Werke.astro';
-import Footer from '@sections/Footer.astro';
 ---
 
-<Layout title='Birgit Mathias Malerei'>
+<Layout title='Birgit Matthias Malerei'>
     <div class='flex flex-col md:block'>
         <!-- Desktop (>=768px) -->
         <Hero>
@@ -28,12 +27,12 @@ import Footer from '@sections/Footer.astro';
     </div>
 
     <div id='sentinel' class='h-1 w-full'></div>
-    <main>
+    <div class='px-4 lg:px-0'>
         <Werke data-section id='werke' />
         <Ausstellungen />
         <Description />
         <UeberMich />
         <Video />
-    </main>
+    </div>
 </Layout>
 <!-- <Footer /> -->
