@@ -2,6 +2,7 @@
 import Container from '@components/Container.astro';
 import Facebook from '@components/ui/Facebook.astro';
 import Instagram from '@components/ui/Instagram.astro';
+
 import { links, socialLinks } from '@consts/links';
 
 const currentPath = Astro.url.pathname;
@@ -62,34 +63,6 @@ const currentPath = Astro.url.pathname;
                     </li>
                 ))
             }
-            <!-- <li>
-                <a
-                    href='/'
-                    rel='noopener noreferrer'
-                    class='footer-link w-fit hover:scale-110 transition-all duration-300 ease-in-out text-gray-600'
-                >
-                    <Facebook
-                        fill='currentColor'
-                        class:list={[
-                            `h-6 w-auto hover:scale-105 transition-all duration-300 ease-in-out hover:text-black`,
-                        ]}
-                    />
-                </a>
-            </li>
-            <li>
-                <a
-                    href='/'
-                    rel='noopener noreferrer'
-                    class='footer-link w-fit hover:scale-110 transition-all duration-300 ease-in-out text-gray-600'
-                >
-                    <Instagram
-                        fill='currentColor'
-                        class:list={[
-                            `h-6 w-auto hover:scale-105 transition-all duration-300 ease-in-out hover:text-black`,
-                        ]}
-                    />
-                </a>
-            </li> -->
         </ul>
     </Container>
 </footer>

@@ -21,6 +21,7 @@ import '@styles/global.css';
 import Navbar from '@sections/Navbar.astro';
 import GlobalStyles from '@styles/GlobalStyles.astro';
 import ObserverScript from '@helpers/ObserverScript.astro';
+import Footer from '@sections/Footer.astro';
 ---
 
 <!doctype html>
@@ -52,6 +53,7 @@ import ObserverScript from '@helpers/ObserverScript.astro';
         <main class:list={['grow', mainSecctionClass]}><slot /></main>
         <GlobalStyles />
         <ObserverScript />
+        <Footer />
     </body>
 </html>
 

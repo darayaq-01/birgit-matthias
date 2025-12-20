@@ -2,6 +2,9 @@
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import Arrow from '@assets/UI/Arrow.astro';
+import TitleSection from '@components/ui/TitleSection.astro';
+import SubTitleSection from '@components/ui/SubTitleSection.astro';
+import ProseTemplate from '@components/ui/ProseTemplate.astro';
 
 const { item, url } = Astro.props;
 ---
@@ -15,11 +18,7 @@ const { item, url } = Astro.props;
         classAstro='md:w-[60%] flex flex-col place-items-center pt-36 md:pt-56'
     >
         <section class='h-full'>
-            <header>
-                <h2 class='py-8 text-3xl font-bold md:pl-20'>
-                    <span class='border-b-2 border-white pb-1'>Werke</span>
-                </h2>
-            </header>
+            <TitleSection title='Werke' />
 
             <div
                 class='flex w-full flex-col justify-evenly gap-8 bg-white md:flex-row md:px-10 md:py-12'
@@ -38,18 +37,29 @@ const { item, url } = Astro.props;
                 <div
                     class='flex w-full flex-col pl-8 md:w-1/3 md:justify-between'
                 >
-                    <div class='py-2'>
-                        <div>
+                    <ProseTemplate class='py-2'>
+                        <SubTitleSection
+                            title={`${item.data.title}`}
+                            classSubTitle='italic'
+                        >
+                            <span class='not-italic text-gray-600'
+                                >{
+                                    item.data.year ? ` - ${item.data.year}` : ''
+                                }</span
+                            >
+                        </SubTitleSection>
+
+                        <!-- <div>
                             <h2
                                 class='mb-4 mt-2 text-balance text-2xl md:text-base'
                             >
                                 <span class='italic'>{item.data.title}</span>
                                 {item.data.year ? `, ${item.data.year}` : ''}
                             </h2>
-                        </div>
+                        </div> -->
 
                         <p>{item.data.description}</p>
-                    </div>
+                    </ProseTemplate>
                     <div class='h-28 self-start'>
                         <a href={url}>
                             <Arrow
