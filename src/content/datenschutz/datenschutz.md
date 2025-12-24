@@ -13,7 +13,7 @@ privacyPolicy: >-
   dem Zugriff durch Dritte ist nicht möglich.
 
 
-  ### **Title**
+  ### Title
 
 
   Datenschutzerklärung für die Nutzung von Facebook-Plugins (Like-Button) Auf unseren Seiten sind Plugins des sozialen Netzwerks Facebook, Anbieter Facebook Inc., 1 Hacker Way, Menlo Park, California 94025, USA, integriert.
