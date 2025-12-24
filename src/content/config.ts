@@ -125,7 +125,6 @@ const gdpr = defineCollection({
     schema: z.object({
         contactList: z.array(z.string()).optional(),
         contactMedia: z.array(z.string()).optional(),
-        legalNotice: z.string().optional(),
     }),
 });
 
@@ -136,15 +135,15 @@ const hero = defineCollection({
     }),
 });
 
-export const collections = { 
-    presse, 
-    ausstellungen, 
-    collectionImages, 
-    events, 
-    ausstellungenDescription, 
-    description, 
-    uebermich, 
-    video, 
-    gdpr, 
-    hero 
+export const collections = {
+    presse,
+    ausstellungen,
+    collectionImages,
+    events,
+    ausstellungenDescription,
+    description,
+    uebermich,
+    video,
+    gdpr,
+    hero
 }
