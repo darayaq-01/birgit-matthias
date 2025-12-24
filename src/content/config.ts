@@ -2,6 +2,7 @@ import { defineCollection, z } from 'astro:content'
 
 const presse = defineCollection({
     // Type-check frontmatter using a schema
+    type: "content",
     schema: () =>
         z.object({
             title: z.string(),
@@ -24,6 +25,7 @@ const presse = defineCollection({
 
 const ausstellungen = defineCollection({
     // Type-check frontmatter using a schema
+    type: "content",
     schema: () =>
         z.object({
             title: z.string(),
@@ -119,6 +121,7 @@ const video = defineCollection({
 })
 
 const impressum = defineCollection({
+    type: "content",
     schema: z.object({
         contactList: z.array(z.string()),
         contactMedia: z.array(z.string()),
@@ -127,6 +130,7 @@ const impressum = defineCollection({
 });
 
 const datenschutz = defineCollection({
+    type: "content",
     schema: z.object({
         privacyPolicy: z.string(),
     }),
