@@ -7,5 +7,5 @@ contactList:
 contactMedia:
   - "Telefon: +49 3643 77 57 90"
   - "E-Mail: atelier@birgit-matthias.de"
-  - Haftungsausschluss (Disclaimer)
+  - Haftungsausschluss (Disclaimer )
 ---
