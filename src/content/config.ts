@@ -120,17 +120,12 @@ const video = defineCollection({
         })
 })
 
-const impressum = defineCollection({
+const gdpr = defineCollection({
     type: "content",
     schema: z.object({
-        contactList: z.array(z.string()),
-        contactMedia: z.array(z.string()),
-        legalNotice: z.string(),
+        contactList: z.array(z.string()).optional(),
+        contactMedia: z.array(z.string()).optional(),
     }),
-});
-
-const datenschutz = defineCollection({
-    type: "content",
 });
 
 const hero = defineCollection({
@@ -140,4 +135,15 @@ const hero = defineCollection({
     }),
 });
 
-export const collections = { presse, ausstellungen, collectionImages, events, ausstellungenDescription, description, uebermich, video, impressum, datenschutz, hero }
+export const collections = {
+    presse,
+    ausstellungen,
+    collectionImages,
+    events,
+    ausstellungenDescription,
+    description,
+    uebermich,
+    video,
+    gdpr,
+    hero
+}

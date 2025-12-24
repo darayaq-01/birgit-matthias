@@ -6,11 +6,10 @@ import ProseTemplate from '@components/ui/ProseTemplate.astro';
 
 import { getEntry } from 'astro:content';
 
-const entry = await getEntry('datenschutz', 'datenschutz');
+const entry = await getEntry('gdpr', 'datenschutz');
 if (!entry?.data) {
     throw new Error('Error: Not found datenschutz entry');
 }
-const { privacyPolicy } = entry.data;
 const { Content } = await entry.render();
 ---
 
@@ -24,7 +23,6 @@ const { Content } = await entry.render();
     >
         <TitleSection title='Datenschutz' />
         <ProseTemplate>
-            {privacyPolicy}
             <Content />
         </ProseTemplate>
     </Container>
