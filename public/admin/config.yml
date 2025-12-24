@@ -33,6 +33,7 @@ collections:
       - { label: "Coverbild", name: "cover", widget: "image", required: false }
       - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string", required: false }
       - { label: "Externer Link", name: "link", widget: "string", required: false }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
 
   - name: "ausstellungen"
     label: "Ausstellungen"
