@@ -12,6 +12,7 @@ if (!entry?.data) {
     throw new Error('Error: Not found impressum entry');
 }
 const { contactList, contactMedia } = entry.data;
+const { Content } = await entry.render();
 ---
 
 <Layout
@@ -26,7 +27,11 @@ const { contactList, contactMedia } = entry.data;
 
         <ProseTemplate>
             <ul class='list-none p-4'>
-                {contactList.map((item) => <li class='max-w-prose'>{item}</li>)}
+                {
+                    (contactList ?? []).map((item) => (
+                        <li class='max-w-prose'>{item}</li>
+                    ))
+                }
             </ul>
         </ProseTemplate>
 
@@ -50,7 +55,7 @@ const { contactList, contactMedia } = entry.data;
         <ProseTemplate>
             <ul class='list-none p-4'>
                 {
-                    contactMedia.map((item) => (
+                    (contactMedia ?? []).map((item) => (
                         <li class='max-w-prose'>{item}</li>
                     ))
                 }
@@ -59,15 +64,7 @@ const { contactList, contactMedia } = entry.data;
 
         <SubTitleSection title='Haftung für Inhalte' />
         <ProseTemplate>
-            {
-                legalNotice && (
-                    <div class='prose prose-xl pl-5'>
-                        {legalNotice.split('\n').map((item) => (
-                            <p>{item}</p>
-                        ))}
-                    </div>
-                )
-            }
+            <Content />
         </ProseTemplate>
     </Container>
 </Layout>
