@@ -144,7 +144,7 @@ collections:
           - { name: "videoUrl", label: "Video URL (Mux Playback ID o URL)", widget: "string" }
           - { name: "captionsUrl", label: "Untertitel URL", widget: "string", required: false }
 
- - name: "gdpr"
+  - name: "gdpr"
     label: "GDPR"
     files:
       - label: "Impressum"
