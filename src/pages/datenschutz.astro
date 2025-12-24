@@ -11,6 +11,7 @@ if (!entry?.data) {
     throw new Error('Error: Not found datenschutz entry');
 }
 const { privacyPolicy } = entry.data;
+const { Content } = await entry.render();
 ---
 
 <Layout
@@ -24,6 +25,7 @@ const { privacyPolicy } = entry.data;
         <TitleSection title='Datenschutz' />
         <ProseTemplate>
             {privacyPolicy}
+            <Content />
         </ProseTemplate>
     </Container>
 </Layout>
