@@ -163,5 +163,4 @@ collections:
         name: "datenschutz"
         file: "src/content/datenschutz/datenschutz.md"
         fields:
-          - { name: "privacyPolicy", label: "Datenschutzerklärung", widget: "markdown" }
           - { label: "Inhalt", name: "body", widget: "markdown" }

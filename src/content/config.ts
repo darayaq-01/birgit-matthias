@@ -131,9 +131,6 @@ const impressum = defineCollection({
 
 const datenschutz = defineCollection({
     type: "content",
-    schema: z.object({
-        privacyPolicy: z.string(),
-    }),
 });
 
 const hero = defineCollection({
