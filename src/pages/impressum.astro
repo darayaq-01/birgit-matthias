@@ -7,11 +7,11 @@ import ProseTemplate from '@components/ui/ProseTemplate.astro';
 
 import { getEntry } from 'astro:content';
 
-const entry = await getEntry('impressum', 'impressum');
+const entry = await getEntry('gdpr', 'impressum');
 if (!entry?.data) {
     throw new Error('Error: Not found impressum entry');
 }
-const { contactList, contactMedia, legalNotice } = entry.data;
+const { contactList, contactMedia } = entry.data;
 ---
 
 <Layout
