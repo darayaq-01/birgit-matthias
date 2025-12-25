@@ -45,7 +45,9 @@ const seriesImages = collection
 const sortOrder = (a: { sortOrder: number }, b: { sortOrder: number }) =>
     a.sortOrder - b.sortOrder || 0;
 seriesImages.sort(sortOrder);
-
+console.log(seriesImages[0].folder);
+const URL = `${seriesImages[0].folder}`;
+console.log(URL);
 const serieTitle = coverImage?.data?.title || 'Serie';
 ---
 
@@ -53,4 +55,5 @@ const serieTitle = coverImage?.data?.title || 'Serie';
     title={serieTitle}
     header={`Serie: ${serieTitle}`}
     dataArt={seriesImages}
+    backUrl={`/${URL}`}
 />
