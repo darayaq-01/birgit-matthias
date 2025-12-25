@@ -14,7 +14,7 @@ const collection = await getCollection('collectionImages');
 const item = collection.find((entry) => entry.slug === id);
 
 if (!item) throw new Error(`No se encontró el item con id ${id}`);
-
+console.log(item.data.seriesId);
 const backUrl = item.data?.seriesId
     ? `/abstrakt/serie/${item.data.seriesId}`
     : '/abstrakt';
