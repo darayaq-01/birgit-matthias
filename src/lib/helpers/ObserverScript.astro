@@ -1,26 +1,32 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // config obeserver
+        // Config observer
         const createObserver = (target, callback, options) => {
             if (target) {
                 const observer = new IntersectionObserver(callback, options);
                 observer.observe(target);
+                return observer;
             }
         };
 
-        // Callback 1st observer
+        // Callback 1st observer - CORREGIDO
         const handleNavbarVisibility = (entries) => {
             const linkElement = document.querySelector(
                 '#navbar .linkLogoClass'
             );
+
             entries.forEach((entry) => {
                 if (linkElement) {
-                    if (!entry.isIntersecting) {
-                        linkElement.classList.remove('initial-scroll');
-                        linkElement.classList.add('on-scroll');
-                    } else {
+                    // Cuando el sentinel ESTÁ visible = estamos en el top
+                    // Cuando el sentinel NO está visible = hemos hecho scroll
+                    if (entry.isIntersecting) {
+                        // Estamos en el top de la página
                         linkElement.classList.add('initial-scroll');
                         linkElement.classList.remove('on-scroll');
+                    } else {
+                        // Hemos hecho scroll hacia abajo
+                        linkElement.classList.remove('initial-scroll');
+                        linkElement.classList.add('on-scroll');
                     }
                 }
             });
@@ -45,10 +51,10 @@
             });
         };
 
-        // Config options
+        // Config options - AJUSTADO
         const observerOptions1 = {
             root: null,
-            rootMargin: '10px',
+            rootMargin: '-1px 0px 0px 0px', // Cambiado para mejor detección
             threshold: 0,
         };
         const observerOptions2 = {
@@ -58,15 +64,19 @@
         };
 
         // Create and configure observers
-        createObserver(
-            document.getElementById('sentinel'),
-            handleNavbarVisibility,
-            observerOptions1
-        );
-        createObserver(
-            document.getElementById('werke'),
-            handleSentinelVisibility,
-            observerOptions2
-        );
+        const sentinel = document.getElementById('sentinel');
+        const werkeSection = document.getElementById('werke');
+
+        if (sentinel) {
+            createObserver(sentinel, handleNavbarVisibility, observerOptions1);
+        }
+
+        if (werkeSection) {
+            createObserver(
+                werkeSection,
+                handleSentinelVisibility,
+                observerOptions2
+            );
+        }
     });
 </script>
