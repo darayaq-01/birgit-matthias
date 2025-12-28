@@ -2,6 +2,22 @@
   command = "pnpm run build"
   publish = "dist"
 
+# Deploy previews for PRs
+[context.deploy-preview]
+  command = "pnpm run build"
+
+# Deploy staging 
+[context.staging]
+  command = "pnpm run build"
+  
+# Branch deploys 
+[context.branch-deploy]
+  command = "pnpm run build"
+
+# Opcional: If there is environment variables different for staging
+[context.staging.environment]
+  NODE_ENV = "staging"
+
 [build.environment]
   NODE_VERSION = "22"
   NPM_FLAGS = "--prefix=/opt/buildhome/.asdf/installs/nodejs/22.0.0"
