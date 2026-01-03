@@ -15,8 +15,8 @@
   command = "pnpm run build"
 
 # Opcional: If there is environment variables different for staging
-[context.staging.environment]
-  NODE_ENV = "staging"
+# [context.staging.environment]
+#  NODE_ENV = "staging"
 
 [build.environment]
   NODE_VERSION = "22"
