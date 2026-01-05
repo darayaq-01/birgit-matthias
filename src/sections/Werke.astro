@@ -28,32 +28,28 @@ werkeStartseite.sort(sortOrder);
 <Container classAstro='lg:h-screen flex justify-center flex-col' id='werke'>
     <TitleSection title='Werke' />
 
-    <article class='flex flex-col lg:w-full lg:flex-row gap-4 bg-white'>
+    <article class='flex flex-col gap-4 bg-white lg:flex-row lg:w-full'>
         {
             werkeStartseite.map((w) => (
                 <a
                     href={`/${w.id}`}
-                    class='relative flex aspect-square lg:w-1/3 gap-10 hover:drop-shadow'
+                    class='group relative aspect-square lg:w-1/3 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-300 transition-shadow duration-300 hover:drop-shadow-lg'
                 >
                     <img
-                        alt={w.imageAlt}
-                        class='absolute inset-0 h-full w-full object-cover object-center'
                         src={w.imageUrl}
+                        alt={w.imageAlt}
+                        class='absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110'
                     />
-                    <article class='relative z-10 flex w-full flex-col items-center justify-center p-2'>
+                    <div class='absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
+
+                    <div class='relative z-10 flex h-full items-center justify-center p-4'>
                         <SubTitleSection
-                            classSubTitle='text-shadow-custom w-fit hyphens-auto text-balance wrap-break-word border-b-4 border-white p-6 lg:p-2 text-center font-extrabold leading-relaxed text-white hover:scale-110'
                             title={w.title}
+                            classSubTitle='text-white text-center font-extrabold border-b-4 border-white p-6 [text-shadow:0_0_5px_#d934b1] transition-transform duration-300 group-hover:scale-110'
                         />
-                    </article>
+                    </div>
                 </a>
             ))
         }
     </article>
 </Container>
-
-<style>
-    .text-shadow-custom {
-        text-shadow: 0 0 10px #020202;
-    }
-</style>
