@@ -11,7 +11,7 @@ interface Props {
 const { noId, data, dataIndex, isCurrent } = Astro.props;
 
 const linkUrl = data.isSeries
-    ? `/abstrakt/serie/${data.seriesId}`
+    ? `/${data.folder}/serie/${data.seriesId}`
     : `/${data.folder}/${data.id}`;
 ---
 

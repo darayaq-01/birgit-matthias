@@ -1,0 +1,62 @@
+---
+import IndexGallery from '@components/gallery/IndexGallery.astro';
+import { getCollection } from 'astro:content';
+
+const CATEGORY_HEADERS = {
+    abstrakt: 'Abstrakte Malerei',
+    gegenstaendlich: 'Gegenständliche Malerei',
+    halbabstrakt: 'Halbabstrakte Malerei',
+};
+
+export async function getStaticPaths() {
+    const collectionImages = await getCollection('collectionImages');
+    const categories = [
+        ...new Set(
+            collectionImages
+                .map((entry) => entry.data?.category.toLowerCase().trim())
+                .filter((cat) => cat && cat !== 'startseite')
+        ),
+    ];
+
+    return categories.map((category) => ({
+        params: { category },
+    }));
+}
+
+const { category } = Astro.params;
+
+const collectionImages = await getCollection('collectionImages');
+
+const categoryImages = collectionImages
+    .filter((entry) => entry.data?.category.toLowerCase() === category)
+    .filter((entry) => !entry.data?.seriesId || entry.data?.isSeriesCover)
+    .map((entry) => ({
+        id: entry.slug,
+        folder: entry.data?.category.toLowerCase(),
+        title: entry.data?.title,
+        sortOrder: entry.data?.sortOrder,
+        description: entry.data?.description,
+        imageUrl: entry.data?.imageUrl,
+        imageAlt: entry.data?.imageAlt,
+        price: entry.data?.price,
+        sold: entry.data?.sold,
+        year: entry.data?.year,
+        isSeries: entry.data?.isSeriesCover || false,
+        seriesId: entry.data?.seriesId || null,
+    }))
+    .sort((a, b) => a.sortOrder - b.sortOrder || 0);
+
+if (categoryImages.length === 0) {
+    return Astro.redirect('/');
+}
+
+const header =
+    CATEGORY_HEADERS[category as keyof typeof CATEGORY_HEADERS] || category;
+---
+
+<IndexGallery
+    title='Malerei'
+    header={header}
+    dataArt={categoryImages}
+    backUrl='/'
+/>

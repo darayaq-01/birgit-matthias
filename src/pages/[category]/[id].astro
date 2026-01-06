@@ -1,0 +1,37 @@
+---
+import IdGallery from '@components/gallery/IdGallery.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('collectionImages');
+
+    return entries
+        .filter((entry) => entry.data?.category.toLowerCase() !== 'startseite')
+        .map((entry) => ({
+            params: {
+                category: entry.data.category.toLowerCase().trim(),
+                id: entry.slug,
+            },
+        }));
+}
+
+const { category, id } = Astro.params;
+
+const collection = await getCollection('collectionImages');
+const item = collection.find((entry) => entry.slug === id);
+
+if (!item) {
+    throw new Error(`No se encontró el item con id ${id}`);
+}
+
+const itemCategory = item.data.category.toLowerCase().trim();
+if (itemCategory !== category) {
+    return Astro.redirect(`/${itemCategory}/${id}`);
+}
+
+const backUrl = item.data?.seriesId
+    ? `/${category}/serie/${item.data.seriesId}`
+    : `/${category}`;
+---
+
+<IdGallery item={item} url={backUrl} />
