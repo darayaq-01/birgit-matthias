@@ -1,0 +1,65 @@
+---
+import IndexGallery from '@components/gallery/IndexGallery.astro';
+import {
+    getSeriesImages,
+    getSeriesCoverImage,
+    getAllGalleryImages,
+} from '@helpers/galleries.ts';
+
+export async function getStaticPaths() {
+    const allImages = await getAllGalleryImages();
+    const seriesMap = new Map();
+
+    allImages
+        .filter(
+            (entry) =>
+                entry.data.seriesId && entry.data.category !== 'startseite'
+        )
+        .forEach((entry) => {
+            const category = entry.data.category;
+            const seriesId = entry.data.seriesId!;
+            const key = `${category}-${seriesId}`;
+
+            if (!seriesMap.has(key)) {
+                seriesMap.set(key, { category, seriesId });
+            }
+        });
+
+    return Array.from(seriesMap.values()).map(({ category, seriesId }) => ({
+        params: { category, serieId: seriesId },
+    }));
+}
+
+const { category, serieId } = Astro.params;
+
+const coverImage = await getSeriesCoverImage(category, serieId);
+const seriesImages = await getSeriesImages(category, serieId);
+
+if (seriesImages.length === 0) {
+    return Astro.redirect(`/${category}`);
+}
+
+const dataArt = seriesImages.map((entry) => ({
+    id: entry.slug,
+    folder: category,
+    title: entry.data.title,
+    sortOrder: entry.data.sortOrder,
+    description: entry.data.description,
+    imageUrl: entry.data.imageUrl,
+    imageAlt: entry.data.imageAlt,
+    price: entry.data.price,
+    sold: entry.data.sold,
+    year: entry.data.year,
+    isSeries: false,
+    seriesId: null,
+}));
+
+const serieTitle = coverImage?.data.title || 'Serie';
+---
+
+<IndexGallery
+    title={serieTitle}
+    header={`Serie: ${serieTitle}`}
+    dataArt={dataArt}
+    backUrl={`/${category}`}
+/>

@@ -1,0 +1,68 @@
+---
+import IndexGallery from '@components/gallery/IndexGallery.astro';
+import { getImagesByCategory } from '@helpers/galleries.ts';
+
+export async function getStaticPaths() {
+    const categories = ['gegenstaendlich', 'abstrakt', 'halbabstrakt'];
+
+    return categories.map((category) => ({
+        params: { category },
+    }));
+}
+
+const { category } = Astro.params;
+const collection = await getImagesByCategory(category);
+
+const seriesMap = new Map();
+const individualImages: any[] = [];
+
+collection.forEach((entry) => {
+    if (entry.data.seriesId) {
+        if (entry.data.isSeriesCover) {
+            seriesMap.set(entry.data.seriesId, {
+                id: entry.data.seriesId,
+                folder: category,
+                title: entry.data.title,
+                sortOrder: entry.data.sortOrder,
+                description: entry.data.description,
+                imageUrl: entry.data.imageUrl,
+                imageAlt: entry.data.imageAlt,
+                price: entry.data.price,
+                sold: entry.data.sold,
+                year: entry.data.year,
+                isSeries: true,
+                seriesId: entry.data.seriesId,
+            });
+        }
+    } else {
+        individualImages.push({
+            id: entry.slug,
+            folder: category,
+            title: entry.data.title,
+            sortOrder: entry.data.sortOrder,
+            description: entry.data.description,
+            imageUrl: entry.data.imageUrl,
+            imageAlt: entry.data.imageAlt,
+            price: entry.data.price,
+            sold: entry.data.sold,
+            year: entry.data.year,
+            isSeries: false,
+            seriesId: null,
+        });
+    }
+});
+
+const dataArt = [...Array.from(seriesMap.values()), ...individualImages].sort(
+    (a, b) => a.sortOrder - b.sortOrder
+);
+
+const categoryTitles: Record<string, string> = {
+    gegenstaendlich: 'Gegenständlich',
+    abstrakt: 'Abstrakt',
+    halbabstrakt: 'Halbabstrakt',
+};
+
+const title = categoryTitles[category] || category;
+---
+
+<IndexGallery title={title} header={title} dataArt={dataArt} backUrl='/' />
