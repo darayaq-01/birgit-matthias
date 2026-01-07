@@ -50,25 +50,15 @@ collections:
       - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string", required: false }
       - { label: "Inhalt", name: "body", widget: "markdown" }
 
-  - name: "collectionImages"
-    label: "Galería de Imágenes"
-    folder: "src/content/collectionImages"
+  - name: "gallery_gegenstaendlich"
+    label: "Gallery - Gegenständlich"
+    folder: "src/content/galleries/gegenstaendlich"
     create: true
     slug: "{{fields.title | slugify}}"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
       - { label: "Beschreibung", name: "description", widget: "text", required: false }
-      - label: "Kategorie"
-        name: "category"
-        widget: "select"
-        options: 
-          - { label: "Gegenständlich", value: "gegenstaendlich" }
-          - { label: "Abstrakt", value: "abstrakt" }
-          - { label: "Halbabstrakt", value: "halbabstrakt" }
-          - { label: "Startseite", value: "startseite" }
-        hint: "Wählen Sie eine Kategorie für das Bild aus."
-        required: true
-        default: "gegenstaendlich"
+      - { label: "Kategorie", name: "category", widget: "hidden", default: "gegenstaendlich" }
       - { label: "Sortierung", name: "sortOrder", widget: "number", required: false, default: 0 }
       - { label: "Preis", name: "price", widget: "number", required: false }
       - { label: "Verkauft", name: "sold", widget: "boolean", required: false, default: false }
@@ -86,6 +76,73 @@ collections:
         required: false
         default: false
         hint: "Aktivieren Sie dies nur für EIN Bild pro Serie - das Bild, das in der Hauptgalerie angezeigt werden soll."
+
+  - name: "gallery_abstrakt"
+    label: "Gallery - Abstrakt"
+    folder: "src/content/galleries/abstrakt"
+    create: true
+    slug: "{{fields.title | slugify}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Beschreibung", name: "description", widget: "text", required: false }
+      - { label: "Kategorie", name: "category", widget: "hidden", default: "abstrakt" }
+      - { label: "Sortierung", name: "sortOrder", widget: "number", required: false, default: 0 }
+      - { label: "Preis", name: "price", widget: "number", required: false }
+      - { label: "Verkauft", name: "sold", widget: "boolean", required: false, default: false }
+      - { label: "Jahr", name: "year", widget: "number", required: false }
+      - { label: "Bild", name: "imageUrl", widget: "image", required: true }
+      - { label: "Alt-Text für Bild", name: "imageAlt", widget: "string", required: true }
+      - label: "Serie ID"
+        name: "seriesId"
+        widget: "string"
+        required: false
+        hint: "Wenn dieses Bild zu einer Serie gehört, geben Sie hier die Serie-ID ein (z.B. 'naturaleza', 'stadtlandschaften'). Lassen Sie es leer, wenn es kein Teil einer Serie ist."
+      - label: "Ist Haupt-Bild der Serie"
+        name: "isSeriesCover"
+        widget: "boolean"
+        required: false
+        default: false
+        hint: "Aktivieren Sie dies nur für EIN Bild pro Serie - das Bild, das in der Hauptgalerie angezeigt werden soll."
+
+  - name: "gallery_halbabstrakt"
+    label: "Gallery - Halbabstrakt"
+    folder: "src/content/galleries/halbabstrakt"
+    create: true
+    slug: "{{fields.title | slugify}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Beschreibung", name: "description", widget: "text", required: false }
+      - { label: "Kategorie", name: "category", widget: "hidden", default: "halbabstrakt" }
+      - { label: "Sortierung", name: "sortOrder", widget: "number", required: false, default: 0 }
+      - { label: "Preis", name: "price", widget: "number", required: false }
+      - { label: "Verkauft", name: "sold", widget: "boolean", required: false, default: false }
+      - { label: "Jahr", name: "year", widget: "number", required: false }
+      - { label: "Bild", name: "imageUrl", widget: "image", required: true }
+      - { label: "Alt-Text für Bild", name: "imageAlt", widget: "string", required: true }
+      - label: "Serie ID"
+        name: "seriesId"
+        widget: "string"
+        required: false
+        hint: "Wenn dieses Bild zu einer Serie gehört, geben Sie hier die Serie-ID ein (z.B. 'naturaleza', 'stadtlandschaften'). Lassen Sie es leer, wenn es kein Teil einer Serie ist."
+      - label: "Ist Haupt-Bild der Serie"
+        name: "isSeriesCover"
+        widget: "boolean"
+        required: false
+        default: false
+        hint: "Aktivieren Sie dies nur für EIN Bild pro Serie - das Bild, das in der Hauptgalerie angezeigt werden soll."
+
+  - name: "gallery_startseite"
+    label: "Gallery - Startseite"
+    folder: "src/content/galleries/startseite"
+    create: true
+    slug: "{{fields.title | slugify}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Beschreibung", name: "description", widget: "text", required: false }
+      - { label: "Kategorie", name: "category", widget: "hidden", default: "startseite" }
+      - { label: "Sortierung", name: "sortOrder", widget: "number", required: false, default: 0 }
+      - { label: "Bild", name: "imageUrl", widget: "image", required: true }
+      - { label: "Alt-Text für Bild", name: "imageAlt", widget: "string", required: true }
 
   - name: "events"
     label: "Nächster Event"

@@ -41,23 +41,34 @@ const ausstellungen = defineCollection({
         })
 })
 
-const collectionImages = defineCollection({
-    schema: () =>
-        z.object({
-            title: z.string(),
-            sortOrder: z.number().default(0),
-            description: z.string().optional(),
-            category: z.string()
-                .transform(val => val.toLowerCase().trim())
-                .pipe(z.enum(['gegenstaendlich', 'abstrakt', 'halbabstrakt', 'startseite'])),
-            price: z.number().optional(),
-            sold: z.boolean().optional(),
-            year: z.number().optional(),
-            imageUrl: z.string(),
-            imageAlt: z.string(),
-            seriesId: z.string().optional(),
-            isSeriesCover: z.boolean().default(false),
-        })
+const galleryImageSchema = z.object({
+    title: z.string(),
+    sortOrder: z.number().default(0),
+    description: z.string().optional(),
+    category: z.string(),
+    price: z.number().optional(),
+    sold: z.boolean().optional(),
+    year: z.number().optional(),
+    imageUrl: z.string(),
+    imageAlt: z.string(),
+    seriesId: z.string().optional(),
+    isSeriesCover: z.boolean().default(false),
+})
+
+const gallery_gegenstaendlich = defineCollection({
+    schema: galleryImageSchema
+})
+
+const gallery_abstrakt = defineCollection({
+    schema: galleryImageSchema
+})
+
+const gallery_halbabstrakt = defineCollection({
+    schema: galleryImageSchema
+})
+
+const gallery_startseite = defineCollection({
+    schema: galleryImageSchema
 })
 
 const events = defineCollection({
@@ -128,7 +139,10 @@ const hero = defineCollection({
 export const collections = {
     presse,
     ausstellungen,
-    collectionImages,
+    gallery_gegenstaendlich,
+    gallery_abstrakt,
+    gallery_halbabstrakt,
+    gallery_startseite,
     events,
     ausstellungenDescription,
     description,

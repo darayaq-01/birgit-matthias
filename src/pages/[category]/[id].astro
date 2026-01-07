@@ -1,35 +1,39 @@
 ---
 import IdGallery from '@components/gallery/IdGallery.astro';
-import { getCollection } from 'astro:content';
+import { getAllGalleryImages, getImageBySlug } from '@helpers/galleries.ts';
 
 export async function getStaticPaths() {
-    const entries = await getCollection('collectionImages');
+    const allImages = await getAllGalleryImages();
 
-    return entries
-        .filter((entry) => entry.data?.category.toLowerCase() !== 'startseite')
+    return allImages
+        .filter((entry) => entry.data.category !== 'startseite')
         .map((entry) => ({
             params: {
-                category: entry.data.category.toLowerCase().trim(),
+                category: entry.data.category,
                 id: entry.slug,
             },
+            props: { entry },
         }));
 }
 
 const { category, id } = Astro.params;
-
-const collection = await getCollection('collectionImages');
-const item = collection.find((entry) => entry.slug === id);
+const { entry: item } = Astro.props;
 
 if (!item) {
-    throw new Error(`No se encontró el item con id ${id}`);
+    const foundItem = await getImageBySlug(category, id);
+    if (!foundItem) {
+        throw new Error(
+            `No se encontró el item con id ${id} en categoría ${category}`
+        );
+    }
 }
 
-const itemCategory = item.data.category.toLowerCase().trim();
+const itemCategory = item.data.category;
 if (itemCategory !== category) {
     return Astro.redirect(`/${itemCategory}/${id}`);
 }
 
-const backUrl = item.data?.seriesId
+const backUrl = item.data.seriesId
     ? `/${category}/serie/${item.data.seriesId}`
     : `/${category}`;
 ---
