@@ -11,14 +11,6 @@ export async function getStaticPaths() {
 }
 const { category } = Astro.params;
 const collection = await getImagesByCategory(category);
-
-// 🔍 DEBUG: Ver qué está trayendo
-console.log('='.repeat(50));
-console.log(`📂 Categoría: ${category}`);
-console.log(`📊 Total de imágenes: ${collection.length}`);
-console.log('Primera imagen:', collection[0]?.data);
-console.log('='.repeat(50));
-
 const seriesMap = new Map();
 const individualImages: any[] = [];
 

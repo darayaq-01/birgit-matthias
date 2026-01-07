@@ -4,25 +4,40 @@ import Container from '@components/Container.astro';
 import TitleSection from '@components/ui/TitleSection.astro';
 import SubTitleSection from '@components/ui/SubTitleSection.astro';
 
-const collectionImages = await getCollection('collectionImages');
+interface GalleryItem {
+    id: string;
+    folder: string;
+    title: string;
+    sortOrder: number;
+    description: string | undefined;
+    imageUrl: string;
+    imageAlt: string;
+    price: number | undefined;
+    sold: boolean | undefined;
+    year: number | undefined;
+}
 
-const werkeStartseite = collectionImages
-    .filter((entry) => entry.data?.category.toLowerCase() === 'startseite')
-    .map((entry) => ({
-        id: entry.slug,
-        folder: entry.data?.category.toLowerCase(),
-        title: entry.data?.title,
-        sortOrder: entry.data?.sortOrder,
-        description: entry.data?.description,
-        imageUrl: entry.data?.imageUrl,
-        imageAlt: entry.data?.imageAlt,
-        price: entry.data?.price,
-        sold: entry.data?.sold,
-        year: entry.data?.year,
-    }));
-const sortOrder = (a: { sortOrder: number }, b: { sortOrder: number }) =>
-    a.sortOrder - b.sortOrder || 0;
-werkeStartseite.sort(sortOrder);
+const startseiteImages = await getCollection('gallery_startseite');
+
+const werkeStartseite: GalleryItem[] = startseiteImages
+    .map(
+        (entry): GalleryItem => ({
+            id: entry.slug,
+            folder: 'startseite',
+            title: entry.data.title || 'Sin título',
+            sortOrder: entry.data.sortOrder || 999,
+            description: entry.data.description || '',
+            imageUrl: entry.data.imageUrl || '/placeholder.jpg',
+            imageAlt:
+                entry.data.imageAlt ||
+                entry.data.title ||
+                'Imagen sin descripción',
+            price: entry.data.price || undefined,
+            sold: entry.data.sold || false,
+            year: entry.data.year || undefined,
+        })
+    )
+    .sort((a, b) => a.sortOrder - b.sortOrder);
 ---
 
 <Container classAstro='lg:h-screen flex justify-center flex-col' id='werke'>
