@@ -1,14 +1,12 @@
 import { defineCollection, z } from 'astro:content'
 
 const presse = defineCollection({
-    // Type-check frontmatter using a schema
     type: "content",
     schema: () =>
         z.object({
             title: z.string(),
             category: z.string().optional(),
             description: z.string().optional(),
-            // Transform string to Date object
             pubDate: z
                 .union([z.string(), z.date()])
                 .optional()
@@ -24,14 +22,12 @@ const presse = defineCollection({
 })
 
 const ausstellungen = defineCollection({
-    // Type-check frontmatter using a schema
     type: "content",
     schema: () =>
         z.object({
             title: z.string(),
             category: z.string(),
             description: z.string().optional(),
-            // Transform string to Date object
             pubDate: z
                 .union([z.string(), z.date()])
                 .optional()
@@ -46,28 +42,25 @@ const ausstellungen = defineCollection({
 })
 
 const collectionImages = defineCollection({
-    // Type-check frontmatter using a schema
     schema: () =>
         z.object({
             title: z.string(),
-            sortOrder: z.number().default(() => 0), // Default sort order to 0
-            folder: z.string().optional(),
-            slug: z.string().optional(),
+            sortOrder: z.number().default(0),
             description: z.string().optional(),
-            category: z.string(),
+            category: z.string()
+                .transform(val => val.toLowerCase().trim())
+                .pipe(z.enum(['gegenstaendlich', 'abstrakt', 'halbabstrakt', 'startseite'])),
             price: z.number().optional(),
             sold: z.boolean().optional(),
             year: z.number().optional(),
             imageUrl: z.string(),
             imageAlt: z.string(),
-            isSeries: z.boolean().optional().default(false),
             seriesId: z.string().optional(),
             isSeriesCover: z.boolean().default(false),
         })
 })
 
 const events = defineCollection({
-    // Type-check frontmatter using a schema
     schema: () =>
         z.object({
             title: z.string(),
@@ -75,7 +68,7 @@ const events = defineCollection({
             dateEvent: z.string(),
             description: z.string().optional(),
             linkEvent: z.string().optional(),
-            active: z.boolean().default(() => true),
+            active: z.boolean().default(true),
         })
 })
 
@@ -92,7 +85,6 @@ const ausstellungenDescription = defineCollection({
 })
 
 const description = defineCollection({
-    // Type-check frontmatter using a schema
     schema: () =>
         z.object({
             description: z.string(),
@@ -100,7 +92,6 @@ const description = defineCollection({
 })
 
 const uebermich = defineCollection({
-    // Type-check frontmatter using a schema
     schema: () =>
         z.object({
             title: z.string(),
@@ -111,7 +102,6 @@ const uebermich = defineCollection({
 })
 
 const video = defineCollection({
-    // Type-check frontmatter using a schema
     schema: () =>
         z.object({
             title: z.string(),
@@ -126,14 +116,14 @@ const gdpr = defineCollection({
         contactList: z.array(z.string()).optional(),
         contactMedia: z.array(z.string()).optional(),
     }),
-});
+})
 
 const hero = defineCollection({
     schema: z.object({
         imageUrl: z.string(),
         imageAlt: z.string()
     }),
-});
+})
 
 export const collections = {
     presse,

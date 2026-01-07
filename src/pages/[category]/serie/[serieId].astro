@@ -1,0 +1,69 @@
+---
+import IndexGallery from '@components/gallery/IndexGallery.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('collectionImages');
+    const seriesMap = new Map();
+
+    entries
+        .filter((entry) => entry.data?.seriesId)
+        .forEach((entry) => {
+            const category = entry.data.category.toLowerCase().trim();
+            const seriesId = entry.data.seriesId;
+            const key = `${category}-${seriesId}`;
+
+            if (category !== 'startseite' && !seriesMap.has(key)) {
+                seriesMap.set(key, { category, seriesId });
+            }
+        });
+
+    return Array.from(seriesMap.values()).map(({ category, seriesId }) => ({
+        params: { category, serieId: seriesId },
+    }));
+}
+
+const { category, serieId } = Astro.params;
+const collection = await getCollection('collectionImages');
+const coverImage = collection.find(
+    (entry) =>
+        entry.data?.seriesId === serieId &&
+        entry.data?.isSeriesCover &&
+        entry.data?.category.toLowerCase().trim() === category
+);
+
+const seriesImages = collection
+    .filter(
+        (entry) =>
+            entry.data?.seriesId === serieId &&
+            entry.data?.category.toLowerCase().trim() === category
+    )
+    .map((entry) => ({
+        id: entry.slug,
+        folder: entry.data?.category.toLowerCase(),
+        title: entry.data?.title,
+        sortOrder: entry.data?.sortOrder,
+        description: entry.data?.description,
+        imageUrl: entry.data?.imageUrl,
+        imageAlt: entry.data?.imageAlt,
+        price: entry.data?.price,
+        sold: entry.data?.sold,
+        year: entry.data?.year,
+        isSeries: false,
+        seriesId: null,
+    }))
+    .sort((a, b) => a.sortOrder - b.sortOrder || 0);
+
+if (seriesImages.length === 0) {
+    return Astro.redirect(`/${category}`);
+}
+
+const serieTitle = coverImage?.data?.title || 'Serie';
+---
+
+<IndexGallery
+    title={serieTitle}
+    header={`Serie: ${serieTitle}`}
+    dataArt={seriesImages}
+    backUrl={`/${category}`}
+/>
