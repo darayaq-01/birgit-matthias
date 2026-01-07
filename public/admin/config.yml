@@ -52,7 +52,7 @@ collections:
 
   - name: "gallery_gegenstaendlich"
     label: "Gallery - Gegenständlich"
-    folder: "src/content/galleries/gegenstaendlich"
+    folder: "src/content/gallery_gegenstaendlich"
     create: true
     slug: "{{fields.title | slugify}}"
     fields:
@@ -79,7 +79,7 @@ collections:
 
   - name: "gallery_abstrakt"
     label: "Gallery - Abstrakt"
-    folder: "src/content/galleries/abstrakt"
+    folder: "src/content/gallery_abstrakt"
     create: true
     slug: "{{fields.title | slugify}}"
     fields:
@@ -106,7 +106,7 @@ collections:
 
   - name: "gallery_halbabstrakt"
     label: "Gallery - Halbabstrakt"
-    folder: "src/content/galleries/halbabstrakt"
+    folder: "src/content/gallery_halbabstrakt"
     create: true
     slug: "{{fields.title | slugify}}"
     fields:
@@ -133,7 +133,7 @@ collections:
 
   - name: "gallery_startseite"
     label: "Gallery - Startseite"
-    folder: "src/content/galleries/startseite"
+    folder: "src/content/gallery_startseite"
     create: true
     slug: "{{fields.title | slugify}}"
     fields:
