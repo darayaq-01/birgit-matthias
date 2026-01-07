@@ -9,10 +9,8 @@ export async function getStaticPaths() {
         params: { category },
     }));
 }
-
 const { category } = Astro.params;
 const collection = await getImagesByCategory(category);
-
 const seriesMap = new Map();
 const individualImages: any[] = [];
 
