@@ -1,11 +1,4 @@
-
-<div align="center">
-	<h1>🎨 Birgit Matthias Art Website</h1>
-  
-	[![Netlify Status](https://api.netlify.com/api/v1/badges/b26e08a9-bb0e-4135-bbfd-657632cca1f0/deploy-status)](https://app.netlify.com/projects/birgitmatthias-malerei/deploys)
-  
-	<i>Modern portfolio and gallery site for Birgit Matthias</i>
-</div>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b26e08a9-bb0e-4135-bbfd-657632cca1f0/deploy-status)](https://app.netlify.com/projects/birgitmatthias-malerei/deploys)
 
 ---
 
