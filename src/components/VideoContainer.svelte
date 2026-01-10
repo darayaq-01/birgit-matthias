@@ -51,6 +51,7 @@
             <mux-player
                 playback-id={playbackId}
                 stream-type="on-demand"
+                default-hidden-captions="true"
                 {poster}
                 controls
                 preload="none"
