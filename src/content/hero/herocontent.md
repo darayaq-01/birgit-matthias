@@ -1,4 +1,4 @@
 ---
-imageUrl: /uploads/bildschirmfoto-2025-07-14-um-13.18.29.webp
+imageUrl: /uploads/Splash-I-II.webp
 imageAlt: Austellungen
 ---
