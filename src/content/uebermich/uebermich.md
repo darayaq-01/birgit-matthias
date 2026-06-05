@@ -20,6 +20,6 @@ description: >-
 
 
   Seit 2025 bin ich Mitglied des Künstlerinnenkollektivs "Women Art Weimar" mit eigenen Ausstellungsflächen und permanenter Werk-Präsenz.
-imageUrl: /uploads/birgit.webp
+imageUrl: ""
 imageAlt: Birgit
 ---
