@@ -1,5 +1,5 @@
 ---
-title: "Abstract Blue: Orange"
+title: Abstrac
 description: Acryl Auf Leinwand, Mt Pappe Auf Leinwand Kaschiert, 100 cm x 70 cm
 category: abstrakt
 sortOrder: 0
