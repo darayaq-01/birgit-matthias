@@ -1,5 +1,5 @@
 ---
-title: WOMEN ART GALLERY
+title: WOMEN ART GALERIE
 venue: "Marktstraße 6   99423 Weimar   "
 dateEvent: Di. bis Sa. 11 bis 18 Uhr.
 description: >
