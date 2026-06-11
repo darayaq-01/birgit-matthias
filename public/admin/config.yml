@@ -42,12 +42,12 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
-      - { label: "Kategorie", name: "category", widget: "string", required: false }
+      - { label: "Kategorie", name: "category", widget: "string" }
       - { label: "Beschreibung", name: "description", widget: "text", required: false }
       - { label: "Veröffentlichungsdatum", name: "pubDate", widget: "datetime" }
       - { label: "Aktualisiert am", name: "updatedDate", widget: "datetime", required: false }
       - { label: "Coverbild", name: "cover", widget: "image", required: false }
-      - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string", required: false }
+      - { label: "Alt-Text für Cover", name: "coverAlt", widget: "string", default: "Coverbild für die Ausstellung" }
       - { label: "Inhalt", name: "body", widget: "markdown" }
 
   - name: "gallery_gegenstaendlich"
