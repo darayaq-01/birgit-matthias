@@ -1,7 +1,8 @@
 ---
 title: BLUE II
 description: |-
-  Mischtechnik auf Leinwand, 
+  Mischtechnik 
+  auf Leinwand, 
   80 x 100 cm, 2024
 category: abstrakt
 sortOrder: 0
