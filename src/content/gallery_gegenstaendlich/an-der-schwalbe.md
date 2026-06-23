@@ -1,5 +1,5 @@
 ---
-title: An der Schwalbe
+title: An der Schwaabe
 description: Acryl auf Leinwand
 category: gegenstaendlich
 sortOrder: 0
