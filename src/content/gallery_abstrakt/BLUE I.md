@@ -1,5 +1,5 @@
 ---
-title: "BLUE "
+title: BLUE I
 description: |-
   Mischtechnik auf Leinwand, 
   80 cm x 100 cm, 2024
